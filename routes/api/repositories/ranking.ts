@@ -4,11 +4,6 @@ import { SqlConst } from '../../sqlConst'
 import { RowDataPacket } from 'mysql2'
 
 export default class Ranking {
-    ncode: string = ""
-    title: string = ""
-    autherName: string = ""
-    genreName: string = ""
-    globalPoint: number = 0
 
     /**
      * TOP画面 総合ランキングのデータを取得します。
