@@ -1,7 +1,7 @@
 import { Router } from "express"
 import 'reflect-metadata'
 import { container } from 'tsyringe'
-import Auther from "./api/repositories/auther"
+import Author from "./api/repositories/author"
 import Ranking from "./api/repositories/ranking"
 import AppDatabase from "./appDatabase"
 import { SqlConst } from "./sqlConst"
@@ -20,10 +20,10 @@ router.get("/", (req, res, next) => res.render("index", { title: "Express" }));
 // // パラメータあり
 // ranking.findGenreRankingTop("1")
 
-// const auther = new Auther()
+// const author = new Author()
 // // パラメータ無し
-// auther.findAutherFromKeyword()
+// author.findAuthorFromKeyword()
 // // パラメータあり キーワードとオフセット
-// auther.findAutherFromKeyword(["1"], 20)
+// author.findAuthorFromKeyword(["1"], 20)
 // パラメータあり キーワードとオフセットとリミット
-// auther.findAutherFromKeyword(["あ", "い", "う", "あ"], 20, 30)
+// author.findAuthorFromKeyword(["あ", "い", "う", "あ"], 20, 30)

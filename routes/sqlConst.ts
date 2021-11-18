@@ -16,13 +16,13 @@ export namespace SqlConst {
         `SELECT
             a.ncode,
             a.title,
-            -- b.auther_name,
+            -- b.author_name,
             c.global_point,
             d.genre_name
         FROM
             trn_novel_base a
             -- LEFT JOIN
-            --     trn_novel_auther_base b ON a.auther_id = b.auther_id
+            --     trn_novel_author_base b ON a.author_id = b.author_id
             LEFT JOIN
                 trn_novel_evanluation c ON a.ncode = c.ncode
             LEFT JOIN
@@ -57,26 +57,26 @@ export namespace SqlConst {
     )
 
     /** 作者一覧画面 */
-    export const FIND_AUTHER =
+    export const FIND_AUTHOR =
         `SELECT
             DISTINCT
-            auther_id,
-            auther_name
+            author_id,
+            author_name
         FROM
-            trn_novel_auther_base`
+            trn_novel_author_base`
 
     /** 作者一覧画面 キーワード(param)を置換して使用すること */
-    export const SQL_WHERE_AUTHER_FROM_KEYWORD = 
+    export const SQL_WHERE_AUTHOR_FROM_KEYWORD =
         ` WHERE
-            (auther_id LIKE '%param%'
-            OR auther_name LIKE '%param%'
-            OR auther_name_ruby LIKE '%param%')`
+            (author_id LIKE '%param%'
+            OR author_name LIKE '%param%'
+            OR author_name_ruby LIKE '%param%')`
 
    /** 作者一覧画面 追加条件 キーワード(param)を置換して使用すること */
-    export const SQL_ADD_AUTHER_FROM_KEYWORD = 
+    export const SQL_ADD_AUTHOR_FROM_KEYWORD =
         ` AND
-            (auther_id LIKE '%param%'
-            OR auther_name LIKE '%param%'
-            OR auther_name_ruby LIKE '%param%')`
+            (author_id LIKE '%param%'
+            OR author_name LIKE '%param%'
+            OR author_name_ruby LIKE '%param%')`
 }
 
