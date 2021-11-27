@@ -16,13 +16,13 @@ export namespace SqlConst {
         `SELECT
             a.ncode,
             a.title,
-            -- b.author_name,
+            b.author_name,
             c.global_point,
             d.genre_name
         FROM
             trn_novel_base a
-            -- LEFT JOIN
-            --     trn_novel_author_base b ON a.author_id = b.author_id
+            LEFT JOIN
+                trn_novel_author_base b ON a.author_id = b.author_id
             LEFT JOIN
                 trn_novel_evanluation c ON a.ncode = c.ncode
             LEFT JOIN
@@ -66,17 +66,54 @@ export namespace SqlConst {
             trn_novel_author_base`
 
     /** 作者一覧画面 キーワード(param)を置換して使用すること */
-    export const SQL_WHERE_AUTHOR_FROM_KEYWORD =
+    export const SQL_WHERE_AUTHOR_FROM_FREE_WORD =
         ` WHERE
             (author_id LIKE '%param%'
             OR author_name LIKE '%param%'
             OR author_name_ruby LIKE '%param%')`
 
-   /** 作者一覧画面 追加条件 キーワード(param)を置換して使用すること */
-    export const SQL_ADD_AUTHOR_FROM_KEYWORD =
+    /** 作者一覧画面 追加条件 キーワード(param)を置換して使用すること */
+    export const SQL_ADD_AUTHOR_FROM_FREE_WORD =
         ` AND
             (author_id LIKE '%param%'
             OR author_name LIKE '%param%'
             OR author_name_ruby LIKE '%param%')`
+
+    /** 作品一覧画面 */
+    export const FIND_NOVEL =
+        `SELECT
+            a.ncode,
+            a.title,
+            b.author_name,
+            c.genre_name
+        FROM
+            trn_novel_base a
+            LEFT JOIN
+                trn_novel_author_base b
+                    ON a.author_id = b.author_id
+            LEFT JOIN
+                mst_genre c
+                    ON a.genre_id = c.genre_id`
+
+    /** 作品一覧画面 追加条件 フリーワード キーワード(freeWord)を置換して使用すること */
+    export const SQL_WHERE_NOVEL_FROM_FREE_WORD = ` a.title LIKE '%freeWord%'`
+    /** 作品一覧画面 追加条件 ジャンルID キーワード(genreId)を置換して使用すること */
+    export const SQL_WHERE_NOVEL_FROM_GENRE_ID = ` a.genre_id = genreId`
+    /** 作品一覧画面 追加条件 小説タイプ キーワード(novelType)を置換して使用すること */
+    export const SQL_WHERE_NOVEL_FROM_NOVEL_TYPE = ` a.novel_type = novelType`
+    /** 作品一覧画面 追加条件 完結フラグ キーワード(isCompleted)を置換して使用すること */
+    export const SQL_WHERE_NOVEL_FROM_COMPLETION = ` a.completion_flg = isCompleted`
+    /** 作品一覧画面 追加条件 R15フラグ */
+    export const SQL_WHERE_NOVEL_FROM_R15 = ` a.r15_flg = '1'`
+    /** 作品一覧画面 追加条件 ボーイズラブフラグ */
+    export const SQL_WHERE_NOVEL_FROM_BOYS_LOVE = ` a.boys_love_flg = '1'`
+    /** 作品一覧画面 追加条件 ガールズラブフラグ */
+    export const SQL_WHERE_NOVEL_FROM_GIRLS_LOVE = ` a.girls_love_flg = '1'`
+    /** 作品一覧画面 追加条件 残虐フラグ */
+    export const SQL_WHERE_NOVEL_FROM_CRUELTY = ` a.cruelty_flg = '1'`
+    /** 作品一覧画面 追加条件 異世界転生フラグ */
+    export const SQL_WHERE_NOVEL_FROM_REINCARNATION = ` a.reincarnation_flg = '1'`
+    /** 作品一覧画面 追加条件 異世界転移フラグ */
+    export const SQL_WHERE_NOVEL_FROM_METASTASIS = ` a.metastasis_flg = '1'`
 }
 

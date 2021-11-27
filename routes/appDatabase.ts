@@ -17,7 +17,7 @@ export default class AppDatabase {
             const [row, field] = await pool.execute(sql, params)
             return row
         } catch (error) {
-            // DB固有のExceptionをthrowする？
+            // TODO: DB固有のExceptionをthrowする？
             console.log(error)
         } finally {
             console.log("database close")

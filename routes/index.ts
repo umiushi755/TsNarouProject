@@ -3,6 +3,7 @@ import 'reflect-metadata'
 import { container } from 'tsyringe'
 import Author from "./api/repositories/author"
 import Ranking from "./api/repositories/ranking"
+import Novel from "./api/repositories/novel"
 import AppDatabase from "./appDatabase"
 import { SqlConst } from "./sqlConst"
 
@@ -22,8 +23,19 @@ router.get("/", (req, res, next) => res.render("index", { title: "Express" }));
 
 // const author = new Author()
 // // パラメータ無し
-// author.findAuthorFromKeyword()
+// author.findAuthorFromFreeWord()
 // // パラメータあり キーワードとオフセット
-// author.findAuthorFromKeyword(["1"], 20)
-// パラメータあり キーワードとオフセットとリミット
-// author.findAuthorFromKeyword(["あ", "い", "う", "あ"], 20, 30)
+// author.findAuthorFromFreeWord(["1"], 20)
+// // パラメータあり キーワードとオフセットとリミット
+// author.findAuthorFromFreeWord(["あ", "い", "う", "あ"], 20, 30)
+
+// const novel = new Novel()
+// novel.findNovelFromSearch(["スラ", "イム"])
+// novel.findNovelFromSearch([], "101")
+// // NovelType, RequiredKeywordは起動してすぐだとapp.tsやindex.tsで参照できないため、コメント解除しても正しく実行されない
+// novel.findNovelFromSearch([], "", [NovelType.SERIAL])
+// novel.findNovelFromSearch([], "", [], [RequiredKeyword.R15, RequiredKeyword.REINCARNATE])
+// // 0~29, 30~59...となるため2ページ目を表示する場合、OFFSETは30
+// novel.findNovelFromSearch([], "", [], [], 30, 20)
+// novel.findNovelFromSearch(["スラ", "イム"], "101")
+// novel.findNovelFromSearch(["スラ", "イム"], "101", [NovelType.SERIAL], [RequiredKeyword.R15, RequiredKeyword.REINCARNATE])

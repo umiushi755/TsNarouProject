@@ -8,25 +8,26 @@ export default class Author {
 
     /**
      * 作者一覧画面 作者のデータを取得します。
-     * @param keywords 
-     * @param offset 
-     * @param limit 
+     *
+     * @param freeWords 検索用フリーワード
+     * @param offset 開始位置
+     * @param limit 取得数
      */
-    async findAuthorFromKeyword(params: string[] = [], offset: number = 0, limit: number = 40) {
+    async findAuthorFromFreeWord(freeWords: string[] = [], offset: number = 0, limit: number = 40) {
         const db = this.getDatabase()
-        const rowData = await db.select(this.makeSqlFindAuthorFromKeyword(params, offset, limit)) as RowDataPacket
+        const rowData = await db.select(this.makeSqlFindAuthorFromFreeWord(freeWords, offset, limit)) as RowDataPacket
         console.log(rowData)
     }
 
-    private makeSqlFindAuthorFromKeyword(params: string[], offset: number, limit: number): string {
-        const setParam = new Set(params)
+    private makeSqlFindAuthorFromFreeWord(freeWords: string[], offset: number, limit: number): string {
+        const setParam = new Set(freeWords)
         let paramReplaced = ""
         let count = 0
         for (const param of setParam) {
-            if (count == 0) {
-                paramReplaced = SqlConst.SQL_WHERE_AUTHOR_FROM_KEYWORD.replace(/param/g, param)
+            if (count === 0) {
+                paramReplaced = SqlConst.SQL_WHERE_AUTHOR_FROM_FREE_WORD.replace(/param/g, param)
             } else {
-                paramReplaced = paramReplaced + SqlConst.SQL_ADD_AUTHOR_FROM_KEYWORD.replace(/param/g, param)
+                paramReplaced += SqlConst.SQL_ADD_AUTHOR_FROM_FREE_WORD.replace(/param/g, param)
             }
             count++
         }
