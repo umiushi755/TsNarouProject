@@ -1,0 +1,39 @@
+.notice_content{
+  /* border: 1px dotted #000; */
+  width: 1200px;
+  margin: 0 auto;
+}
+.topic_img {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+.topic_img::before,
+.topic_img::after{
+	content: '';
+	position: absolute;
+	top: 30%;
+	display: inline-block;
+	width: 5%;
+	height: 3px;
+	border-top: 3px solid #909ff8;
+}
+.topic_img::before{
+	left: 42%;
+}
+.topic_img::after{
+	right:42%;
+}
+.notice_text_view{
+  width: 100%;
+  text-align: center;
+  margin-bottom: 48px;
+}
+.notice_text_view p{
+  margin: 0;
+  padding: 0.5em;
+}
+

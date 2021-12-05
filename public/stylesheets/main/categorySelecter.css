@@ -1,0 +1,244 @@
+.select_wrap {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border-bottom: 2px dotted #ececec;
+  padding-bottom: 48px;
+}
+select {
+  cursor: pointer;
+  position: relative;
+  -webkit-appearance: none;
+  appearance: none;
+  display: block;
+  border: none;
+  border-radius: 5px;
+  background: transparent;
+}
+/*default --ここから*/
+.category_tab_area {
+  position: relative;
+  height: 44px;
+  width: -webkit-calc((100%/7) - 8px);
+  width: calc((100%/7) - 8px);
+  transition: 0.3s;
+}
+.category_tab_area:hover {
+  border-color: #fff;
+}
+.category_tab_area::after {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 50%;
+  right: 10px;
+  width: 6px;
+  height: 6px;
+  transform: translateY(-50%) rotate(135deg);
+  margin-top: -3px;
+  border-top-style: solid;
+  border-right-style: solid;
+  border-top-width: 2px;
+  border-right-width: 2px;
+}
+.category_tab {
+  font-weight: bold;
+  line-height: 1;
+  padding: 12px;
+  width: 100%;
+  height: 44px;
+  font-size: 12px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.genre_tab {
+  /*font-weight: bold;*/
+  line-height: 1;
+  padding: 12px 10px;
+  height: 44px;
+  font-size: 12px;
+  font-weight: bold;
+  transition: 0.3s;
+  width: 100%;
+}
+.category_tab:focus,
+.genre_tab:focus {
+  outline: none;
+}
+/*default --ここまで*/
+
+/*総合*/
+.tab_total {
+  border-color: #669ff7;
+}
+.tab_total::after {
+  border-color: inherit;
+}
+.tab_total .category_tab {
+  color: #669ff7;
+  background-color: #eaf2ff;
+}
+.tab_total:hover .category_tab,
+.tab_total .category_tab:focus {
+  color: #fff;
+  background-color: #669ff7;
+}
+/*恋愛*/
+.tab_love {
+  border-color: #fb81cf;
+}
+.tab_love::after {
+  border-color: inherit;
+}
+.tab_love .genre_tab {
+  color: #fb81cf;
+  background-color: #fceff8;
+}
+.tab_love:hover .genre_tab,
+.tab_love .genre_tab:focus {
+  color: #fff;
+  background-color: #fb81cf;
+}
+/*ファンタジー*/
+.tab_fantasy {
+  border-color: #ca84f8;
+}
+.tab_fantasy::after {
+  border-color: inherit;
+}
+.tab_fantasy .genre_tab {
+  color: #ca84f8;
+  background-color: #faefff;
+}
+.tab_fantasy:hover .genre_tab,
+.tab_fantasy .genre_tab:focus {
+  color: #fff;
+  background-color: #ca84f8;
+}
+/*文芸*/
+.tab_literary {
+  border-color: #2eb9ec;
+}
+.tab_literary::after {
+  border-color: inherit;
+}
+.tab_literary .genre_tab {
+  color: #2eb9ec;
+  background-color: #e5f8ff;
+}
+.tab_literary:hover .genre_tab,
+.tab_literary .genre_tab:focus {
+  color: #fff;
+  background-color: #2eb9ec;
+}
+/*SF*/
+.tab_sf {
+  border-color: #16d082;
+}
+.tab_sf::after {
+  border-color: inherit;
+}
+.tab_sf .genre_tab {
+  color: #16d082;
+  background-color: #e9fbf5;
+}
+.tab_sf:hover .genre_tab,
+.tab_sf .genre_tab:focus  {
+  color: #fff;
+  background-color: #16d082;
+}
+/*その他*/
+.tab_other {
+  border-color: #f3b21e;
+}
+.tab_other::after {
+  border-color: inherit;
+}
+.tab_other .genre_tab {
+  color: #f3b21e;
+  background-color: #FFF8EA;
+}
+.tab_other:hover .genre_tab,
+.tab_other .genre_tab:focus {
+  color: #fff;
+  background-color: #f3b21e;
+}
+/*ノンジャンル*/
+.tab_non-genre {
+  border-color :#fd9c7b;
+}
+.tab_non-genre::after {
+  border-color: inherit;
+}
+.tab_non-genre .genre_tab {
+  color: #fd9c7b;
+  background-color: #fff0e4;
+}
+.tab_non-genre:hover .genre_tab,
+.tab_non-genre .genre_tab:focus {
+  color: #fff;
+  background-color: #fd9c7b;
+}
+/*ジャンル別button --ここまで*/
+.genre_tab:focus-visible {
+  outline: none;
+}
+.category_tab_item {
+  height: 44px;
+}
+
+@media only screen and (max-width: 1140px) {
+  .select_wrap {
+    justify-content: center;
+  }
+  .category_tab_area {
+    height: inherit;
+    padding: 6px;
+  }
+  .category_tab_area:nth-child(-n+4) {
+    width: -webkit-calc((100%/4) - 6px);
+    width: calc((100%/4) - 6px);
+  }
+  .category_tab_area:nth-child(n+5) {
+    width: -webkit-calc((100%/4) - 6px);
+    width: calc((100%/4) - 6px);
+  }
+  .category_tab_area::after {
+    right: 20px;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .select_wrap {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 -6px 0 -6px;
+    padding-bottom: 16px;
+  }
+  select {
+  }
+  .category_tab_area {
+    margin: 0px;
+    height: inherit;
+    padding: 6px;
+    width: 50%;
+  }
+  .category_tab_area:nth-child(-n+4) {
+    width: 50%;
+  }
+  .category_tab_area:nth-child(n+5) {
+    width: 50%;
+  }
+  .category_tab_area::after {
+    right: 20px;
+  }
+  .category_tab {
+    width: 100%;
+  }
+  .genre_tab {
+    width: 100%;
+  }
+}

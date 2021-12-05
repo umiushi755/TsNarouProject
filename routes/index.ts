@@ -13,8 +13,6 @@ container.register(SqlConst.DB_NAME, {
     useClass: AppDatabase
 })
 
-router.get("/", (req, res, next) => res.render("index", { title: "Express" }));
-
 // const ranking = new Ranking()
 // // パラメータ無し
 // ranking.findTotalRankingTop()
@@ -39,3 +37,8 @@ router.get("/", (req, res, next) => res.render("index", { title: "Express" }));
 // novel.findNovelFromSearch([], "", [], [], 30, 20)
 // novel.findNovelFromSearch(["スラ", "イム"], "101")
 // novel.findNovelFromSearch(["スラ", "イム"], "101", [NovelType.SERIAL], [RequiredKeyword.R15, RequiredKeyword.REINCARNATE])
+
+router.get("/", (req, res, next) => {
+  res.render('index');
+  // res.render("index", { title: "Express" });
+});

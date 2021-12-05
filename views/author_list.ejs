@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N2E060C3LF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-N2E060C3LF');
+  </script>
+  <link type="text/css" href="stylesheets/html5reset-1.6.1.css" rel="stylesheet" />
+<link type="text/css" href="stylesheets/common.css" rel="stylesheet" />
+  <link type="text/css" href="stylesheets/header.css" rel="stylesheet" />
+  <link type="text/css" href="stylesheets/author_topics.css" rel="stylesheet" />
+  <link type="text/css" href="stylesheets/main/stringSelecter.css" rel="stylesheet" />
+  <link type="text/css" href="stylesheets/main/author_list.css" rel="stylesheet" />
+  <link type="text/css" href="stylesheets/footer.css" rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="/public/javascripts/authorList.js"></script>
+  <title>なろ研｜作者検索</title>
+</head>
+
+<body class="author_list">
+  <header>
+    <section class="header_content">
+      <h1><a href="/"><img src="img/logo.png" alt="なろ研" class="logoImg" /></a></h1>
+
+      <!-- ▼ global-navigation ▼ -->
+      <input type="checkbox" id="nav">
+
+      <label for="nav" class="nav-label">
+        <span class="nav-icon">
+          <span class="nav-icon_item"></span>
+          <span class="nav-icon_item"></span>
+          <span class="nav-icon_item"></span>
+      </label>
+
+      <nav class="nav-list">
+
+        <div class="nav-list_wrap">
+
+          <div class="nav-list_menu">
+            <ul class="nav-list_items">
+              <li class="nav-list_item"><a class="nav-list_link" href="/">ホーム</a></li>
+              <li class="nav-list_item"><a class="nav-list_link" href="/analysis">分析</a></li>
+              <li class="nav-list_item"><a class="nav-list_link" href="/ranking">ランキング</a></li>
+              <li class="nav-list_item"><a class="nav-list_link" href="/author_list">作者一覧</a></li>
+              <li class="nav-list_item"><a class="nav-list_link" href="/masterpiece_list">作品一覧</a></li>
+              <li class="nav-list_item"><a class="nav-list_link" href="/contact">お問い合わせ</a></li>
+            </ul>
+          </div>
+          <div class="sns_link">
+            <a
+              href="javascript:window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(location.href),'sharewindow','width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!');">
+              <img src="img/sns/facebook-icon.png" alt="facebook" />
+            </a>
+            <a
+              href="javascript:window.open('http://twitter.com/share?text='+encodeURIComponent(document.title)+'&url='+encodeURIComponent(location.href),'sharewindow','width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!');">
+              <img src="img/sns/twitter-icon.png" alt="twitter" />
+            </a>
+            <a
+              href="javascript:window.open('http://line.me/R/msg/text/?'+encodeURIComponent(document.title)+'%20'+encodeURIComponent(location.href),'sharewindow','width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!');">
+              <img src="img/sns/line-icon.png" alt="line" />
+            </a>
+          </div>
+
+        </div>
+
+      </nav>
+
+      <!-- ▲ global-navigation ▲ -->
+
+    </section>
+  </header>
+  <main>
+    <div class="main_content">
+      <section class="informing_block informing_title">
+        <h2>作者一覧</h2>
+        <div class="overview">
+          <p>このページでは、過去に作品を投稿した<br class="sp-only">作者の一覧を表示しています。<br>
+            取得しているデータの都合上、<br>
+            既に<a href="https://syosetu.com/">小説家になろう</a>にて削除された方も<br class="sp-only">表示される可能性があるためご注意ください。</p>
+        </div>
+        <div class="input_frame">
+          <form action="search/result" method="post">
+            <input type="text" name="input_search_text" placeholder="キーワードを入力" class="input_search_text" /><input type="image" alt="submit" src="img/magnifying_glass.png" class="submit_button"/>
+          </form>
+        </div>
+      </section>
+      <div class="content_area">
+        <div class="content_block auther_cards">
+
+          <div class="auther_card">
+            <p class="auther_id">作者ID:200</p>
+            <p class="author_name">
+              <a href="/details/author/200">水本爽涼</a>
+            </p>
+          </div>
+
+
+          <div class="auther_card">
+            <p class="auther_id">作者ID:208</p>
+            <p class="author_name">
+              <a href="/details/author/208">葉月香</a>
+            </p>
+          </div>
+
+
+          <div class="auther_card">
+            <p class="auther_id">作者ID:450</p>
+            <p class="author_name">
+              <a href="/details/author/450">他界</a>
+            </p>
+          </div>
+
+
+          <div class="auther_card">
+            <p class="auther_id">作者ID:615</p>
+            <p class="author_name">
+              <a href="/details/author/615">hana</a>
+            </p>
+          </div>
+
+
+          <div class="auther_card">
+            <p class="auther_id">作者ID:616</p>
+            <p class="author_name">
+              <a href="/details/author/616">青葉ミチル&青葉ミチル&青葉ミチル</a>
+            </p>
+          </div>
+
+
+          <div class="auther_card">
+            <p class="auther_id">作者ID:618</p>
+            <p class="author_name">
+              <a href="/details/author/618">ちぐ</a>
+            </p>
+          </div>
+
+
+          <div class="auther_card">
+            <p class="auther_id">作者ID:619</p>
+            <p class="author_name">
+              <a href="/details/author/619">梶原鶫</a>
+            </p>
+          </div>
+
+
+          <div class="auther_card">
+            <p class="auther_id">作者ID:622</p>
+            <p class="author_name">
+              <a href="/details/author/622">大月　泉</a>
+            </p>
+          </div>
+
+
+          <div class="auther_card">
+            <p class="auther_id">作者ID:624</p>
+            <p class="author_name">
+              <a href="/details/author/624">ＬＡＢ．☆</a>
+            </p>
+          </div>
+
+
+          <div class="auther_card">
+            <p class="auther_id">作者ID:627</p>
+            <p class="author_name">
+              <a href="/details/author/627">タカヤ モモ</a>
+            </p>
+          </div>
+
+
+          <div class="auther_card">
+            <p class="auther_id">作者ID:630</p>
+            <p class="author_name">
+              <a href="/details/author/630">小泉　翅穏</a>
+            </p>
+          </div>
+
+
+          <div class="auther_card">
+            <p class="auther_id">作者ID:634</p>
+            <p class="author_name">
+              <a href="/details/author/634">moon</a>
+            </p>
+          </div>
+
+
+          <div class="auther_card">
+            <p class="auther_id">作者ID:642</p>
+            <p class="author_name">
+              <a href="/details/author/642">TA−</a>
+            </p>
+          </div>
+
+
+          <div class="auther_card">
+            <p class="auther_id">作者ID:643</p>
+            <p class="author_name">
+              <a href="/details/author/643">遊元　もえ</a>
+            </p>
+          </div>
+
+
+          <div class="auther_card">
+            <p class="auther_id">作者ID:652</p>
+            <p class="author_name">
+              <a href="/details/author/652">藤田文人</a>
+            </p>
+          </div>
+
+
+          <div class="auther_card">
+            <p class="auther_id">作者ID:665</p>
+            <p class="author_name">
+              <a href="/details/author/665">財前太郎</a>
+            </p>
+          </div>
+
+
+          <div class="auther_card">
+            <p class="auther_id">作者ID:666</p>
+            <p class="author_name">
+              <a href="/details/author/666">月宮夏樹</a>
+            </p>
+          </div>
+
+
+          <div class="auther_card">
+            <p class="auther_id">作者ID:668</p>
+            <p class="author_name">
+              <a href="/details/author/668">相庭 ゆうき</a>
+            </p>
+          </div>
+
+
+          <div class="auther_card">
+            <p class="auther_id">作者ID:669</p>
+            <p class="author_name">
+              <a href="/details/author/669">夕玉　黄華</a>
+            </p>
+          </div>
+
+
+          <div class="auther_card">
+            <p class="auther_id">作者ID:674</p>
+            <p class="author_name">
+              <a href="/details/author/674">汀</a>
+            </p>
+          </div>
+
+
+          <div class="auther_card">
+            <p class="auther_id">作者ID:678</p>
+            <p class="author_name">
+              <a href="/details/author/678">麗</a>
+            </p>
+          </div>
+
+
+          <div class="auther_card">
+            <p class="auther_id">作者ID:679</p>
+            <p class="author_name">
+              <a href="/details/author/679">マッスー</a>
+            </p>
+          </div>
+
+
+          <div class="auther_card">
+            <p class="auther_id">作者ID:680</p>
+            <p class="author_name">
+              <a href="/details/author/680">弐死無羅</a>
+            </p>
+          </div>
+
+
+          <div class="auther_card">
+            <p class="auther_id">作者ID:682</p>
+            <p class="author_name">
+              <a href="/details/author/682">越華</a>
+            </p>
+          </div>
+
+
+          <div class="auther_card">
+            <p class="auther_id">作者ID:685</p>
+            <p class="author_name">
+              <a href="/details/author/685">明</a>
+            </p>
+          </div>
+
+
+          <div class="auther_card">
+            <p class="auther_id">作者ID:686</p>
+            <p class="author_name">
+              <a href="/details/author/686">御陵一茶</a>
+            </p>
+          </div>
+
+
+          <div class="auther_card">
+            <p class="auther_id">作者ID:688</p>
+            <p class="author_name">
+              <a href="/details/author/688">基</a>
+            </p>
+          </div>
+
+
+          <div class="auther_card">
+            <p class="auther_id">作者ID:689</p>
+            <p class="author_name">
+              <a href="/details/author/689">長谷部まこと</a>
+            </p>
+          </div>
+
+
+          <div class="auther_card">
+            <p class="auther_id">作者ID:691</p>
+            <p class="author_name">
+              <a href="/details/author/691">マジック．ジョー</a>
+            </p>
+          </div>
+
+
+          <div class="auther_card">
+            <p class="auther_id">作者ID:692</p>
+            <p class="author_name">
+              <a href="/details/author/692">翡翠</a>
+            </p>
+          </div>
+
+
+          <div class="auther_card">
+            <p class="auther_id">作者ID:698</p>
+            <p class="author_name">
+              <a href="/details/author/698">快丈凪</a>
+            </p>
+          </div>
+
+
+          <div class="auther_card">
+            <p class="auther_id">作者ID:699</p>
+            <p class="author_name">
+              <a href="/details/author/699">ESP</a>
+            </p>
+          </div>
+
+
+          <div class="auther_card">
+            <p class="auther_id">作者ID:700</p>
+            <p class="author_name">
+              <a href="/details/author/700">守利上　響</a>
+            </p>
+          </div>
+
+
+          <div class="auther_card">
+            <p class="auther_id">作者ID:704</p>
+            <p class="author_name">
+              <a href="/details/author/704">ヤマダゴロウ</a>
+            </p>
+          </div>
+
+
+          <div class="auther_card">
+            <p class="auther_id">作者ID:708</p>
+            <p class="author_name">
+              <a href="/details/author/708">青</a>
+            </p>
+          </div>
+
+
+          <div class="auther_card">
+            <p class="auther_id">作者ID:709</p>
+            <p class="author_name">
+              <a href="/details/author/709">Hika</a>
+            </p>
+          </div>
+
+
+          <div class="auther_card">
+            <p class="auther_id">作者ID:713</p>
+            <p class="author_name">
+              <a href="/details/author/713">凛驟雨</a>
+            </p>
+          </div>
+
+
+          <div class="auther_card">
+            <p class="auther_id">作者ID:714</p>
+            <p class="author_name">
+              <a href="/details/author/714">香</a>
+            </p>
+          </div>
+
+
+          <div class="auther_card">
+            <p class="auther_id">作者ID:717</p>
+            <p class="author_name">
+              <a href="/details/author/717">幸田もえ</a>
+            </p>
+          </div>
+
+
+          <div class="auther_card">
+            <p class="auther_id">作者ID:720</p>
+            <p class="author_name">
+              <a href="/details/author/720">鹽崎 裕</a>
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="content_block">
+        <ul class="page_link_list">
+            <li id="page_link_active"><span href="/masterpiece_list">1</span></li><li><a href="/masterpiece_list/2">2</a></li><li><a href="/masterpiece_list/3">3</a></li><li><a href="/masterpiece_list/4">4</a></li><li><a href="/masterpiece_list/5">5</a></li><span class="three-dots">⋯</span><li><a href="/masterpiece_list/25656">6507</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </main>
+  <footer>
+    <div class="footer_content">
+
+      <div class="menu_area">
+        <nav class="regular">
+          <ul>
+            <li><a href="index.html" class="menu_link">ホーム</a></li>
+            <li><a href="analysis.html" class="menu_link">分析</a></li>
+            <li><a href="ranking.html" class="menu_link">ランキング</a></li>
+            <li><a href="author_list.html" class="menu_link">作者一覧</a></li>
+            <li><a href="masterpiece_list.html" class="menu_link">作品一覧</a></li>
+            <li><a href="contact.html" class="menu_link">お問い合わせ</a></li>
+          </ul>
+        </nav>
+      </div>
+      <img class="footer_logo" border="0" src="img/logo.png" alt="logo">
+      <p>© 2019 NAROKEN</p>
+    </div>
+  </footer>
+
+</body>
+
+</html>

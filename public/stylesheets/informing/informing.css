@@ -1,0 +1,26 @@
+.informing_block{
+  width: 100%;
+  margin-bottom:56px;
+}
+.informing_title{
+  text-align: center;
+}
+.informing_title hr{
+  width: 4%;
+  height: 2px;
+  background-color:#909ff8;
+  margin: 0 auto;
+}
+.informing_block h2{
+  margin-bottom: 24px;
+  font-size: 28px;
+}
+.informing_description{
+  display: inline-block;
+  margin-top: 32px;
+  margin-bottom: 16px;
+}
+.informing_description p{
+  margin: 0;
+  padding: 0.5em;
+}

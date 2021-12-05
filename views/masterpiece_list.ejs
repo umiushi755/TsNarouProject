@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N2E060C3LF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-N2E060C3LF');
+</script>
+    <link rel="icon" href="img/favicon.ico">
+    <link type="text/css" href="stylesheets/html5reset-1.6.1.css" rel="stylesheet" />
+    <link type="text/css" href="stylesheets/common.css" rel="stylesheet" />
+    <link type="text/css" href="stylesheets/header.css" rel="stylesheet" />
+    <link type="text/css" href="stylesheets/main/search.css" rel="stylesheet" />
+    <link type="text/css" href="stylesheets/main/stringSelecter.css" rel="stylesheet" />
+    <link type="text/css" href="stylesheets/main/masterpiece_list.css" rel="stylesheet" />
+    <link type="text/css" href="stylesheets/footer.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="/public/javascripts/masterpieceList.js"></script>
+    <title>なろ研｜作品検索</title>
+  </head>
+  <body class="masterpiece_list">
+    <header>
+      <section class="header_content">
+        <h1><a href="/"><img src="img/logo.png" alt="なろ研" class="logoImg" /></a></h1>
+        
+        <!-- ▼ global-navigation ▼ -->
+        <input type="checkbox" id="nav">
+        
+        <label for="nav" class="nav-label">
+          <span class="nav-icon">
+            <span class="nav-icon_item"></span>
+            <span class="nav-icon_item"></span>
+            <span class="nav-icon_item"></span>
+        </label>
+
+        <nav class="nav-list">
+
+          <div class="nav-list_wrap">
+
+            <div class="nav-list_menu">
+              <ul class="nav-list_items">
+                <li class="nav-list_item"><a class="nav-list_link" href="/">ホーム</a></li>
+                <li class="nav-list_item"><a class="nav-list_link" href="/analysis">分析</a></li>
+                <li class="nav-list_item"><a class="nav-list_link" href="/ranking">ランキング</a></li>
+                <li class="nav-list_item"><a class="nav-list_link" href="/author_list">作者一覧</a></li>
+                <li class="nav-list_item"><a class="nav-list_link" href="/masterpiece_list">作品一覧</a></li>
+                <li class="nav-list_item"><a class="nav-list_link" href="/contact">お問い合わせ</a></li>
+              </ul>
+            </div>
+            <div class="sns_link">
+              <a href="javascript:window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(location.href),'sharewindow','width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!');">
+                <img src="img/sns/facebook-icon.png" alt="facebook" />
+              </a>
+              <a href="javascript:window.open('http://twitter.com/share?text='+encodeURIComponent(document.title)+'&url='+encodeURIComponent(location.href),'sharewindow','width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!');">
+                <img src="img/sns/twitter-icon.png" alt="twitter" />
+              </a>
+              <a href="javascript:window.open('http://line.me/R/msg/text/?'+encodeURIComponent(document.title)+'%20'+encodeURIComponent(location.href),'sharewindow','width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!');">
+                <img src="img/sns/line-icon.png" alt="line" />
+              </a>
+            </div>
+            
+          </div>
+
+        </nav>
+
+        <!-- ▲ global-navigation ▲ -->
+
+      </section>
+    </header>
+    <main>
+      <div class="main_content">
+        <section class="informing_block informing_title">
+  <h2>作品一覧</h2>
+  <div class="overview">
+    <p>作品名、タグ、Nコードを条件に<br class="sp-only">作品を探すことができます。</p>
+  </div>
+  <!-- <form  name="search_form" class="input_frame" action="" method="">
+    <input type="hidden" name="data"  placeholder="キーワード検索" value="">
+  </form> -->
+
+  <div id="input_parts" class="input_parts">
+    <input type="text" name="search_keyword" class="search_keyword" id="search_keyword" value= ""  placeholder="キーワードを入力" />
+    <div class = "search_option">
+      <div class = "option_box">
+        <div class = "option_box_elem" id="search_option_change">
+            <label><input class = "option_box_item" type="radio" name="nobel_or_author" value="0" checked />作品名</label>
+            <label><input class = "option_box_item" type="radio" name="nobel_or_author" value="0" />作品名</label>
+            <label><input class = "option_box_item" type="radio" name="nobel_or_author" value="1" checked />作者名</label>
+            <label><input class = "option_box_item" type="radio" name="nobel_or_author" value="1" />作者名</label>
+        </div>
+      </div>
+      <div class = "option_box">
+        <div class="category_tab_area total_arrow"><!-- 総合 -->
+          <select class="category_tab total_tab_color" name="big_category_tab" id="big_category"><!-- class各ジャンルごとに変更-->
+              <option class="category_tab_item" value="total">大カテゴリー選択</option>
+              <option class="category_tab_item" value="1">恋愛</option>
+              <option class="category_tab_item" value="2">ファンタジー</option>
+              <option class="category_tab_item" value="3">文芸</option>
+              <option class="category_tab_item" value="4">SF</option>
+              <option class="category_tab_item" value="99">その他</option>
+              <option class="category_tab_item" value="98">ノンジャンル</option>
+          </select>
+        </div>
+      </div>
+      <div class = "option_box">
+        <div class="category_tab_area total_arrow"><!-- 総合 -->
+          <select class="category_tab total_tab_color" name="small_category_tab" id="small_category"><!-- class各ジャンルごとに変更-->
+              <option class="category_tab_item" value="total">小カテゴリー選択</option>
+                <option value="101" selected>異世界</option>
+                <option value="102">現実世界</option>
+                <option value="201">ハイファンタジー</option>
+                <option value="202" selected>ローファンタジー</option>
+                <option value="301" selected>純文学</option>
+                <option value="302">ヒューマンドラマ</option>
+                <option value="303">歴史</option>
+                <option value="304">推理</option>
+                <option value="305">ホラー</option>
+                <option value="306">アクション</option>
+                <option value="307">コメディー</option>
+                <option value="401" selected>VRゲーム</option>
+                <option value="402">宇宙</option>
+                <option value="403">空想科学</option>
+                <option value="404">パニック</option>
+                <option value="9901" selected>童話</option>
+                <option value="9902">詩</option>
+                <option value="9903">エッセイ</option>
+                <option value="9904">リプレイ</option>
+                <option value="9999">その他</option>
+                <option value="9801" selected>ノンジャンル</option>
+          </select>
+        </div>
+      </div>
+      <div class = "option_box">
+        <div class = "option_box_elem" id="nobel_length">
+            <label><input class = "option_box_item" type="checkbox" name="length_nobel" value="1">短編</label>
+            <label><input class = "option_box_item" type="checkbox" name="length_nobel" value="2">長編</label>
+            <label><input class = "option_box_item" type="checkbox" name="length_nobel" value="3">完結済</label>
+            <label><input class = "option_box_item" type="checkbox" name="length_nobel" value="4">連載</label>
+        </div>
+      </div>
+    </div>
+    <div class = "search_option">
+      <div class = "option_key_box">
+        <div class = "option_box_title">
+          <p>登録必須<br class="pc-only">キーワード</p>
+        </div>
+        <div class = "option_box_elem">
+            <label><input class = "option_box_item" type="checkbox" name="keyword_nobel" value="1" />R15</label>
+            <label><input class = "option_box_item" type="checkbox" name="keyword_nobel" value="2" />ボーイズラブ</label>
+            <label><input class = "option_box_item" type="checkbox" name="keyword_nobel" value="3" />ガールズラブ</label>
+            <label><input class = "option_box_item" type="checkbox" name="keyword_nobel" value="4" />残酷な描写あり</label>
+            <label><input class = "option_box_item" type="checkbox" name="keyword_nobel" value="5" />異世界転生者</label>
+            <label><input class = "option_box_item" type="checkbox" name="keyword_nobel" value="6" />異世界転移</label>
+            <label><input class = "option_box_item" type="checkbox" name="keyword_nobel" value="7" />異世界転生または異世界転移</label>
+        </div>
+      </div>
+    </div>
+    <div class="link_search">
+      <input id="submitButton" class="link_button" type="button" value="この条件で検索する "onclick="checkPostfill()" />
+      </div>
+  </div>
+</section>
+
+        <div class="content_area">
+  <div class="content_block novel_cards">
+    
+      
+      <div class="novel_card">
+        <div class="card_upper_row">
+          <p class="novel_id">Nコード:N0001BI</p>
+          <p class="novel_cotegory">ノンジャンル〔ノンジャンル〕</p>
+        </div>
+        <div class="card_middle">
+          <p class="novel_title"><a href="/details/author/132923">いちばん空に近い場所</a></p>
+        </div>
+        <div class="card_lower_tier">
+          <p class="novel_author">作者:シアンHCN</p>
+        </div>
+      </div>
+    
+      
+      <div class="novel_card">
+        <div class="card_upper_row">
+          <p class="novel_id">Nコード:N0001BJ</p>
+          <p class="novel_cotegory">ノンジャンル〔ノンジャンル〕</p>
+        </div>
+        <div class="card_middle">
+          <p class="novel_title"><a href="/details/author/237611">正義はけしてシロではない</a></p>
+        </div>
+        <div class="card_lower_tier">
+          <p class="novel_author">作者:八月一日</p>
+        </div>
+      </div>
+    
+      
+      <div class="novel_card">
+        <div class="card_upper_row">
+          <p class="novel_id">Nコード:N0001BM</p>
+          <p class="novel_cotegory">ノンジャンル〔ノンジャンル〕</p>
+        </div>
+        <div class="card_middle">
+          <p class="novel_title"><a href="/details/author/264878">RPG ～序章～</a></p>
+        </div>
+        <div class="card_lower_tier">
+          <p class="novel_author">作者:世羅</p>
+        </div>
+      </div>
+    
+      
+      <div class="novel_card">
+        <div class="card_upper_row">
+          <p class="novel_id">Nコード:N0001BQ</p>
+          <p class="novel_cotegory">ヒューマンドラマ〔文芸〕</p>
+        </div>
+        <div class="card_middle">
+          <p class="novel_title"><a href="/details/author/5610">蝶々と寂しがり</a></p>
+        </div>
+        <div class="card_lower_tier">
+          <p class="novel_author">作者:楠瑞稀</p>
+        </div>
+      </div>
+    
+      
+      <div class="novel_card">
+        <div class="card_upper_row">
+          <p class="novel_id">Nコード:N0001BT</p>
+          <p class="novel_cotegory">ノンジャンル〔ノンジャンル〕</p>
+        </div>
+        <div class="card_middle">
+          <p class="novel_title"><a href="/details/author/359228">クワインテット</a></p>
+        </div>
+        <div class="card_lower_tier">
+          <p class="novel_author">作者:ニケ</p>
+        </div>
+      </div>
+    
+      
+      <div class="novel_card">
+        <div class="card_upper_row">
+          <p class="novel_id">Nコード:N0001C</p>
+          <p class="novel_cotegory">ノンジャンル〔ノンジャンル〕</p>
+        </div>
+        <div class="card_middle">
+          <p class="novel_title"><a href="/details/author/8480">何だかんだでキミのことが、</a></p>
+        </div>
+        <div class="card_lower_tier">
+          <p class="novel_author">作者:moro</p>
+        </div>
+      </div>
+    
+      
+      <div class="novel_card">
+        <div class="card_upper_row">
+          <p class="novel_id">Nコード:N0001CA</p>
+          <p class="novel_cotegory">ローファンタジー〔ファンタジー〕</p>
+        </div>
+        <div class="card_middle">
+          <p class="novel_title"><a href="/details/author/188094">メリーさんが電話を掛けたのは？</a></p>
+        </div>
+        <div class="card_lower_tier">
+          <p class="novel_author">作者:cardy</p>
+        </div>
+      </div>
+    
+      
+      <div class="novel_card">
+        <div class="card_upper_row">
+          <p class="novel_id">Nコード:N0001CC</p>
+          <p class="novel_cotegory">ハイファンタジー〔ファンタジー〕</p>
+        </div>
+        <div class="card_middle">
+          <p class="novel_title"><a href="/details/author/451917">とりあえず保留にしました～ＴＳ転生者リンゴはその場しのぎをしたようです～</a></p>
+        </div>
+        <div class="card_lower_tier">
+          <p class="novel_author">作者:みみと</p>
+        </div>
+      </div>
+    
+      
+      <div class="novel_card">
+        <div class="card_upper_row">
+          <p class="novel_id">Nコード:N0001CG</p>
+          <p class="novel_cotegory">純文学〔文芸〕</p>
+        </div>
+        <div class="card_middle">
+          <p class="novel_title"><a href="/details/author/321494">アントロポファジー</a></p>
+        </div>
+        <div class="card_lower_tier">
+          <p class="novel_author">作者:太郎</p>
+        </div>
+      </div>
+    
+      
+      <div class="novel_card">
+        <div class="card_upper_row">
+          <p class="novel_id">Nコード:N0001CI</p>
+          <p class="novel_cotegory">ノンジャンル〔ノンジャンル〕</p>
+        </div>
+        <div class="card_middle">
+          <p class="novel_title"><a href="/details/author/308313">草萌える聖書物語</a></p>
+        </div>
+        <div class="card_lower_tier">
+          <p class="novel_author">作者:竹中時雄</p>
+        </div>
+      </div>
+    
+      
+      <div class="novel_card">
+        <div class="card_upper_row">
+          <p class="novel_id">Nコード:N0001CN</p>
+          <p class="novel_cotegory">ノンジャンル〔ノンジャンル〕</p>
+        </div>
+        <div class="card_middle">
+          <p class="novel_title"><a href="/details/author/271839">綴</a></p>
+        </div>
+        <div class="card_lower_tier">
+          <p class="novel_author">作者:RK</p>
+        </div>
+      </div>
+    
+      
+      <div class="novel_card">
+        <div class="card_upper_row">
+          <p class="novel_id">Nコード:N0001CP</p>
+          <p class="novel_cotegory">エッセイ〔その他〕</p>
+        </div>
+        <div class="card_middle">
+          <p class="novel_title"><a href="/details/author/363562">ファンタジー世界って魔法とかモンスターがいるけど、どんな風に発展していくの？</a></p>
+        </div>
+        <div class="card_lower_tier">
+          <p class="novel_author">作者:Rima</p>
+        </div>
+      </div>
+    
+      
+      <div class="novel_card">
+        <div class="card_upper_row">
+          <p class="novel_id">Nコード:N0001CQ</p>
+          <p class="novel_cotegory">ハイファンタジー〔ファンタジー〕</p>
+        </div>
+        <div class="card_middle">
+          <p class="novel_title"><a href="/details/author/585092">宿屋酒場の主人、ノーグ・ポゥはかく語りき</a></p>
+        </div>
+        <div class="card_lower_tier">
+          <p class="novel_author">作者:菊華　伴</p>
+        </div>
+      </div>
+    
+      
+      <div class="novel_card">
+        <div class="card_upper_row">
+          <p class="novel_id">Nコード:N0001CR</p>
+          <p class="novel_cotegory">異世界〔恋愛〕</p>
+        </div>
+        <div class="card_middle">
+          <p class="novel_title"><a href="/details/author/573459">マジェンタの瞳</a></p>
+        </div>
+        <div class="card_lower_tier">
+          <p class="novel_author">作者:よろず</p>
+        </div>
+      </div>
+    
+      
+      <div class="novel_card">
+        <div class="card_upper_row">
+          <p class="novel_id">Nコード:N0001CT</p>
+          <p class="novel_cotegory">ノンジャンル〔ノンジャンル〕</p>
+        </div>
+        <div class="card_middle">
+          <p class="novel_title"><a href="/details/author/231447">図書館の小さな案内人</a></p>
+        </div>
+        <div class="card_lower_tier">
+          <p class="novel_author">作者:ゆり</p>
+        </div>
+      </div>
+    
+      
+      <div class="novel_card">
+        <div class="card_upper_row">
+          <p class="novel_id">Nコード:N0001CU</p>
+          <p class="novel_cotegory">現実世界〔恋愛〕</p>
+        </div>
+        <div class="card_middle">
+          <p class="novel_title"><a href="/details/author/474019">the  edge  story</a></p>
+        </div>
+        <div class="card_lower_tier">
+          <p class="novel_author">作者:裕司</p>
+        </div>
+      </div>
+    
+      
+      <div class="novel_card">
+        <div class="card_upper_row">
+          <p class="novel_id">Nコード:N0001CV</p>
+          <p class="novel_cotegory">詩〔その他〕</p>
+        </div>
+        <div class="card_middle">
+          <p class="novel_title"><a href="/details/author/509479">しょうがない夜さ</a></p>
+        </div>
+        <div class="card_lower_tier">
+          <p class="novel_author">作者:九卯石</p>
+        </div>
+      </div>
+    
+      
+      <div class="novel_card">
+        <div class="card_upper_row">
+          <p class="novel_id">Nコード:N0001CW</p>
+          <p class="novel_cotegory">ノンジャンル〔ノンジャンル〕</p>
+        </div>
+        <div class="card_middle">
+          <p class="novel_title"><a href="/details/author/627637">僕、ヘッポコ勇者に昇格しました。</a></p>
+        </div>
+        <div class="card_lower_tier">
+          <p class="novel_author">作者:倉沢 疾風</p>
+        </div>
+      </div>
+    
+      
+      <div class="novel_card">
+        <div class="card_upper_row">
+          <p class="novel_id">Nコード:N0001CZ</p>
+          <p class="novel_cotegory">ヒューマンドラマ〔文芸〕</p>
+        </div>
+        <div class="card_middle">
+          <p class="novel_title"><a href="/details/author/81450">ジャックポット！</a></p>
+        </div>
+        <div class="card_lower_tier">
+          <p class="novel_author">作者:pinkmint</p>
+        </div>
+      </div>
+    
+      
+      <div class="novel_card">
+        <div class="card_upper_row">
+          <p class="novel_id">Nコード:N0001D</p>
+          <p class="novel_cotegory">ノンジャンル〔ノンジャンル〕</p>
+        </div>
+        <div class="card_middle">
+          <p class="novel_title"><a href="/details/author/16360">フミクンとフミクン</a></p>
+        </div>
+        <div class="card_lower_tier">
+          <p class="novel_author">作者:メフィスト牛子</p>
+        </div>
+      </div>
+    
+      
+      <div class="novel_card">
+        <div class="card_upper_row">
+          <p class="novel_id">Nコード:N0001DA</p>
+          <p class="novel_cotegory">コメディー〔文芸〕</p>
+        </div>
+        <div class="card_middle">
+          <p class="novel_title"><a href="/details/author/38624">猫だろ</a></p>
+        </div>
+        <div class="card_lower_tier">
+          <p class="novel_author">作者:栖坂月</p>
+        </div>
+      </div>
+    
+      
+      <div class="novel_card">
+        <div class="card_upper_row">
+          <p class="novel_id">Nコード:N0001DE</p>
+          <p class="novel_cotegory">ノンジャンル〔ノンジャンル〕</p>
+        </div>
+        <div class="card_middle">
+          <p class="novel_title"><a href="/details/author/744904">僕と彼女？</a></p>
+        </div>
+        <div class="card_lower_tier">
+          <p class="novel_author">作者:空耳</p>
+        </div>
+      </div>
+    
+      
+      <div class="novel_card">
+        <div class="card_upper_row">
+          <p class="novel_id">Nコード:N0001DF</p>
+          <p class="novel_cotegory">ハイファンタジー〔ファンタジー〕</p>
+        </div>
+        <div class="card_middle">
+          <p class="novel_title"><a href="/details/author/554112">家に帰りたい！でも帰れない！異世界で私、勇者してるから！</a></p>
+        </div>
+        <div class="card_lower_tier">
+          <p class="novel_author">作者:橘　月菜</p>
+        </div>
+      </div>
+    
+      
+      <div class="novel_card">
+        <div class="card_upper_row">
+          <p class="novel_id">Nコード:N0001DG</p>
+          <p class="novel_cotegory">ノンジャンル〔ノンジャンル〕</p>
+        </div>
+        <div class="card_middle">
+          <p class="novel_title"><a href="/details/author/790608">その出逢いに意味なんて無い。</a></p>
+        </div>
+        <div class="card_lower_tier">
+          <p class="novel_author">作者:三ノ句　雪月夏</p>
+        </div>
+      </div>
+    
+      
+      <div class="novel_card">
+        <div class="card_upper_row">
+          <p class="novel_id">Nコード:N0001DH</p>
+          <p class="novel_cotegory">純文学〔文芸〕</p>
+        </div>
+        <div class="card_middle">
+          <p class="novel_title"><a href="/details/author/465480">思い出橋</a></p>
+        </div>
+        <div class="card_lower_tier">
+          <p class="novel_author">作者:Sing</p>
+        </div>
+      </div>
+    
+      
+      <div class="novel_card">
+        <div class="card_upper_row">
+          <p class="novel_id">Nコード:N0001DI</p>
+          <p class="novel_cotegory">現実世界〔恋愛〕</p>
+        </div>
+        <div class="card_middle">
+          <p class="novel_title"><a href="/details/author/820674">Anemone</a></p>
+        </div>
+        <div class="card_lower_tier">
+          <p class="novel_author">作者:槙野一貴</p>
+        </div>
+      </div>
+    
+      
+      <div class="novel_card">
+        <div class="card_upper_row">
+          <p class="novel_id">Nコード:N0001DJ</p>
+          <p class="novel_cotegory">現実世界〔恋愛〕</p>
+        </div>
+        <div class="card_middle">
+          <p class="novel_title"><a href="/details/author/828460">残念イケメンでも主人公になれる?</a></p>
+        </div>
+        <div class="card_lower_tier">
+          <p class="novel_author">作者:白</p>
+        </div>
+      </div>
+    
+      
+      <div class="novel_card">
+        <div class="card_upper_row">
+          <p class="novel_id">Nコード:N0001DO</p>
+          <p class="novel_cotegory">ハイファンタジー〔ファンタジー〕</p>
+        </div>
+        <div class="card_middle">
+          <p class="novel_title"><a href="/details/author/786251">俺の人生に悪魔が乱入してきた</a></p>
+        </div>
+        <div class="card_lower_tier">
+          <p class="novel_author">作者:ブー＆カマ</p>
+        </div>
+      </div>
+    
+      
+      <div class="novel_card">
+        <div class="card_upper_row">
+          <p class="novel_id">Nコード:N0001DP</p>
+          <p class="novel_cotegory">純文学〔文芸〕</p>
+        </div>
+        <div class="card_middle">
+          <p class="novel_title"><a href="/details/author/806256">「か」　-可・過・夏-</a></p>
+        </div>
+        <div class="card_lower_tier">
+          <p class="novel_author">作者:牧田沙有狸</p>
+        </div>
+      </div>
+    
+      
+      <div class="novel_card">
+        <div class="card_upper_row">
+          <p class="novel_id">Nコード:N0001DQ</p>
+          <p class="novel_cotegory">パニック〔SF〕</p>
+        </div>
+        <div class="card_middle">
+          <p class="novel_title"><a href="/details/author/813881">狂人化現象（心の強い主人公の物語）</a></p>
+        </div>
+        <div class="card_lower_tier">
+          <p class="novel_author">作者:ワイヤー・パンサー</p>
+        </div>
+      </div>
+    
+  </div>
+</div>
+        
+<div class="content_block">
+  <ul class="page_link_list">
+      <li id="page_link_active"><span href="/masterpiece_list">1</span></li><li><a href="/masterpiece_list/2">2</a></li><li><a href="/masterpiece_list/3">3</a></li><li><a href="/masterpiece_list/4">4</a></li><li><a href="/masterpiece_list/5">5</a></li><span class="three-dots">⋯</span><li><a href="/masterpiece_list/25656">25656</a></li>
+  </ul>
+</div>
+
+      </div>
+    </main>
+    <footer>
+      <div class="footer_content">
+
+  <div class="menu_area">
+    <nav class="regular">
+      <ul>
+        <li><a href="index.html" class="menu_link">ホーム</a></li>
+        <li><a href="analysis.html" class="menu_link">分析</a></li>
+        <li><a href="ranking.html" class="menu_link">ランキング</a></li>
+        <li><a href="author_list.html" class="menu_link">作者一覧</a></li>
+        <li><a href="masterpiece_list.html" class="menu_link">作品一覧</a></li>
+        <li><a href="contact.html" class="menu_link">お問い合わせ</a></li>
+      </ul>
+    </nav>
+  </div>
+  <img class="footer_logo" border="0" src="img/logo.png" alt="logo">
+  <p>© 2019 NAROKEN</p>
+</div>
+    </footer>
+  </body>
+</html>

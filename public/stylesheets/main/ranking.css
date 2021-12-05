@@ -1,0 +1,254 @@
+.category_rank{
+  margin-top: 40px;
+  text-align: center;
+}
+.rank_content{
+  width: 100%;
+  margin-bottom: -20px;
+}
+.rank_area{
+  text-align: center;
+}
+.category_rank_card_field {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.category_rank_card{
+  border: 2px solid #f1f1f1;
+  border-radius: 8px;
+  padding: 16px 20px 16px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  width: -webkit-calc((100%/3) - 10.6px);
+  width: calc((100%/3) - 10.6px);
+}
+.category_rank_card:nth-child(1),
+.category_rank_card:nth-child(2),
+.category_rank_card:nth-child(3) {
+  padding-top: 10px;
+}
+.category_rank_card:nth-child(2) .crown_rank_point{
+  color: #898686;
+}
+.category_rank_card:nth-child(3) .crown_rank_point{
+  color: #D0896A;
+}
+.category_rank_subordinate{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.category_rank_card:nth-child(-n+3) .category_rank_subordinate{
+  margin-left: -4px;
+}
+.category_rank_img{
+  position: relative;
+  line-height: 0;
+}
+.category_crown_img{
+  width: 44px;
+}
+.category_rank_card:nth-child(-n+3) .category_crown_img {
+  width: 50px;
+}
+.crown_ranks_mark{
+  position: absolute;
+  border-width: 1px;
+  width: 100%;
+  top: 65%;
+  left: 50%;
+  -ms-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  color: #fff;
+}
+.category_ranks_mark{
+  position: absolute;
+  border-width: 1px;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  color: #fff;
+}
+.category_rank_point{
+  margin-left: 8px;
+  font-size: 14px;
+  font-weight: bold;
+}
+.crown_rank_point{
+  margin-top: 12px;
+  margin-left: 2px;
+  font-size: 14px;
+  font-weight: bold;
+}
+.category_rank_card:nth-child(1) .crown_rank_point{
+ color: #ccab3a;
+}
+.category_rank_card:nth-child(2) .crown_rank_point{
+  color: #898686;
+ }
+ .category_rank_card:nth-child(3) .crown_rank_point{
+  color: #D0896A;
+ }
+.category_rank_meta {
+  margin-bottom: 10px;
+}
+.category_rank_category{
+  text-align: left;
+}
+.category_rank_category p{
+  margin: 0;
+  font-size: 12px;
+}
+.category_rank_category p:first-child{
+  margin-bottom: 5px;
+}
+.category_rank_details_text{
+  font-weight: bold;
+  text-align: left;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+.category_rank_details_text p{
+  color: #000;
+  margin: 0;
+  font-size: 14px;
+}
+.category_rank_author{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.category_rank_author_name{
+  padding-right: 0.2em;
+}
+.category_rank_author_name p{
+	display: inline-block;
+  font-size: 12px;
+  white-space: nowrap;
+  text-align:center;
+  margin: 0;
+}
+.category_rank_author_detail p{
+  display: inline-block;
+  font-size: 12px;
+  margin: 0;
+  text-align:center;
+}
+.non_genre_rank{
+  margin-bottom: 72px;
+}
+/*タグ関連*/
+.tag_rank_list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: -6px;
+}
+.tag_rank_list div{
+  margin: 6px;
+  background: #EAF2FF;
+  padding: 8px 12px;
+  border-radius: 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.tag_rank{
+  background-color:#fff;
+  text-align: center;
+}
+.tag_content{
+  margin: auto;
+}
+.tags{
+  font-size: 13px;
+  font-weight: bold;
+}
+.tag_order{
+  color: #669ff7;
+  margin-right: 8px;
+}
+.tag_name{
+  background-color:#EAF2FF;
+  color: #4a4d51;
+}
+
+@media only screen and (max-width: 750px) {
+  .rank_content{
+    margin-bottom: -12px;
+  }
+  .category_rank_card{
+    display: block;
+    padding: 12px 16px 14px;
+    width: 100%;
+    margin-bottom: 12px;
+  }
+  .category_rank_category{
+    margin-bottom: 10px;
+  }
+  .category_rank_category p{
+    font-size: 12px;
+  }
+  .category_rank_details_text{
+    height: auto;
+    margin-bottom: 10px;
+  }
+  .category_rank_author_name{
+    margin: 0;
+  }
+  .category_rank_author_name p{
+    font-size: 11px;
+  }
+  .category_rank_author_detail p{
+    font-size: 11px;
+  }
+  /*タグ関連*/
+  .tag_rank_list {
+    margin: -3px;
+  }
+  .tag_rank_list div{
+    margin: 3px;
+    padding: 8px 8px;
+  }
+  .tag_content{
+    width: 100%;
+  }
+  .tags{
+    font-size: 12px;
+  }
+  .tag_order{
+    margin-right: 4px;
+  }
+}
