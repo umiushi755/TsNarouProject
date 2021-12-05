@@ -1,0 +1,234 @@
+header {
+  position: relative;
+  padding: 32px 3% 0;
+}
+h1{
+  width: 100%;
+  text-align: center;
+  margin-bottom: 24px;
+}
+header section{
+  max-width: 1200px;
+  margin: 0 auto;
+}
+header section img{
+  border: 0;
+}
+header .sns_link{
+  position: absolute;
+  top:32px;
+}
+header .sns_link a {
+  display: inline-block;
+  margin-right: 12px;
+  width: 32px;
+}
+header .sns_link a img {
+  width: 100%;
+}
+header .logoImg{
+  position: relative;
+  width: 120px;
+}
+header .nav-list{
+  margin:0 auto;
+  margin-bottom: 32px;
+}
+.nav-label {
+  display: none;
+}
+#nav {
+  display: none;
+}
+header nav {
+  /* border: 1px dotted #000; */
+  margin:0 auto;
+}
+.nav-list_menu {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.nav-list_items {
+	display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  list-style-type: none;
+  font-size: 14px;
+  padding-left: 0px;
+}
+.nav-list_item {
+  width: calc(100%/6);
+}
+.nav-list_item + .nav-list_item {
+  border-left: 1px solid #e4e4e4;
+}
+.nav-list_link {
+  color: #46484a;
+  display: block;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  transition: 0.3s;
+}
+.nav-list_link:hover {
+  color: #669ff7;
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 750px) {
+  header {
+    position: fixed;
+    top: 0;
+    padding-top: 0;
+    height: 50px;
+    width: 100%;
+    z-index: 100;
+  }
+  h1 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin-bottom: 0;
+  }
+  header section {
+    height: 40px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  header .logoImg{
+    width: 80px;
+    vertical-align: middle;
+  }
+  .nav-label {
+    display: block;
+  }
+  header .nav-list {
+    width: 100%;
+    margin: 0 auto;
+  }
+  /*ドロワーメニュー --ここから*/
+  #nav {
+    display: none;
+  }
+  .nav-label {
+    position: absolute;
+    z-index: 1000;
+    right: 16px;
+    top: 16px;
+  }
+  .nav-icon {
+    display: block;
+    height: 18px;
+    width: 24px;
+    cursor: pointer;
+  }
+  .nav-icon .nav-icon_item {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #3879D9;
+    display: block;
+    transition: all .3s ease-in-out;
+  }
+  .nav-icon .nav-icon_item:nth-child(1) {
+    top: 0;
+  }
+  .nav-icon .nav-icon_item:nth-child(2) {
+    margin: auto;
+    top: 0;
+    bottom: 0;
+  }
+  .nav-icon .nav-icon_item:nth-child(3) {
+    bottom: 0;
+  }
+  #nav:checked + .nav-label .nav-icon .nav-icon_item:nth-child(1) {
+    margin: auto;
+    transform: rotate(45deg);
+    right: 0;
+    bottom: 0;
+    left: 0;
+    top: 0;
+  }
+  #nav:checked + .nav-label .nav-icon .nav-icon_item:nth-child(2) {
+    transform: rotateX(90deg);
+    top: 0;
+    bottom: 0;
+  }
+  #nav:checked + .nav-label .nav-icon .nav-icon_item:nth-child(3) {
+    margin: auto;
+    transform: rotate(-45deg);
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+  #nav:checked + .nav-label + .nav-list {
+    position: fixed;
+    z-index: 99;
+    opacity: 1;
+  }
+  .nav-list {
+    opacity: 1;
+    background-color: rgb(70, 70, 70, 0.7);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    transition: .3s;
+  }
+  .nav-list_wrap {
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    padding-top: 60px;
+    right: -100%;
+    top: 0;
+    bottom:0;
+     transition: right .4s ease-in-out; 
+    background-color: #eaf2ff;
+    /* background-color: rgb(255, 255, 255,1); */
+  }
+  #nav:checked + .nav-label + .nav-list > .nav-list_wrap {
+    right: 0;
+  }
+  .nav-list_menu {
+    margin: 0 auto;
+    width: 65%;  
+  }
+  .nav-list_items {
+    display: block;
+    flex-flow: row;
+    justify-content: space-between;
+    list-style-type: none;
+    font-size: 14px;
+    padding-left: 0px;
+    margin: 0;
+  }
+  .nav-list_item {
+    width: 100%;
+    margin-bottom: 14px;
+  }
+  .nav-list_item + .nav-list_item {
+    border: none;
+  }
+  .nav-list_link {
+    position: relative;
+    padding: 16px;
+    font-size: 15px;
+    background: rgba(255,255,255,0.6);
+    border-radius: 8px;
+  }
+  .nav-list_link:hover{
+    color:#3879D9;
+    transition: .4s;
+    text-decoration: none;
+  }
+  header .sns_link {
+    position: static;
+    top: 0;
+    padding-top: 32px;
+    text-align: center;
+  }
+  /*ドロワーメニュー --ここまで*/
+}

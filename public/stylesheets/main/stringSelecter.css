@@ -1,0 +1,51 @@
+.select_wrap {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+select {
+  cursor: pointer;
+  position: relative;
+  -webkit-appearance: none;
+  appearance: none;
+  display: block;
+  border: none;
+  border-radius: 5px;
+  background: transparent;
+}
+.kana_tab_area {
+  position: relative;
+  width: 90px; /* 可変 */
+  height: 44px;
+}
+.kana_tab_area::after {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 50%;
+  right: 10px;
+  width: 6px;
+  height: 6px;
+  border-top: 2px solid #669FF8;
+  border-right: 2px solid #669FF8;
+  transform: translateY(-50%) rotate(135deg);
+  margin-top: -3px;
+}
+.kana_tab {
+  /*font-weight: bold;*/
+  background: #fFF;
+  color: #669FF8;
+  line-height: 1;
+  padding: 16px;
+  width: 90px;
+  height: 44px;
+  font-size: 12px;
+}
+.kana_tab_item {
+  background: #EAF2FF;
+  color: #669FF8;
+  padding: 16px;
+  width: 90px;
+  height: 44px;
+}

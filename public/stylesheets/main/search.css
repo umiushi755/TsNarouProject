@@ -1,0 +1,332 @@
+.input_parts{
+  background: #e5efff;
+  padding: 48px 3.5vw;
+  border-radius: 10px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+/*検索フォーム --ここから*/
+form{
+  text-align: center;
+}
+.search_keyword {
+  border: none;
+  color: #46484a;
+  cursor: default;
+  font-size: 16px;
+  margin: 0 auto;
+  text-align: left;
+  padding: 12px 16px;
+  width: 568px;
+  height: 46px;
+  vertical-align: middle;
+  border-radius: 6px;
+  outline: none;
+}
+/*検索フォーム --ここまで*/
+.search_option{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+  margin-top: 20px;
+  font-size: 12px;
+  color: #669FF8;
+  max-width: 980px;
+}
+.option_box{
+  background-color: #fff;
+  border-radius: 6px;
+}
+.option_box_elem{
+  padding: 8px 16px;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  justify-content: center;
+  height: 46px;
+  margin: auto;
+}
+.option_box_elem label{
+  display:inline-block;
+  font-size: 14px;
+  position:relative;
+  padding-left:1.3em;
+  line-height:2em;
+  font-weight: bold;
+  margin: auto 5px;
+}
+label input{
+  position:absolute;
+  top:-2px;
+  bottom:0;
+  left:0;
+  margin:auto;
+}
+.category_tab_area{
+  position: relative;
+  width: 180px;
+  height: 100%;
+}
+select {
+  cursor: pointer;
+  position: relative;
+  -webkit-appearance: none;
+  appearance: none;
+  display: block;
+  border: none;
+  border-radius: 5px;
+  background: transparent;
+}
+.category_tab{
+  font-size: 14px;
+  font-weight: bold;
+  background: #fFF;
+  color: #669FF8;
+  line-height: 1;
+  padding: 16px;
+  width: 100%;
+  border: none;
+  height: 100%;
+}
+.category_tab:focus-visible{
+  outline: none;
+}
+.category_tab_area::after {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 50%;
+  right: 20px;
+  width: 6px;
+  height: 6px;
+  transform: translateY(-50%) rotate(135deg);
+  margin-top: -3px;
+}
+.category_tab_item {
+  padding: 12px;
+  width: 180px;
+  margin: 16px;
+}
+.total_arrow::after{/*総合*/
+  border-top: 2px solid #669FF8;
+  border-right: 2px solid #669FF8;
+}
+.option_key_box{
+  display: flex;
+  justify-content: flex-start;
+  background: #fff;
+  border-radius: 6px;
+  width: 100%;
+}
+.option_box_title{
+  color: #fff;
+  font-weight: bold;
+  background-color: #75a8f7;
+  height: 50px;
+  padding-left: 14px;
+  padding-right: 14px;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+.option_box_title p{
+  margin: 0;
+  line-height: 1.3;
+}
+.results_number {
+  position: relative;
+  display: inline-block;
+  padding: 0 55px;
+}
+.results_number:before,
+.results_number:after {
+  content: '';
+  position: absolute;
+  top: 40%;
+  display: inline-block;
+  width: 50px;
+  height: 3px;
+  background-color: #666;
+}
+.results_number:before {
+  left: 0;
+}
+.results_number:after {
+  right: 0;
+}
+.start_search_result{
+  text-align: center;
+}
+/*default --ここから*/
+.link_search {
+  position: relative;
+  margin: 32px auto 0;
+  width: 300px;
+  transition: 0.3s;
+  border-color: #fff;
+}
+.link_search:hover {
+  border-color: #fff;
+} 
+.link_search::after {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 50%;
+  right: 24px;
+  width: 8px;
+  height: 8px;
+  transform: translateY(-50%) rotate(45deg);
+  margin-top: 0px;
+  border-top-style: solid;
+  border-right-style: solid;
+  border-top-width: 2px;
+  border-right-width: 2px;
+  border-color: inherit;
+}
+.link_button {
+  color: #fff;
+  background-color: #669ff7;
+  font-size: 16px;
+  display: block;
+  border: none;
+  border-radius: 28px;
+  outline: 0;
+  cursor: pointer;
+  font-weight: bold;
+  line-height: 1;
+  width: 100%;
+  padding: 18px 0 18px;
+  transition: 0.3s;
+}
+.link_search:hover .link_button {
+  color: #fff;
+  background-color: #3681f4;
+}
+/*default --ここまで*/
+
+@media only screen and (max-width: 1140px) { 
+  .option_box {
+    margin-bottom: 8px;
+  }
+  .option_box:last-child {
+    margin-bottom: 0;
+  }
+  .option_box:nth-child(1),
+  .option_box:nth-child(4) {
+    width: 100%;
+  }
+  .option_box:nth-child(2),
+  .option_box:nth-child(3) {
+    width: calc( 50% - 4px);
+  }
+  .category_tab_area {
+    width: 100%;
+  }
+  .category_tab_item {
+    width: 100%;
+  }
+  .option_key_box {
+    display: block;
+  }
+  .option_box_title {
+    display: block;
+    padding: 10px;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 6px;
+    height: initial;
+    text-align: center;
+  }
+  .option_box_elem {
+    display: block;
+    margin: 0;
+    padding: 12px 0;
+    height: auto;
+  }
+  .option_key_box .option_box_elem {
+    padding: 12px 16px;
+    text-align: left;
+  }
+  .pc-only {
+    display: none;
+  }
+}
+
+
+
+/*レスポンシブ --------------------------------------------------*/
+
+
+
+@media only screen and (max-width: 750px) {
+  .input_parts {
+    padding: 28px 3% 28px;
+  }
+  /*検索フォーム --ここから*/
+  .search_keyword {
+    width: 100%;
+  }
+  /*検索フォーム --ここまで*/
+  .search_option{
+    display: block;
+    max-width: 550px;
+    width: 100%;
+  }
+  .option_box{
+    margin-bottom: 8px;
+  }
+  .option_box:nth-child(2),
+  .option_box:nth-child(3) {
+    width: 100%;
+  }
+  .option_box_elem{
+    display: block;
+    margin: 0;
+    padding: 9px 0;
+  }
+  .option_box_elem label{
+    font-size: 13px;
+    margin: auto 1%;
+    padding-left: 1.3em;
+  }
+  .option_box_elem label:last-child{
+    margin-right: 0;
+  }
+  .category_tab_area{
+    width: 100%;
+  }
+  .category_tab{
+    font-size: 13px;
+    padding: 14px;
+  }
+  .option_key_box{
+    display: block;
+  }
+  .option_key_box .option_box_elem {
+    padding: 12px 16px;
+    text-align: left;
+  }
+  .option_box_title{
+    display: block;
+    padding: 10px;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 6px;
+    height: initial;
+    text-align: center;
+  }
+  .option_key_box .option_box_elem {
+    height: initial;
+  }
+  .link_search {
+    margin: 28px auto 0;
+  }
+  .link_search .link_button {
+    font-size: 14px;
+  }
+}

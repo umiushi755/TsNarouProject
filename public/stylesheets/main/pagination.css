@@ -1,0 +1,25 @@
+.main_pagination_view{
+  width: 1080px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.main_pagination_view ul{
+  margin: 0 auto;
+  margin-top: 56px;
+  margin-bottom: 72px;
+  padding-inline-start: 0px;
+}
+.page_link_list li {
+  display: inline-block;
+  padding:10px 15px;
+  background-color: #fff;
+  border:1px #ccc solid;
+  color:#000;
+  border-radius: 5px / 5px;
+}
+.strong_page_num{
+  font-weight: bold;
+}

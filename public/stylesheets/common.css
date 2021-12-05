@@ -1,0 +1,378 @@
+/*フォントの読み込み*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+/*共通項*/
+* {
+  box-sizing: border-box;
+}
+body{
+  border: 1px dotted #333333;
+  color: #46484a;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  font-family: "roboto",
+  Arial,
+  "Hiragino Kaku Gothic ProN",
+  "Hiragino Sans",
+  Meiryo,
+  sans-serif;
+}
+a {
+  text-decoration: none;
+  position: relative;
+  color: #4b83d9;
+  cursor: pointer;
+  line-height: 1.3;
+}
+a:hover{
+  text-decoration: underline;
+}
+input {
+  cursor: pointer;
+}
+header, main, footer {
+  width: auto;
+	margin: 0;
+}
+input:focus::-webkit-input-placeholder,
+textarea:focus::-webkit-input-placeholder {
+	color: transparent;
+  outline: none;
+}
+input:focus::-moz-placeholder,
+textarea:focus::-moz-placeholder {
+	color: transparent;
+  outline: none;
+}
+input:focus::-ms-input-placeholder,
+textarea:focus::-ms-input-placeholder {
+	color: transparent;
+  outline: none;
+}
+input:focus::placeholder,
+textarea:focus::placeholder {
+	color: transparent;
+  outline: none;
+}
+.explanation_area{
+  width: auto;
+  margin: 0;
+}
+/*タイトル*/
+h2 {
+  position: relative;
+  margin-bottom: 48px;
+  font-size: 28px;
+  text-align: center;
+  line-height: 1.2;
+}
+h2::after {
+  position: absolute;
+  content: '';
+  border-bottom: 3px solid #669ff7;
+  bottom: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+}
+h3 {
+  margin-bottom: 24px;
+  font-size: 22px;
+  text-align: center;
+}
+h3.rank_ttl  {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  justify-content: center;
+}
+.rank_ttl .rank_number {
+  font-size: 1.4em;
+  margin-left: 3px;
+  line-height: 1;
+}
+h3.rank_ttl.rank_ttl_long > span:last-child {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+}
+/*メインコンテンツ領域*/
+.main_content{
+  margin: 0 auto;
+  padding: 56px 3% 72px 3%;
+}
+.content_area{
+  background-color: #fff;
+  border-radius: 10px;
+  border: 1px dotted #fff;
+  padding: 48px 3.5vw;
+  margin: 0 auto 40px;
+  max-width: 1200px;
+}
+.content_area:last-of-type,
+.content_area:only-of-type {
+  margin-bottom: 0;
+}
+.content_block{
+}
+.content_block_bg_color {
+  background-color: #fff;
+}
+/*ページタイトル*/
+.informing_block{
+  margin-bottom:56px;
+}
+.informing_title{
+  text-align: center;
+}
+.informing_title hr{
+  width: 4%;
+  height: 2px;
+  background-color:#909ff8;
+  margin: 0 auto;
+}
+.page_link_list {
+  text-align: center;
+}
+.page_link_list li {
+  display: inline-block;
+  color:#000;
+  margin: 3px;
+}
+.page_link_list li *{
+  display: inline-block;
+  font-size: 18px;
+  padding: 8px 12px;
+  background: #fff;
+  border-radius: 4px;
+  line-height: 1;
+  transition: 0.3s;
+}
+.page_link_list li *:hover{
+  text-decoration: none;
+  background: #669ff7;
+  color: #fff;
+}
+#page_link_active span,
+#page_link_active span:hover {
+  background: #e5efff;
+  color: #8DB6F7;
+}
+.three-dots {
+  color: #75a8f7;
+  margin: 0 4px;
+}
+.strong_page_num{
+  font-weight: bold;
+}
+/*ページの概要*/
+.overview {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.overview p{
+  margin: 0;
+  line-height: 1.8;
+}
+/*検索フォーム*/
+form{
+  text-align: center;
+}
+.input_search_text{
+  border: none;
+  cursor: default;
+  font-size: 16px;
+  margin: 0 auto;
+  text-align: left;
+  padding: 12px 16px;
+  width: 568px;
+  height: 46px;
+  vertical-align: middle;
+  border-top-left-radius: 6px;
+  -webkit-border-top-left-radius: 6px;
+  -moz-border-radius-topleft: 6px;
+  border-bottom-left-radius: 6px;
+  -webkit-border-bottom-left-radius: 6px;
+  -moz-border-radius-bottomleft: 6px;
+  outline: none;
+}
+::placeholder {
+  color: #B9B9B9;
+}
+.submit_button{
+  cursor: pointer;
+  font-family: FontAwesome;
+  border: none;
+  background: #669ff7;
+  color: #fff;
+  outline: none;
+  padding: 12px;
+  height: 46px;
+  width: 46px;
+  border-top-right-radius: 6px;
+  -webkit-border-top-right-radius: 6px;
+  -moz-border-radius-topright: 6px;
+  border-bottom-right-radius: 6px;
+  -webkit-border-bottom-right-radius: 6px;
+  -moz-border-radius-bottomright: 6px;
+}
+/*背景色 ここが各画面変更有り*/
+header{
+  background-color:#ffffff ;
+}
+.topics_area_index {
+  background-color:#e9f1ff ;
+  padding: 0 3%;
+}
+.explanation_area {
+  background-color:#f5f7fa;
+}
+main{
+  background-color:#f5f7fa;
+}
+footer{
+  background-color:#ffffff ;
+}
+/*フォントカラー(白以外) --ここから*/
+.work_info_font_color {
+  color: #888;
+}
+/*ランキングトップ*/
+.top_font {
+  color: #ccab3a;
+}
+/*総合*/
+.total_font {
+  color: #669ff7;
+}
+/*恋愛*/
+.love_font {
+  color: #fb81cf;
+}
+/*ファンタジー*/
+.fantasy_font {
+  color: #ca84f8;
+}
+/*文芸*/
+.literary_font {
+  color: #2eb9ec;
+}
+/*SF*/
+.sf_font {
+  color: #16d082;
+}
+/*その他*/
+.other_font {
+  color: #f3b21e;
+}
+/*ノンジャンル*/
+.nonGenre_font {
+  color: #F7925C;
+}
+/*レスポンシブ 段落の有り/無しを指定*/
+.pc-only {
+  display: block;
+}
+.sp-only {
+  display: none;
+}
+
+@media only screen and (max-width: 750px) {
+  .pc-only {
+    display: none;
+  }
+  .sp-only {
+    display: block;
+  }
+  body {
+    padding-top: 50px;
+  }
+  /*タイトル*/
+  h2 {
+    margin-bottom: 38px;
+    font-size: 22px;
+  }
+  h2::after {
+    bottom: -14px;
+  }
+  h3 {
+    margin-bottom: 20px;
+    font-size: 20px;
+  }
+  h3.rank_ttl  {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    justify-content: center;
+  }
+  h3.rank_ttl.rank_ttl_long  {
+    flex-wrap: wrap;
+  }
+  .rank_ttl .rank_number {
+    font-size: 1.4em;
+    margin-left: 2px;
+    line-height: 1;
+  }
+  /*メインコンテンツ領域*/
+  .main_content {
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 32px;
+    padding-bottom: 48px;
+  }
+  .content_area {
+    margin-bottom: 28px;
+    padding: 28px 3% 28px;
+  }
+  .content_block {
+    width: auto;
+    margin: 0;
+    text-align: left;
+  }
+  /*ページタイトル*/
+  .informing_block{
+    margin: 0 auto 32px;
+  }
+  .page_link_list li {
+    margin: 3px;
+  }
+  .three-dots {
+    margin: 3px 4px;
+  }
+  .page_link_list li *{
+    font-size: 16px;
+    padding:8px 10px;
+    min-width: 32px;
+  }
+  /* ページの概要 */
+  .overview {
+    margin: 0 auto 28px;
+    width: 100%;
+    text-align: center;
+  }
+  .overview + .input_frame {
+    margin-bottom: 40px;
+  }
+  .overview-long{
+    margin: 0 auto 32px;
+    width: 80%;
+    text-align: left;
+  }
+  .overview p{
+    font-size: 14px;
+    margin: 0;
+    line-height: 1.6;
+  }
+  /*検索フォーム*/
+  form{
+    text-align: center;
+  }
+  .input_search_text {
+    max-width: 500px;
+    width: calc( 100% - 50px);
+  }
+}

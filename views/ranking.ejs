@@ -1,0 +1,1848 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N2E060C3LF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-N2E060C3LF');
+  </script>
+  <link rel="icon" href="img/favicon.ico">
+  <link type="text/css" href="stylesheets/html5reset-1.6.1.css" rel="stylesheet" />
+  <link type="text/css" href="stylesheets/common.css" rel="stylesheet" />
+  <link type="text/css" href="stylesheets/header.css" rel="stylesheet" />
+  <link type="text/css" href="stylesheets/main/categorySelecter.css" rel="stylesheet" />
+  <link type="text/css" href="stylesheets/main/ranking.css" rel="stylesheet" />
+  <link type="text/css" href="stylesheets/footer.css" rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="/public/javascripts/ranking.js"></script>
+  <title>なろ研｜ランキング</title>
+</head>
+
+<body class="ranking">
+  <header>
+    <section class="header_content">
+      <h1><a href="/"><img src="img/logo.png" alt="なろ研" class="logoImg" /></a></h1>
+
+      <!-- ▼ global-navigation ▼ -->
+      <input type="checkbox" id="nav">
+
+      <label for="nav" class="nav-label">
+        <span class="nav-icon">
+          <span class="nav-icon_item"></span>
+          <span class="nav-icon_item"></span>
+          <span class="nav-icon_item"></span>
+      </label>
+
+      <nav class="nav-list">
+
+        <div class="nav-list_wrap">
+
+          <div class="nav-list_menu">
+            <ul class="nav-list_items">
+              <li class="nav-list_item"><a class="nav-list_link" href="/">ホーム</a></li>
+              <li class="nav-list_item"><a class="nav-list_link" href="/analysis">分析</a></li>
+              <li class="nav-list_item"><a class="nav-list_link" href="/ranking">ランキング</a></li>
+              <li class="nav-list_item"><a class="nav-list_link" href="/author_list">作者一覧</a></li>
+              <li class="nav-list_item"><a class="nav-list_link" href="/masterpiece_list">作品一覧</a></li>
+              <li class="nav-list_item"><a class="nav-list_link" href="/contact">お問い合わせ</a></li>
+            </ul>
+          </div>
+          <div class="sns_link">
+            <a
+              href="javascript:window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(location.href),'sharewindow','width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!');">
+              <img src="img/sns/facebook-icon.png" alt="facebook" />
+            </a>
+            <a
+              href="javascript:window.open('http://twitter.com/share?text='+encodeURIComponent(document.title)+'&url='+encodeURIComponent(location.href),'sharewindow','width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!');">
+              <img src="img/sns/twitter-icon.png" alt="twitter" />
+            </a>
+            <a
+              href="javascript:window.open('http://line.me/R/msg/text/?'+encodeURIComponent(document.title)+'%20'+encodeURIComponent(location.href),'sharewindow','width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!');">
+              <img src="img/sns/line-icon.png" alt="line" />
+            </a>
+          </div>
+
+        </div>
+
+      </nav>
+
+      <!-- ▲ global-navigation ▲ -->
+
+    </section>
+  </header>
+  <main>
+    <div class="main_content">
+      <section class="informing_block informing_title">
+        <h2>ランキング</h2>
+        <div class="overview">
+          <p>各ジャンルのランキングを表示しています。</p>
+        </div>
+      </section>
+
+
+      <section class="content_area">
+        <div class="content_block select_wrap">
+          <div class="category_tab_area tab_total">
+            <!-- 総合 -->
+            <select class="category_tab" name="category_tab">
+              <!-- class各ジャンルごとに変更-->
+              <option class="category_tab_item" value="total">総合</option>
+              <option class="category_tab_item" value="1">恋愛</option>
+              <option class="category_tab_item" value="2">ファンタジー</option>
+              <option class="category_tab_item" value="3">文芸</option>
+              <option class="category_tab_item" value="4">SF</option>
+              <option class="category_tab_item" value="99">その他</option>
+              <option class="category_tab_item" value="98">ノンジャンル</option>
+            </select>
+          </div>
+          <div class="category_tab_area tab_love">
+            <!-- 恋愛 -->
+            <select class="genre_tab" name="genre_tab">
+              <!-- class各ジャンルごとに変更-->
+              <option class="category_tab_item" value="1">恋愛</option>
+              <option class="category_tab_item" value="101">異世界</option>
+              <option class="category_tab_item" value="102">現実世界</option>
+            </select>
+          </div>
+          <div class="category_tab_area tab_fantasy">
+            <!-- ファンタジー -->
+            <select class="genre_tab" name="genre_tab">
+              <!-- class各ジャンルごとに変更-->
+              <option class="category_tab_item" value="2">ファンタジー</option>
+              <option class="category_tab_item" value="201">ハイファンタジー</option>
+              <option class="category_tab_item" value="202">ローファンタジー</option>
+            </select>
+          </div>
+          <div class="category_tab_area tab_literary">
+            <!-- 文芸 -->
+            <select class="genre_tab" name="genre_tab">
+              <!-- class各ジャンルごとに変更-->
+              <option class="category_tab_item" value="3">文芸</option>
+              <option class="category_tab_item" value="301">純文学</option>
+              <option class="category_tab_item" value="302">ヒューマンドラマ</option>
+              <option class="category_tab_item" value="303">歴史</option>
+              <option class="category_tab_item" value="304">推理</option>
+              <option class="category_tab_item" value="305">ホラー</option>
+              <option class="category_tab_item" value="306">アクション</option>
+              <option class="category_tab_item" value="307">コメディー</option>
+            </select>
+          </div>
+          <div class="category_tab_area tab_sf">
+            <!-- SF -->
+            <select class="genre_tab" name="genre_tab">
+              <!-- class各ジャンルごとに変更-->
+              <option class="category_tab_item" value="4">SF</option>
+              <option class="category_tab_item" value="401">VRゲーム</option>
+              <option class="category_tab_item" value="402">宇宙</option>
+              <option class="category_tab_item" value="403">空想科学</option>
+              <option class="category_tab_item" value="404">パニック</option>
+            </select>
+          </div>
+          <div class="category_tab_area tab_other">
+            <!-- その他 -->
+            <select class="genre_tab" name="genre_tab">
+              <!-- class各ジャンルごとに変更-->
+              <option class="category_tab_item" value="99">その他</option>
+              <option class="category_tab_item" value="9901">童話</option>
+              <option class="category_tab_item" value="9902">詩</option>
+              <option class="category_tab_item" value="9903">エッセイ</option>
+              <option class="category_tab_item" value="9904">リプレイ</option>
+              <option class="category_tab_item" value="9999">その他</option>
+            </select>
+          </div>
+          <div class="category_tab_area tab_non-genre">
+            <!-- ノンジャンル -->
+            <select class="genre_tab" name="genre_tab">
+              <!-- class各ジャンルごとに変更-->
+              <option class="category_tab_item" value="98">ノンジャンル</option>
+              <option class="category_tab_item" value="9801">ノンジャンル</option>
+            </select>
+          </div>
+        </div>
+        <div class="content_block category_rank">
+          <div class="rank_content" id="rank_content">
+
+            <h3 class="rank_ttl">総合ランキングベスト<span class="total_font rank_number">30</span></h3>
+            <div class="category_rank_card_field total_font">
+
+              <div class="category_rank_card">
+                <div class="category_rank_meta">
+                  <div class="category_rank_subordinate">
+                    <div class="category_rank_img">
+                      <img class="category_crown_img" border="0" src="img/crown/first.png" alt="crown_img" />
+                      <p class="crown_ranks_mark">1位</p>
+
+                    </div>
+
+                    <div class="crown_rank_point">
+                      <p class="crown_total_point">635306pt</p>
+
+                    </div>
+                  </div>
+                  <div class="category_rank_category work_info_font_color">
+                    <p>ハイファンタジー〔ファンタジー〕</p>
+                    <p>Nコード:N2710DB</p>
+                  </div>
+                </div>
+                <div class="category_rank_details_text">
+                  <p><a href="/details/author/679640">とんでもスキルで異世界放浪メシ</a></p>
+                </div>
+                <div class="category_rank_author work_info_font_color">
+                  <div class="category_rank_author_name">
+                    <p>作者:</p>
+                  </div>
+                  <div class="category_rank_author_detail">
+                    <p>江口　連</p>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="category_rank_card">
+                <div class="category_rank_meta">
+                  <div class="category_rank_subordinate">
+                    <div class="category_rank_img">
+                      <img class="category_crown_img" border="0" src="img/crown/second.png" alt="crown_img" />
+                      <p class="crown_ranks_mark">2位</p>
+                    </div>
+                    <div class="crown_rank_point">
+                      <p class="crown_total_point">603088pt</p>
+                    </div>
+                  </div>
+                  <div class="category_rank_category work_info_font_color">
+                    <p>ハイファンタジー〔ファンタジー〕</p>
+                    <p>Nコード:N6316BN</p>
+                  </div>
+                </div>
+                <div class="category_rank_details_text">
+                  <p><a href="/details/author/311735">転生したらスライムだった件</a></p>
+                </div>
+                <div class="category_rank_author work_info_font_color">
+                  <div class="category_rank_author_name">
+                    <p>作者:</p>
+                  </div>
+                  <div class="category_rank_author_detail">
+                    <p>伏瀬</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="category_rank_card">
+                <div class="category_rank_meta">
+                  <div class="category_rank_subordinate">
+                    <div class="category_rank_img">
+                      <img class="category_crown_img" border="0" src="img/crown/third.png" alt="crown_img" />
+                      <p class="crown_ranks_mark">3位</p>
+
+                    </div>
+
+                    <div class="crown_rank_point">
+                      <p class="crown_total_point">598955pt</p>
+
+                    </div>
+                  </div>
+                  <div class="category_rank_category work_info_font_color">
+                    <p>ハイファンタジー〔ファンタジー〕</p>
+                    <p>Nコード:N8611BV</p>
+                  </div>
+                </div>
+                <div class="category_rank_details_text">
+                  <p><a href="/details/author/386841">ありふれた職業で世界最強</a></p>
+                </div>
+                <div class="category_rank_author work_info_font_color">
+                  <div class="category_rank_author_name">
+                    <p>作者:</p>
+                  </div>
+                  <div class="category_rank_author_detail">
+                    <p>厨二好き/白米良</p>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="category_rank_card">
+                <div class="category_rank_meta">
+                  <div class="category_rank_subordinate">
+                    <div class="category_rank_img">
+
+                      <img class="category_crown_img" border="0" src="img/square/total_square.png" alt="crown_img" />
+                      <p class="category_ranks_mark">4位</p>
+
+                    </div>
+
+                    <div class="category_rank_point">
+                      <p class="notfirst_total_point">554495pt</p>
+
+                    </div>
+                  </div>
+                  <div class="category_rank_category work_info_font_color">
+                    <p>ハイファンタジー〔ファンタジー〕</p>
+                    <p>Nコード:N9669BK</p>
+                  </div>
+                </div>
+                <div class="category_rank_details_text">
+                  <p><a href="/details/author/288399">無職転生　- 異世界行ったら本気だす -</a></p>
+                </div>
+                <div class="category_rank_author work_info_font_color">
+                  <div class="category_rank_author_name">
+                    <p>作者:</p>
+                  </div>
+                  <div class="category_rank_author_detail">
+                    <p>理不尽な孫の手</p>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="category_rank_card">
+                <div class="category_rank_meta">
+                  <div class="category_rank_subordinate">
+                    <div class="category_rank_img">
+
+
+                      <img class="category_crown_img" border="0" src="img/square/total_square.png" alt="crown_img" />
+                      <p class="category_ranks_mark">5位</p>
+
+                    </div>
+
+                    <div class="category_rank_point">
+                      <p class="notfirst_total_point">541408pt</p>
+
+                    </div>
+                  </div>
+                  <div class="category_rank_category work_info_font_color">
+                    <p>ハイファンタジー〔ファンタジー〕</p>
+                    <p>Nコード:N2267BE</p>
+                  </div>
+                </div>
+                <div class="category_rank_details_text">
+                  <p><a href="/details/author/235132">Ｒｅ：ゼロから始める異世界生活</a></p>
+                </div>
+                <div class="category_rank_author work_info_font_color">
+                  <div class="category_rank_author_name">
+                    <p>作者:</p>
+                  </div>
+                  <div class="category_rank_author_detail">
+                    <p>鼠色猫/長月達平</p>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="category_rank_card">
+                <div class="category_rank_meta">
+                  <div class="category_rank_subordinate">
+                    <div class="category_rank_img">
+
+
+                      <img class="category_crown_img" border="0" src="img/square/total_square.png" alt="crown_img" />
+                      <p class="category_ranks_mark">6位</p>
+
+                    </div>
+
+                    <div class="category_rank_point">
+                      <p class="notfirst_total_point">527354pt</p>
+
+                    </div>
+                  </div>
+                  <div class="category_rank_category work_info_font_color">
+                    <p>ハイファンタジー〔ファンタジー〕</p>
+                    <p>Nコード:N9902BN</p>
+                  </div>
+                </div>
+                <div class="category_rank_details_text">
+                  <p><a href="/details/author/282802">デスマーチからはじまる異世界狂想曲（ web版 ）</a></p>
+                </div>
+                <div class="category_rank_author work_info_font_color">
+                  <div class="category_rank_author_name">
+                    <p>作者:</p>
+                  </div>
+                  <div class="category_rank_author_detail">
+                    <p>愛七ひろ</p>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="category_rank_card">
+                <div class="category_rank_meta">
+                  <div class="category_rank_subordinate">
+                    <div class="category_rank_img">
+
+
+                      <img class="category_crown_img" border="0" src="img/square/total_square.png" alt="crown_img" />
+                      <p class="category_ranks_mark">7位</p>
+
+                    </div>
+
+                    <div class="category_rank_point">
+                      <p class="notfirst_total_point">515039pt</p>
+
+                    </div>
+                  </div>
+                  <div class="category_rank_category work_info_font_color">
+                    <p>ハイファンタジー〔ファンタジー〕</p>
+                    <p>Nコード:N3669FW</p>
+                  </div>
+                </div>
+                <div class="category_rank_details_text">
+                  <p><a href="/details/author/1015944">ヘルモード　～やり込み好きのゲーマーは廃設定の異世界で無双する～</a></p>
+                </div>
+                <div class="category_rank_author work_info_font_color">
+                  <div class="category_rank_author_name">
+                    <p>作者:</p>
+                  </div>
+                  <div class="category_rank_author_detail">
+                    <p>ハム男</p>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="category_rank_card">
+                <div class="category_rank_meta">
+                  <div class="category_rank_subordinate">
+                    <div class="category_rank_img">
+
+
+                      <img class="category_crown_img" border="0" src="img/square/total_square.png" alt="crown_img" />
+                      <p class="category_ranks_mark">8位</p>
+
+                    </div>
+
+                    <div class="category_rank_point">
+                      <p class="notfirst_total_point">489071pt</p>
+
+                    </div>
+                  </div>
+                  <div class="category_rank_category work_info_font_color">
+                    <p>ハイファンタジー〔ファンタジー〕</p>
+                    <p>Nコード:N7975CR</p>
+                  </div>
+                </div>
+                <div class="category_rank_details_text">
+                  <p><a href="/details/author/595431">蜘蛛ですが、なにか？</a></p>
+                </div>
+                <div class="category_rank_author work_info_font_color">
+                  <div class="category_rank_author_name">
+                    <p>作者:</p>
+                  </div>
+                  <div class="category_rank_author_detail">
+                    <p>馬場翁</p>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="category_rank_card">
+                <div class="category_rank_meta">
+                  <div class="category_rank_subordinate">
+                    <div class="category_rank_img">
+
+
+                      <img class="category_crown_img" border="0" src="img/square/total_square.png" alt="crown_img" />
+                      <p class="category_ranks_mark">9位</p>
+
+                    </div>
+
+                    <div class="category_rank_point">
+                      <p class="notfirst_total_point">468058pt</p>
+
+                    </div>
+                  </div>
+                  <div class="category_rank_category work_info_font_color">
+                    <p>ハイファンタジー〔ファンタジー〕</p>
+                    <p>Nコード:N0611EM</p>
+                  </div>
+                </div>
+                <div class="category_rank_details_text">
+                  <p><a href="/details/author/298373">陰の実力者になりたくて！【web版】</a></p>
+                </div>
+                <div class="category_rank_author work_info_font_color">
+                  <div class="category_rank_author_name">
+                    <p>作者:</p>
+                  </div>
+                  <div class="category_rank_author_detail">
+                    <p>逢沢大介</p>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="category_rank_card">
+                <div class="category_rank_meta">
+                  <div class="category_rank_subordinate">
+                    <div class="category_rank_img">
+
+
+                      <img class="category_crown_img" border="0" src="img/square/total_square.png" alt="crown_img" />
+                      <p class="category_ranks_mark">10位</p>
+
+                    </div>
+
+                    <div class="category_rank_point">
+                      <p class="notfirst_total_point">462133pt</p>
+
+                    </div>
+                  </div>
+                  <div class="category_rank_category work_info_font_color">
+                    <p>ハイファンタジー〔ファンタジー〕</p>
+                    <p>Nコード:N8802BQ</p>
+                  </div>
+                </div>
+                <div class="category_rank_details_text">
+                  <p><a href="/details/author/33567">八男って、それはないでしょう！　</a></p>
+                </div>
+                <div class="category_rank_author work_info_font_color">
+                  <div class="category_rank_author_name">
+                    <p>作者:</p>
+                  </div>
+                  <div class="category_rank_author_detail">
+                    <p>Ｙ．Ａ</p>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="category_rank_card">
+                <div class="category_rank_meta">
+                  <div class="category_rank_subordinate">
+                    <div class="category_rank_img">
+
+
+                      <img class="category_crown_img" border="0" src="img/square/total_square.png" alt="crown_img" />
+                      <p class="category_ranks_mark">11位</p>
+
+                    </div>
+
+                    <div class="category_rank_point">
+                      <p class="notfirst_total_point">444131pt</p>
+
+                    </div>
+                  </div>
+                  <div class="category_rank_category work_info_font_color">
+                    <p>ハイファンタジー〔ファンタジー〕</p>
+                    <p>Nコード:N6475DB</p>
+                  </div>
+                </div>
+                <div class="category_rank_details_text">
+                  <p><a href="/details/author/79012">私、能力は平均値でって言ったよね！</a></p>
+                </div>
+                <div class="category_rank_author work_info_font_color">
+                  <div class="category_rank_author_name">
+                    <p>作者:</p>
+                  </div>
+                  <div class="category_rank_author_detail">
+                    <p>FUNA</p>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="category_rank_card">
+                <div class="category_rank_meta">
+                  <div class="category_rank_subordinate">
+                    <div class="category_rank_img">
+
+
+                      <img class="category_crown_img" border="0" src="img/square/total_square.png" alt="crown_img" />
+                      <p class="category_ranks_mark">12位</p>
+
+                    </div>
+
+                    <div class="category_rank_point">
+                      <p class="notfirst_total_point">438671pt</p>
+
+                    </div>
+                  </div>
+                  <div class="category_rank_category work_info_font_color">
+                    <p>ハイファンタジー〔ファンタジー〕</p>
+                    <p>Nコード:N3289DS</p>
+                  </div>
+                </div>
+                <div class="category_rank_details_text">
+                  <p><a href="/details/author/611609">異世界のんびり農家</a></p>
+                </div>
+                <div class="category_rank_author work_info_font_color">
+                  <div class="category_rank_author_name">
+                    <p>作者:</p>
+                  </div>
+                  <div class="category_rank_author_detail">
+                    <p>内藤騎之介</p>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="category_rank_card">
+                <div class="category_rank_meta">
+                  <div class="category_rank_subordinate">
+                    <div class="category_rank_img">
+
+
+                      <img class="category_crown_img" border="0" src="img/square/total_square.png" alt="crown_img" />
+                      <p class="category_ranks_mark">13位</p>
+
+                    </div>
+
+                    <div class="category_rank_point">
+                      <p class="notfirst_total_point">429800pt</p>
+
+                    </div>
+                  </div>
+                  <div class="category_rank_category work_info_font_color">
+                    <p>ハイファンタジー〔ファンタジー〕</p>
+                    <p>Nコード:N1474FH</p>
+                  </div>
+                </div>
+                <div class="category_rank_details_text">
+                  <p><a href="/details/author/994271">一億年ボタンを連打した俺は、気付いたら最強になっていた～落第剣士の学院無双～</a></p>
+                </div>
+                <div class="category_rank_author work_info_font_color">
+                  <div class="category_rank_author_name">
+                    <p>作者:</p>
+                  </div>
+                  <div class="category_rank_author_detail">
+                    <p>月島 秀一</p>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="category_rank_card">
+                <div class="category_rank_meta">
+                  <div class="category_rank_subordinate">
+                    <div class="category_rank_img">
+
+
+                      <img class="category_crown_img" border="0" src="img/square/total_square.png" alt="crown_img" />
+                      <p class="category_ranks_mark">14位</p>
+
+                    </div>
+
+                    <div class="category_rank_point">
+                      <p class="notfirst_total_point">422764pt</p>
+
+                    </div>
+                  </div>
+                  <div class="category_rank_category work_info_font_color">
+                    <p>ハイファンタジー〔ファンタジー〕</p>
+                    <p>Nコード:N5824CT</p>
+                  </div>
+                </div>
+                <div class="category_rank_details_text">
+                  <p><a href="/details/author/413779">神達に拾われた男（改訂版）</a></p>
+                </div>
+                <div class="category_rank_author work_info_font_color">
+                  <div class="category_rank_author_name">
+                    <p>作者:</p>
+                  </div>
+                  <div class="category_rank_author_detail">
+                    <p>Roy</p>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="category_rank_card">
+                <div class="category_rank_meta">
+                  <div class="category_rank_subordinate">
+                    <div class="category_rank_img">
+
+
+                      <img class="category_crown_img" border="0" src="img/square/total_square.png" alt="crown_img" />
+                      <p class="category_ranks_mark">15位</p>
+
+                    </div>
+
+                    <div class="category_rank_point">
+                      <p class="notfirst_total_point">398016pt</p>
+
+                    </div>
+                  </div>
+                  <div class="category_rank_category work_info_font_color">
+                    <p>ハイファンタジー〔ファンタジー〕</p>
+                    <p>Nコード:N3009BK</p>
+                  </div>
+                </div>
+                <div class="category_rank_details_text">
+                  <p><a href="/details/author/172188">盾の勇者の成り上がり</a></p>
+                </div>
+                <div class="category_rank_author work_info_font_color">
+                  <div class="category_rank_author_name">
+                    <p>作者:</p>
+                  </div>
+                  <div class="category_rank_author_detail">
+                    <p>アネコユサギ</p>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="category_rank_card">
+                <div class="category_rank_meta">
+                  <div class="category_rank_subordinate">
+                    <div class="category_rank_img">
+
+
+                      <img class="category_crown_img" border="0" src="img/square/total_square.png" alt="crown_img" />
+                      <p class="category_ranks_mark">16位</p>
+
+                    </div>
+
+                    <div class="category_rank_point">
+                      <p class="notfirst_total_point">395732pt</p>
+
+                    </div>
+                  </div>
+                  <div class="category_rank_category work_info_font_color">
+                    <p>ハイファンタジー〔ファンタジー〕</p>
+                    <p>Nコード:N4830BU</p>
+                  </div>
+                </div>
+                <div class="category_rank_details_text">
+                  <p><a href="/details/author/372556">本好きの下剋上　～司書になるためには手段を選んでいられません～</a></p>
+                </div>
+                <div class="category_rank_author work_info_font_color">
+                  <div class="category_rank_author_name">
+                    <p>作者:</p>
+                  </div>
+                  <div class="category_rank_author_detail">
+                    <p>香月　美夜</p>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="category_rank_card">
+                <div class="category_rank_meta">
+                  <div class="category_rank_subordinate">
+                    <div class="category_rank_img">
+
+
+                      <img class="category_crown_img" border="0" src="img/square/total_square.png" alt="crown_img" />
+                      <p class="category_ranks_mark">17位</p>
+
+                    </div>
+
+                    <div class="category_rank_point">
+                      <p class="notfirst_total_point">393961pt</p>
+
+                    </div>
+                  </div>
+                  <div class="category_rank_category work_info_font_color">
+                    <p>異世界〔恋愛〕</p>
+                    <p>Nコード:N8139DG</p>
+                  </div>
+                </div>
+                <div class="category_rank_details_text">
+                  <p><a href="/details/author/608811">聖女の魔力は万能です</a></p>
+                </div>
+                <div class="category_rank_author work_info_font_color">
+                  <div class="category_rank_author_name">
+                    <p>作者:</p>
+                  </div>
+                  <div class="category_rank_author_detail">
+                    <p>橘由華</p>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="category_rank_card">
+                <div class="category_rank_meta">
+                  <div class="category_rank_subordinate">
+                    <div class="category_rank_img">
+
+
+                      <img class="category_crown_img" border="0" src="img/square/total_square.png" alt="crown_img" />
+                      <p class="category_ranks_mark">18位</p>
+
+                    </div>
+
+                    <div class="category_rank_point">
+                      <p class="notfirst_total_point">378281pt</p>
+
+                    </div>
+                  </div>
+                  <div class="category_rank_category work_info_font_color">
+                    <p>異世界〔恋愛〕</p>
+                    <p>Nコード:N7787EQ</p>
+                  </div>
+                </div>
+                <div class="category_rank_details_text">
+                  <p><a href="/details/author/1300935">魔導具師ダリヤはうつむかない</a></p>
+                </div>
+                <div class="category_rank_author work_info_font_color">
+                  <div class="category_rank_author_name">
+                    <p>作者:</p>
+                  </div>
+                  <div class="category_rank_author_detail">
+                    <p>甘岸久弥</p>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="category_rank_card">
+                <div class="category_rank_meta">
+                  <div class="category_rank_subordinate">
+                    <div class="category_rank_img">
+
+
+                      <img class="category_crown_img" border="0" src="img/square/total_square.png" alt="crown_img" />
+                      <p class="category_ranks_mark">19位</p>
+
+                    </div>
+
+                    <div class="category_rank_point">
+                      <p class="notfirst_total_point">376744pt</p>
+
+                    </div>
+                  </div>
+                  <div class="category_rank_category work_info_font_color">
+                    <p>ハイファンタジー〔ファンタジー〕</p>
+                    <p>Nコード:N5375CY</p>
+                  </div>
+                </div>
+                <div class="category_rank_details_text">
+                  <p><a href="/details/author/613697">転生して田舎でスローライフをおくりたい</a></p>
+                </div>
+                <div class="category_rank_author work_info_font_color">
+                  <div class="category_rank_author_name">
+                    <p>作者:</p>
+                  </div>
+                  <div class="category_rank_author_detail">
+                    <p>錬金王</p>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="category_rank_card">
+                <div class="category_rank_meta">
+                  <div class="category_rank_subordinate">
+                    <div class="category_rank_img">
+
+
+                      <img class="category_crown_img" border="0" src="img/square/total_square.png" alt="crown_img" />
+                      <p class="category_ranks_mark">20位</p>
+
+                    </div>
+
+                    <div class="category_rank_point">
+                      <p class="notfirst_total_point">375516pt</p>
+
+                    </div>
+                  </div>
+                  <div class="category_rank_category work_info_font_color">
+                    <p>現実世界〔恋愛〕</p>
+                    <p>Nコード:N4029BS</p>
+                  </div>
+                </div>
+                <div class="category_rank_details_text">
+                  <p><a href="/details/author/345745">謙虚、堅実をモットーに生きております！</a></p>
+                </div>
+                <div class="category_rank_author work_info_font_color">
+                  <div class="category_rank_author_name">
+                    <p>作者:</p>
+                  </div>
+                  <div class="category_rank_author_detail">
+                    <p>ひよこのケーキ</p>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="category_rank_card">
+                <div class="category_rank_meta">
+                  <div class="category_rank_subordinate">
+                    <div class="category_rank_img">
+
+
+                      <img class="category_crown_img" border="0" src="img/square/total_square.png" alt="crown_img" />
+                      <p class="category_ranks_mark">21位</p>
+
+                    </div>
+
+                    <div class="category_rank_point">
+                      <p class="notfirst_total_point">373127pt</p>
+
+                    </div>
+                  </div>
+                  <div class="category_rank_category work_info_font_color">
+                    <p>ハイファンタジー〔ファンタジー〕</p>
+                    <p>Nコード:N4259S</p>
+                  </div>
+                </div>
+                <div class="category_rank_details_text">
+                  <p><a href="/details/author/121376">異世界迷宮で奴隷ハーレムを</a></p>
+                </div>
+                <div class="category_rank_author work_info_font_color">
+                  <div class="category_rank_author_name">
+                    <p>作者:</p>
+                  </div>
+                  <div class="category_rank_author_detail">
+                    <p>蘇我捨恥</p>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="category_rank_card">
+                <div class="category_rank_meta">
+                  <div class="category_rank_subordinate">
+                    <div class="category_rank_img">
+
+
+                      <img class="category_crown_img" border="0" src="img/square/total_square.png" alt="crown_img" />
+                      <p class="category_ranks_mark">22位</p>
+
+                    </div>
+
+                    <div class="category_rank_point">
+                      <p class="notfirst_total_point">362356pt</p>
+
+                    </div>
+                  </div>
+                  <div class="category_rank_category work_info_font_color">
+                    <p>ローファンタジー〔ファンタジー〕</p>
+                    <p>Nコード:N3976GK</p>
+                  </div>
+                </div>
+                <div class="category_rank_details_text">
+                  <p><a href="/details/author/484778">世界最速のレベルアップ　～無能スキル【ダンジョン内転移】が覚醒した結果、俺だけダンジョンのルールに縛られず最強になった～</a>
+                  </p>
+                </div>
+                <div class="category_rank_author work_info_font_color">
+                  <div class="category_rank_author_name">
+                    <p>作者:</p>
+                  </div>
+                  <div class="category_rank_author_detail">
+                    <p>八又ナガト</p>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="category_rank_card">
+                <div class="category_rank_meta">
+                  <div class="category_rank_subordinate">
+                    <div class="category_rank_img">
+
+
+                      <img class="category_crown_img" border="0" src="img/square/total_square.png" alt="crown_img" />
+                      <p class="category_ranks_mark">23位</p>
+
+                    </div>
+
+                    <div class="category_rank_point">
+                      <p class="notfirst_total_point">361355pt</p>
+
+                    </div>
+                  </div>
+                  <div class="category_rank_category work_info_font_color">
+                    <p>ハイファンタジー〔ファンタジー〕</p>
+                    <p>Nコード:N6774EH</p>
+                  </div>
+                </div>
+                <div class="category_rank_details_text">
+                  <p><a href="/details/author/465028">元・世界１位のサブキャラ育成日記 ～廃プレイヤー、異世界を攻略中！～</a></p>
+                </div>
+                <div class="category_rank_author work_info_font_color">
+                  <div class="category_rank_author_name">
+                    <p>作者:</p>
+                  </div>
+                  <div class="category_rank_author_detail">
+                    <p>沢村治太郎(合成酵素)</p>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="category_rank_card">
+                <div class="category_rank_meta">
+                  <div class="category_rank_subordinate">
+                    <div class="category_rank_img">
+
+
+                      <img class="category_crown_img" border="0" src="img/square/total_square.png" alt="crown_img" />
+                      <p class="category_ranks_mark">24位</p>
+
+                    </div>
+
+                    <div class="category_rank_point">
+                      <p class="notfirst_total_point">360954pt</p>
+
+                    </div>
+                  </div>
+                  <div class="category_rank_category work_info_font_color">
+                    <p>ハイファンタジー〔ファンタジー〕</p>
+                    <p>Nコード:N5881CL</p>
+                  </div>
+                </div>
+                <div class="category_rank_details_text">
+                  <p><a href="/details/author/269105">賢者の孫</a></p>
+                </div>
+                <div class="category_rank_author work_info_font_color">
+                  <div class="category_rank_author_name">
+                    <p>作者:</p>
+                  </div>
+                  <div class="category_rank_author_detail">
+                    <p>吉岡剛</p>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="category_rank_card">
+                <div class="category_rank_meta">
+                  <div class="category_rank_subordinate">
+                    <div class="category_rank_img">
+
+
+                      <img class="category_crown_img" border="0" src="img/square/total_square.png" alt="crown_img" />
+                      <p class="category_ranks_mark">25位</p>
+
+                    </div>
+
+                    <div class="category_rank_point">
+                      <p class="notfirst_total_point">359395pt</p>
+
+                    </div>
+                  </div>
+                  <div class="category_rank_category work_info_font_color">
+                    <p>ハイファンタジー〔ファンタジー〕</p>
+                    <p>Nコード:N4936DP</p>
+                  </div>
+                </div>
+                <div class="category_rank_details_text">
+                  <p><a href="/details/author/886615">転生貴族の異世界冒険録～自重を知らない神々の使徒～</a></p>
+                </div>
+                <div class="category_rank_author work_info_font_color">
+                  <div class="category_rank_author_name">
+                    <p>作者:</p>
+                  </div>
+                  <div class="category_rank_author_detail">
+                    <p>夜州</p>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="category_rank_card">
+                <div class="category_rank_meta">
+                  <div class="category_rank_subordinate">
+                    <div class="category_rank_img">
+
+
+                      <img class="category_crown_img" border="0" src="img/square/total_square.png" alt="crown_img" />
+                      <p class="category_ranks_mark">26位</p>
+
+                    </div>
+
+                    <div class="category_rank_point">
+                      <p class="notfirst_total_point">356240pt</p>
+
+                    </div>
+                  </div>
+                  <div class="category_rank_category work_info_font_color">
+                    <p>ハイファンタジー〔ファンタジー〕</p>
+                    <p>Nコード:N1785EK</p>
+                  </div>
+                </div>
+                <div class="category_rank_details_text">
+                  <p><a href="/details/author/381532">ハズレ枠の【状態異常スキル】で最強になった俺がすべてを蹂躙するまで</a></p>
+                </div>
+                <div class="category_rank_author work_info_font_color">
+                  <div class="category_rank_author_name">
+                    <p>作者:</p>
+                  </div>
+                  <div class="category_rank_author_detail">
+                    <p>篠崎芳</p>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="category_rank_card">
+                <div class="category_rank_meta">
+                  <div class="category_rank_subordinate">
+                    <div class="category_rank_img">
+
+
+                      <img class="category_crown_img" border="0" src="img/square/total_square.png" alt="crown_img" />
+                      <p class="category_ranks_mark">27位</p>
+
+                    </div>
+
+                    <div class="category_rank_point">
+                      <p class="notfirst_total_point">353208pt</p>
+
+                    </div>
+                  </div>
+                  <div class="category_rank_category work_info_font_color">
+                    <p>推理〔文芸〕</p>
+                    <p>Nコード:N9636X</p>
+                  </div>
+                </div>
+                <div class="category_rank_details_text">
+                  <p><a href="/details/author/183213">薬屋のひとりごと</a></p>
+                </div>
+                <div class="category_rank_author work_info_font_color">
+                  <div class="category_rank_author_name">
+                    <p>作者:</p>
+                  </div>
+                  <div class="category_rank_author_detail">
+                    <p>日向夏</p>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="category_rank_card">
+                <div class="category_rank_meta">
+                  <div class="category_rank_subordinate">
+                    <div class="category_rank_img">
+
+
+                      <img class="category_crown_img" border="0" src="img/square/total_square.png" alt="crown_img" />
+                      <p class="category_ranks_mark">28位</p>
+
+                    </div>
+
+                    <div class="category_rank_point">
+                      <p class="notfirst_total_point">352667pt</p>
+
+                    </div>
+                  </div>
+                  <div class="category_rank_category work_info_font_color">
+                    <p>ハイファンタジー〔ファンタジー〕</p>
+                    <p>Nコード:N2377FH</p>
+                  </div>
+                </div>
+                <div class="category_rank_details_text">
+                  <p><a href="/details/author/408664">最強出涸らし皇子の暗躍帝位争い～帝位に興味ないですが、死ぬのは嫌なので弟を皇帝にしようと思います～</a></p>
+                </div>
+                <div class="category_rank_author work_info_font_color">
+                  <div class="category_rank_author_name">
+                    <p>作者:</p>
+                  </div>
+                  <div class="category_rank_author_detail">
+                    <p>タンバ</p>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="category_rank_card">
+                <div class="category_rank_meta">
+                  <div class="category_rank_subordinate">
+                    <div class="category_rank_img">
+
+
+                      <img class="category_crown_img" border="0" src="img/square/total_square.png" alt="crown_img" />
+                      <p class="category_ranks_mark">29位</p>
+
+                    </div>
+
+                    <div class="category_rank_point">
+                      <p class="notfirst_total_point">350315pt</p>
+
+                    </div>
+                  </div>
+                  <div class="category_rank_category work_info_font_color">
+                    <p>VRゲーム〔SF〕</p>
+                    <p>Nコード:N6169DZ</p>
+                  </div>
+                </div>
+                <div class="category_rank_details_text">
+                  <p><a href="/details/author/474038">シャングリラ・フロンティア〜クソゲーハンター、神ゲーに挑まんとす〜</a></p>
+                </div>
+                <div class="category_rank_author work_info_font_color">
+                  <div class="category_rank_author_name">
+                    <p>作者:</p>
+                  </div>
+                  <div class="category_rank_author_detail">
+                    <p>硬梨菜</p>
+                  </div>
+                </div>
+              </div>
+              <div class="category_rank_card">
+                <div class="category_rank_meta">
+                  <div class="category_rank_subordinate">
+                    <div class="category_rank_img">
+                      <img class="category_crown_img" border="0" src="img/square/total_square.png" alt="crown_img" />
+                      <p class="category_ranks_mark">30位</p>
+                    </div>
+                    <div class="category_rank_point">
+                      <p class="notfirst_total_point">347604pt</p>
+                    </div>
+                  </div>
+                  <div class="category_rank_category work_info_font_color">
+                    <p>ハイファンタジー〔ファンタジー〕</p>
+                    <p>Nコード:N6537FU</p>
+                  </div>
+                </div>
+                <div class="category_rank_details_text">
+                  <p><a href="/details/author/1300300">俺は全てを【パリイ】する　〜逆勘違いの世界最強は冒険者になりたい〜</a></p>
+                </div>
+                <div class="category_rank_author work_info_font_color">
+                  <div class="category_rank_author_name">
+                    <p>作者:</p>
+                  </div>
+                  <div class="category_rank_author_detail">
+                    <p>鍋敷</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="content_area">
+        <section class="content_block tag_rank">
+          <div class="tag_content" id="tag_content">
+            <h3 class="rank_ttl rank_ttl_long"><span>登録が多いタグランキング</span><span>ベスト<span
+                  class="fantasy_font rank_number">100</span></span></h3>
+
+            <div class="tag_rank_list">
+
+              <div>
+                <span class="tags tag_order">01位</span>
+                <!-- 
+                --><span class="tags tag_name">R15</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">02位</span>
+                <!-- 
+                --><span class="tags tag_name">残酷な描写あり</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">03位</span>
+                <!-- 
+                --><span class="tags tag_name">日常</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">04位</span>
+                <!-- 
+                --><span class="tags tag_name">青春</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">05位</span>
+                <!-- 
+                --><span class="tags tag_name">男主人公</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">06位</span>
+                <!-- 
+                --><span class="tags tag_name">冒険</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">07位</span>
+                <!-- 
+                --><span class="tags tag_name">魔法</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">08位</span>
+                <!-- 
+                --><span class="tags tag_name">恋愛</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">09位</span>
+                <!-- 
+                --><span class="tags tag_name">現代</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">10位</span>
+                <!-- 
+                --><span class="tags tag_name">ほのぼの</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">11位</span>
+                <!-- 
+                --><span class="tags tag_name">シリアス</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">12位</span>
+                <!-- 
+                --><span class="tags tag_name">ファンタジー</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">13位</span>
+                <!-- 
+                --><span class="tags tag_name">異世界転移</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">14位</span>
+                <!-- 
+                --><span class="tags tag_name">女主人公</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">15位</span>
+                <!-- 
+                --><span class="tags tag_name">ラブコメ</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">16位</span>
+                <!-- 
+                --><span class="tags tag_name">異世界転生</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">17位</span>
+                <!-- 
+                --><span class="tags tag_name">オリジナル戦記</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">18位</span>
+                <!-- 
+                --><span class="tags tag_name"></span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">19位</span>
+                <!-- 
+                --><span class="tags tag_name">異世界</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">20位</span>
+                <!-- 
+                --><span class="tags tag_name">異能力バトル</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">21位</span>
+                <!-- 
+                --><span class="tags tag_name">学園</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">22位</span>
+                <!-- 
+                --><span class="tags tag_name">ハッピーエンド</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">23位</span>
+                <!-- 
+                --><span class="tags tag_name">ギャグ</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">24位</span>
+                <!-- 
+                --><span class="tags tag_name">チート</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">25位</span>
+                <!-- 
+                --><span class="tags tag_name">高校生</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">26位</span>
+                <!-- 
+                --><span class="tags tag_name">スクールラブ</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">27位</span>
+                <!-- 
+                --><span class="tags tag_name">ダーク</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">28位</span>
+                <!-- 
+                --><span class="tags tag_name">西洋</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">29位</span>
+                <!-- 
+                --><span class="tags tag_name">悲恋</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">30位</span>
+                <!-- 
+                --><span class="tags tag_name">現代(モダン)</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">31位</span>
+                <!-- 
+                --><span class="tags tag_name">私小説</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">32位</span>
+                <!-- 
+                --><span class="tags tag_name">近未来</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">33位</span>
+                <!-- 
+                --><span class="tags tag_name">魔王</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">34位</span>
+                <!-- 
+                --><span class="tags tag_name">勇者</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">35位</span>
+                <!-- 
+                --><span class="tags tag_name">年の差</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">36位</span>
+                <!-- 
+                --><span class="tags tag_name">人外</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">37位</span>
+                <!-- 
+                --><span class="tags tag_name">ハーレム</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">38位</span>
+                <!-- 
+                --><span class="tags tag_name">ガールズラブ</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">39位</span>
+                <!-- 
+                --><span class="tags tag_name">ミステリー</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">40位</span>
+                <!-- 
+                --><span class="tags tag_name">超能力</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">41位</span>
+                <!-- 
+                --><span class="tags tag_name">身分差</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">42位</span>
+                <!-- 
+                --><span class="tags tag_name">伝奇</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">43位</span>
+                <!-- 
+                --><span class="tags tag_name">ヒーロー</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">44位</span>
+                <!-- 
+                --><span class="tags tag_name">中世</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">45位</span>
+                <!-- 
+                --><span class="tags tag_name">コメディ</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">46位</span>
+                <!-- 
+                --><span class="tags tag_name">少女</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">47位</span>
+                <!-- 
+                --><span class="tags tag_name">ボーイズラブ</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">48位</span>
+                <!-- 
+                --><span class="tags tag_name">怪談</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">49位</span>
+                <!-- 
+                --><span class="tags tag_name">ホームドラマ</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">50位</span>
+                <!-- 
+                --><span class="tags tag_name">未来</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">51位</span>
+                <!-- 
+                --><span class="tags tag_name">主人公最強</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">52位</span>
+                <!-- 
+                --><span class="tags tag_name">転生</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">53位</span>
+                <!-- 
+                --><span class="tags tag_name">友情</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">54位</span>
+                <!-- 
+                --><span class="tags tag_name">詩</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">55位</span>
+                <!-- 
+                --><span class="tags tag_name">ダンジョン</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">56位</span>
+                <!-- 
+                --><span class="tags tag_name">コメディー</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">57位</span>
+                <!-- 
+                --><span class="tags tag_name">SF</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">58位</span>
+                <!-- 
+                --><span class="tags tag_name">和風</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">59位</span>
+                <!-- 
+                --><span class="tags tag_name">バトル</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">60位</span>
+                <!-- 
+                --><span class="tags tag_name">二次創作</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">61位</span>
+                <!-- 
+                --><span class="tags tag_name">短編</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">62位</span>
+                <!-- 
+                --><span class="tags tag_name">サスペンス</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">63位</span>
+                <!-- 
+                --><span class="tags tag_name">ホラー</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">64位</span>
+                <!-- 
+                --><span class="tags tag_name">サイコホラー</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">65位</span>
+                <!-- 
+                --><span class="tags tag_name">少年</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">66位</span>
+                <!-- 
+                --><span class="tags tag_name">悪役令嬢</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">67位</span>
+                <!-- 
+                --><span class="tags tag_name">学校/学園</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">68位</span>
+                <!-- 
+                --><span class="tags tag_name">幼馴染</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">69位</span>
+                <!-- 
+                --><span class="tags tag_name">乙女ゲーム</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">70位</span>
+                <!-- 
+                --><span class="tags tag_name">ショートショート</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">71位</span>
+                <!-- 
+                --><span class="tags tag_name">職業もの</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">72位</span>
+                <!-- 
+                --><span class="tags tag_name">文学</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">73位</span>
+                <!-- 
+                --><span class="tags tag_name">ヒストリカル</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">74位</span>
+                <!-- 
+                --><span class="tags tag_name">戦争</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">75位</span>
+                <!-- 
+                --><span class="tags tag_name">バッドエンド</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">76位</span>
+                <!-- 
+                --><span class="tags tag_name">ゲーム</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">77位</span>
+                <!-- 
+                --><span class="tags tag_name">VRMMO</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">78位</span>
+                <!-- 
+                --><span class="tags tag_name">異類婚姻譚</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">79位</span>
+                <!-- 
+                --><span class="tags tag_name">人工知能</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">80位</span>
+                <!-- 
+                --><span class="tags tag_name">ハードボイルド</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">81位</span>
+                <!-- 
+                --><span class="tags tag_name">天災</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">82位</span>
+                <!-- 
+                --><span class="tags tag_name">大学生</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">83位</span>
+                <!-- 
+                --><span class="tags tag_name">中学生</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">84位</span>
+                <!-- 
+                --><span class="tags tag_name">ロボット</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">85位</span>
+                <!-- 
+                --><span class="tags tag_name">時代小説</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">86位</span>
+                <!-- 
+                --><span class="tags tag_name">群像劇</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">87位</span>
+                <!-- 
+                --><span class="tags tag_name">美少女</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">88位</span>
+                <!-- 
+                --><span class="tags tag_name">剣と魔法</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">89位</span>
+                <!-- 
+                --><span class="tags tag_name">夢</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">90位</span>
+                <!-- 
+                --><span class="tags tag_name">パラレルワールド</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">91位</span>
+                <!-- 
+                --><span class="tags tag_name">スプラッタ</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">92位</span>
+                <!-- 
+                --><span class="tags tag_name">百合</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">93位</span>
+                <!-- 
+                --><span class="tags tag_name">ディストピア</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">94位</span>
+                <!-- 
+                --><span class="tags tag_name">復讐</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">95位</span>
+                <!-- 
+                --><span class="tags tag_name">妖怪</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">96位</span>
+                <!-- 
+                --><span class="tags tag_name">恋</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">97位</span>
+                <!-- 
+                --><span class="tags tag_name">涙</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">98位</span>
+                <!-- 
+                --><span class="tags tag_name">猫</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">99位</span>
+                <!-- 
+                --><span class="tags tag_name">古典恋愛</span>
+              </div>
+
+              <div>
+                <span class="tags tag_order">100位</span>
+                <!-- 
+                --><span class="tags tag_name">童話</span>
+              </div>
+
+            </div>
+
+
+          </div>
+        </section>
+      </section>
+
+    </div>
+  </main>
+  <footer>
+    <div class="footer_content">
+
+      <div class="menu_area">
+        <nav class="regular">
+          <ul>
+            <li><a href="index.html" class="menu_link">ホーム</a></li>
+            <li><a href="analysis.html" class="menu_link">分析</a></li>
+            <li><a href="ranking.html" class="menu_link">ランキング</a></li>
+            <li><a href="author_list.html" class="menu_link">作者一覧</a></li>
+            <li><a href="masterpiece_list.html" class="menu_link">作品一覧</a></li>
+            <li><a href="contact.html" class="menu_link">お問い合わせ</a></li>
+          </ul>
+        </nav>
+      </div>
+      <img class="footer_logo" border="0" src="img/logo.png" alt="logo">
+      <p>© 2019 NAROKEN</p>
+    </div>
+  </footer>
+</body>
+
+</html>
