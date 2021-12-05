@@ -1,0 +1,29 @@
+{
+  "appenders":{
+    "console": {
+      "type": "console",
+      "level": "all",
+      "layout": {
+        "type": "pattern",
+        "pattern": "%[[%d{yyyy/MM/dd hh:mm:ss.SSS}] [%p] %c -%] %m"
+      }
+    },
+    "default":{
+      "type": "file",
+      "filename": "log/system.log",
+      "layout": {
+        "type": "pattern",
+        "pattern": "[%d{yyyy/MM/dd hh:mm:ss.SSS}] [%p] %c - %m"
+      },
+      "maxLogSize": 20480,
+      "backups": 3,
+      "category": "system"
+    }
+  },
+  "categories": { 
+    "default": { 
+      "appenders": ["default","console"], 
+      "level": "debug"
+    }
+  }
+}
