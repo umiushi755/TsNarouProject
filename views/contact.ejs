@@ -22,52 +22,7 @@
   </head>
   <body class="contact">
     <header>
-      <section class="header_content">
-        <h1><a href="/"><img src="img/logo.png" alt="なろ研" class="logoImg" /></a></h1>
-        
-        <!-- ▼ global-navigation ▼ -->
-        <input type="checkbox" id="nav">
-        
-        <label for="nav" class="nav-label">
-          <span class="nav-icon">
-            <span class="nav-icon_item"></span>
-            <span class="nav-icon_item"></span>
-            <span class="nav-icon_item"></span>
-        </label>
-
-        <nav class="nav-list">
-
-          <div class="nav-list_wrap">
-
-            <div class="nav-list_menu">
-              <ul class="nav-list_items">
-                <li class="nav-list_item"><a class="nav-list_link" href="/">ホーム</a></li>
-                <li class="nav-list_item"><a class="nav-list_link" href="/analysis">分析</a></li>
-                <li class="nav-list_item"><a class="nav-list_link" href="/ranking">ランキング</a></li>
-                <li class="nav-list_item"><a class="nav-list_link" href="/author_list">作者一覧</a></li>
-                <li class="nav-list_item"><a class="nav-list_link" href="/masterpiece_list">作品一覧</a></li>
-                <li class="nav-list_item"><a class="nav-list_link" href="/contact">お問い合わせ</a></li>
-              </ul>
-            </div>
-            <div class="sns_link">
-              <a href="javascript:window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(location.href),'sharewindow','width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!');">
-                <img src="img/sns/facebook-icon.png" alt="facebook" />
-              </a>
-              <a href="javascript:window.open('http://twitter.com/share?text='+encodeURIComponent(document.title)+'&url='+encodeURIComponent(location.href),'sharewindow','width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!');">
-                <img src="img/sns/twitter-icon.png" alt="twitter" />
-              </a>
-              <a href="javascript:window.open('http://line.me/R/msg/text/?'+encodeURIComponent(document.title)+'%20'+encodeURIComponent(location.href),'sharewindow','width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!');">
-                <img src="img/sns/line-icon.png" alt="line" />
-              </a>
-            </div>
-            
-          </div>
-
-        </nav>
-
-        <!-- ▲ global-navigation ▲ -->
-
-      </section>
+      <%- include('./common/_header.ejs') %>
     </header>
     <main>
       <div class="main_content">

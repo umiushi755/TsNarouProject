@@ -6,6 +6,15 @@ import Ranking from "./api/repositories/ranking"
 import Novel from "./api/repositories/novel"
 import AppDatabase from "./appDatabase"
 import { SqlConst } from "./sqlConst"
+import log4js from "log4js"
+
+log4js.configure('./log4jsConfig.json');
+const accesslog = log4js.getLogger('index');
+// const errLog    = log4js.getLogger('error');
+
+import * as  getJsonVal from "./api/readValue/json"
+
+// export const getJ = "./api/readValue/json"
 
 export const router = Router()
 
@@ -13,7 +22,7 @@ container.register(SqlConst.DB_NAME, {
     useClass: AppDatabase
 })
 
-// const ranking = new Ranking()
+
 // // パラメータ無し
 // ranking.findTotalRankingTop()
 // // パラメータあり
@@ -39,6 +48,58 @@ container.register(SqlConst.DB_NAME, {
 // novel.findNovelFromSearch(["スラ", "イム"], "101", [NovelType.SERIAL], [RequiredKeyword.R15, RequiredKeyword.REINCARNATE])
 
 router.get("/", (req, res, next) => {
-  res.render('index');
+  accesslog.info("indexを見ています。");
+  // errLog.error("エラーです");
+  indexMain(res);
+  return;
+  // res.render('index');
   // res.render("index", { title: "Express" });
 });
+
+
+async function indexMain(res : any){
+  const filePass = 'public/json/top.json';
+  const resultJsonData = await getJsonVal.readJsonFile(filePass);
+  let viewData = void(0);
+  if(resultJsonData != undefined){
+    viewData = resultJsonData;
+  }else{
+    accesslog.error("jsonの取得に失敗しました。");
+    accesslog.info("DBからパラメータ取得をします");
+    console.log("気にならんよ");
+    const resultDbList = await getDbValueList();
+    // console.log(resultDbList);
+    // const resultList = editResults(resultDbList);
+    // viewData = resultList;
+  }
+  res.render('index');
+  return ;
+};
+
+async function getDbValueList(){
+  const ranking = new Ranking();
+  const resultData = await Promise.all([
+    ranking.findTotalRankingTop(),//total
+    ranking.findGenreRankingTop("1"),//love
+    ranking.findGenreRankingTop("2"),//Fantasy
+    ranking.findGenreRankingTop("3"),//文芸
+    ranking.findGenreRankingTop("4"),//SF
+    ranking.findGenreRankingTop("99"),//その他
+    ranking.findGenreRankingTop("98")//ノンジャンル
+  ]).then(function(value){
+    return value;
+  }).catch(function(error){
+    return undefined;
+  });
+
+  return resultData;
+};
+let editResults = function(list : any) {
+  //console.log(list);
+  let edited = {};
+  for(let i=0;i<list.length;i++){
+    // edited[list[i].keyName] =list[i].data;
+    edited = {[list[i].keyName]: list[i].data};
+  }
+  return edited;
+}

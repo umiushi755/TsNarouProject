@@ -1,16 +1,8 @@
 {
   "appenders":{
-    "console": {
-      "type": "console",
-      "level": "all",
-      "layout": {
-        "type": "pattern",
-        "pattern": "%[[%d{yyyy/MM/dd hh:mm:ss.SSS}] [%p] %c -%] %m"
-      }
-    },
     "default":{
       "type": "file",
-      "filename": "log/system.log",
+      "filename": "./logs/system.log",
       "layout": {
         "type": "pattern",
         "pattern": "[%d{yyyy/MM/dd hh:mm:ss.SSS}] [%p] %c - %m"
@@ -18,12 +10,108 @@
       "maxLogSize": 1048576,
       "backups": 1,
       "category": "system"
+    },
+    "access": {
+      "type": "dateFile",
+      "filename": "logs/access.log",
+      "pattern": "yyyy-MM-dd"
+    },
+    "error": {
+      "type": "dateFile",
+      "filename": "logs/error.log",
+      "pattern": "%[[%d{yyyy/MM/dd hh:mm:ss.SSS}] [%p] %c -%] %m"
+    },
+    "index": {
+      "type": "dateFile",
+      "filename": "logs/index.log",
+      "pattern": "yyyy-MM-dd"
+    },
+    "analysis": {
+      "type": "dateFile",
+      "filename": "logs/analysis.log",
+      "pattern": "yyyy-MM-dd"
+    },
+    "ranking": {
+      "type": "dateFile",
+      "filename": "logs/ranking.log",
+      "pattern": "yyyy-MM-dd"
+    },
+    "author_list": {
+      "type": "dateFile",
+      "filename": "logs/author_list.log",
+      "pattern": "yyyy-MM-dd"
+    },
+    "masterpiece_list": {
+      "type": "dateFile",
+      "filename": "logs/author_list.log",
+      "pattern": "yyyy-MM-dd"
+    },
+    "details": {
+      "type": "dateFile",
+      "filename": "logs/details.log",
+      "pattern": "yyyy-MM-dd"
+    },
+    "contact": {
+      "type": "dateFile",
+      "filename": "logs/contact.log",
+      "pattern": "yyyy-MM-dd"
+    },
+    "dbAccess": {
+      "type": "dateFile",
+      "filename": "logs/dbAccess.log",
+      "pattern": "yyyy-MM-dd"
+    },
+    "console": {
+      "type": "console"
+    },
+    "out": {
+      "type": "stdout"
     }
   },
   "categories": { 
     "default": { 
       "appenders": ["default","console"], 
+      "level": "info"
+    },
+    "access": {
+      "appenders": ["access", "console"],
+      "level": "info"
+    },
+    "error": {
+      "appenders": ["error", "console"],
       "level": "debug"
+    },
+    "index": {
+      "appenders": ["index", "console"],
+      "level": "info"
+    },
+    "analysis": {
+      "appenders": ["analysis", "console"],
+      "level": "info"
+    },
+    "ranking": {
+      "appenders": ["ranking", "console"],
+      "level": "info"
+    },
+    "author_list": {
+      "appenders": ["author_list", "console"],
+      "level": "info"
+    },
+    "masterpiece_list": {
+      "appenders": ["author_list", "console"],
+      "level": "info"
+    },
+    "details": {
+      "appenders": ["details", "console"],
+      "level": "info"
+    },
+    "contact": {
+      "appenders": ["contact", "console"],
+      "level": "info"
+    },
+    "dbAccess": {
+      "appenders": ["dbAccess", "console"],
+      "level": "info"
     }
   }
 }
