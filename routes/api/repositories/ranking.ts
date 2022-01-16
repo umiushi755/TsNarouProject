@@ -25,6 +25,17 @@ export default class Ranking {
         console.log(rowData)
     }
 
+    async findRankingTopAll() {
+        const db = this.getDatabase()
+        var sqls = [SqlConst.FIND_TOTAL_RANKING_TOP]
+        for (const genre in BigGenre) {
+            const sql = SqlConst.FIND_GENRE_RANKING_TOP.replace("?", genre)
+            sqls.push(sql)
+        }
+        const rowData = await db.selectAllForSqls(sqls) as RowDataPacket[][]
+        console.log(rowData)
+    }
+
     /**
      * ランキング画面 各大ジャンルランキングのデータを取得します。
      *
