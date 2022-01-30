@@ -40,8 +40,7 @@ export default class Novel {
         const db = this.getDatabase()
         const sql = `${SqlConst.FIND_NOVEL}${where}${sqlOrder}${sqlLimit}${sqlOffset}`
         console.log(sql)
-        const rowData = await db.select(mysql.format(sql)) as RowDataPacket
-        console.log(rowData)
+        return await db.select(mysql.format(sql))
     }
 
     private makeSqlFromFreeWord(freeWords: string[]): string {
