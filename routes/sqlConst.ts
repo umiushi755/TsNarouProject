@@ -16,6 +16,7 @@ export namespace SqlConst {
         `SELECT
             a.ncode,
             a.title,
+            a.big_genre_id,
             b.author_name,
             c.global_point,
             d.genre_name
@@ -29,16 +30,29 @@ export namespace SqlConst {
                 mst_genre d ON a.genre_id = d.genre_id`
 
     /** TOP画面 総合ランキング */
-    export const FIND_TOTAL_RANKING_TOP = mysql.format(
-        `${FIND_RANKING} WHERE c.global_point > 500000
-        ORDER BY c.global_point DESC
+    export const FIND_TOTAL_RANKING_TOP_NCODE = mysql.format(
+        `SELECT
+            ncode
+        FROM
+            trn_novel_evanluation
+        ORDER BY
+            global_point DESC
         LIMIT 5`
     )
 
     /** TOP画面 各ジャンルランキング 大ジャンルIDを付与して使用する */
-    export const FIND_GENRE_RANKING_TOP = mysql.format(
-        `${FIND_RANKING} WHERE a.big_genre_id = ?
-        ORDER BY c.global_point DESC
+    export const FIND_GENRE_RANKING_TOP_NCODE = mysql.format(
+        `SELECT
+            a.ncode
+        FROM
+            trn_novel_base a,
+            trn_novel_evanluation b
+        WHERE
+            a.ncode = b.ncode
+            AND a.big_genre_id = ?
+            AND b.global_point > 50000
+        ORDER BY
+            b.global_point DESC
         LIMIT 3`
     )
 
@@ -54,6 +68,11 @@ export namespace SqlConst {
         `${FIND_RANKING} WHERE a.genre_id = ?
         ORDER BY c.global_point DESC
         LIMIT 30`
+    )
+
+    /** ncodeをもとにデータを取得 */
+    export const FIND_RANKING_TOP_BY_NCODE = mysql.format(
+        `${FIND_RANKING} WHERE a.ncode in (?)`
     )
 
     /** 作者一覧画面 */

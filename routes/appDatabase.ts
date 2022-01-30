@@ -1,5 +1,9 @@
 import 'reflect-metadata'
 import * as mysql from 'mysql2/promise'
+import log4js from "log4js"
+
+log4js.configure('./log4jsConfig.json')
+const accesslog = log4js.getLogger('index')
 
 export default class AppDatabase {
 
@@ -18,7 +22,7 @@ export default class AppDatabase {
             return row
         } catch (error) {
             // TODO: DB固有のExceptionをthrowする？
-            console.log(error)
+            accesslog.error(error)
         } finally {
             console.log("database close")
             pool.end()
@@ -36,14 +40,14 @@ export default class AppDatabase {
         console.log("database open")
         try {
             var data: mysql.RowDataPacket[][] = []
-            for (const sql in sqls) {
-                const [row, field] = await pool.execute(sql)
+            for (const i in sqls) {
+                const [row, field] = await pool.execute(sqls[i])
                 data.push(row as mysql.RowDataPacket[])
             }
             return data
         } catch (error) {
             // TODO: DB固有のExceptionをthrowする？
-            console.log(error)
+            accesslog.error(error)
         } finally {
             console.log("database close")
             pool.end()
@@ -62,6 +66,6 @@ interface DbConfig {
 const dbConfig: DbConfig = {
     host: 'localhost',
     user: 'root',
-    password: 'siina1987',
+    password: 'ther7midor',
     database: 'new_naroken'
 }
