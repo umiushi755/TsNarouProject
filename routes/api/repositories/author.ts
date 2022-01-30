@@ -15,8 +15,7 @@ export default class Author {
      */
     async findAuthorFromFreeWord(freeWords: string[] = [], offset: number = 0, limit: number = 40) {
         const db = this.getDatabase()
-        const rowData = await db.select(this.makeSqlFindAuthorFromFreeWord(freeWords, offset, limit)) as RowDataPacket
-        console.log(rowData)
+        return await db.select(this.makeSqlFindAuthorFromFreeWord(freeWords, offset, limit))
     }
 
     private makeSqlFindAuthorFromFreeWord(freeWords: string[], offset: number, limit: number): string {

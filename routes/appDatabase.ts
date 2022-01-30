@@ -1,5 +1,9 @@
 import 'reflect-metadata'
 import * as mysql from 'mysql2/promise'
+import log4js from "log4js"
+
+log4js.configure('./log4jsConfig.json')
+const accesslog = log4js.getLogger('index')
 
 export default class AppDatabase {
 
@@ -18,7 +22,32 @@ export default class AppDatabase {
             return row
         } catch (error) {
             // TODO: DB固有のExceptionをthrowする？
-            console.log(error)
+            accesslog.error(error)
+        } finally {
+            console.log("database close")
+            pool.end()
+        }
+    }
+
+    /**
+     * 複数のSQLを使用して、データベースからデータを取得
+     * 
+     * @param sqls 使用する複数のSQL
+     * @returns SQLに応じたデータをJSON形式で返却
+     */
+    async selectAllForSqls(sqls: string[] = []) {
+        const pool = await mysql.createPool(dbConfig)
+        console.log("database open")
+        try {
+            var data: mysql.RowDataPacket[][] = []
+            for (const i in sqls) {
+                const [row, field] = await pool.execute(sqls[i])
+                data.push(row as mysql.RowDataPacket[])
+            }
+            return data
+        } catch (error) {
+            // TODO: DB固有のExceptionをthrowする？
+            accesslog.error(error)
         } finally {
             console.log("database close")
             pool.end()
