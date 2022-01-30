@@ -142,7 +142,81 @@
     </div>
   </div>
 </section>
-
+<section class="content_area white_color">
+  <h3>総合ランキングベスト5</h3>
+  <div class="content_block" id="toprank_description">
+    <div class="first_rank_view">
+      <div class="first_rank_img">
+        <img class="first_crown_backimg" src="/public/images/crown/crown_first-background.jpg" alt="crownBack" />
+        <img class="first_crown_img" src="/public/images/crown/crown_first.png" alt="crownFirst" />
+        <p class="first_total_rank">1位</p>
+        <p class="first_total_point"><%= total[0].global_point %>pt</p>
+      </div>
+      <div class="first_rank_details">
+        <div class="first_rank_details_text test_center_flex">
+          <p><a href="./details/author/<%= total[0].auther_id %>"><%= total[0].title %></a></p>
+        </div>
+        <div class="first_rank_details_data_block">
+          <div class="first_rank_details_data_left_right test_center_flex work_info_font_color">
+            <p>作者:<%= total[0].auther_name %></p>
+          </div>
+          <div class="first_rank_details_data_center test_center_flex work_info_font_color">
+            <p>カテゴリ:<%= total[0].genre_name %></p>
+          </div>
+          <div class="first_rank_details_data_left_right test_center_flex work_info_font_color">
+            <p>ncode:<%= total[0].ncode %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="notfirst_rank_details">
+      <% let totalNum = 0 %>
+      <% for(i=1; i<total.length; i++){ %>
+        <% let totalNum=i+1 %>
+        <% let crownImg="" %>
+        <% let pointClass="" %>
+        <% let crownImgTag="total_ranks_mark" %>
+        <% let pointTag="norfirst_rank_point" %>
+        <% let crownCategoryClass="norfirst_rank_category" %>
+        <% if(totalNum==2){ %>
+          <% crownImg = "/public/images/crown/second.jpg" %>
+          <% pointClass = "second_place" %>
+        <% }else if(totalNum==3){ %>
+          <% crownImg = "/public/images/crown/third.jpg" %>
+          <% pointClass = "third_place" %>
+        <% }else{ %>
+          <% crownImg = "/public/images/unnamed.png" %>
+          <% pointClass = "four_five_place" %>
+          <% crownImgTag="total_ranks_mark_unnamed" %>
+          <% pointTag="norfirst_rank_point_unnamed" %>
+          <% crownCategoryClass="norfirst_rank_category_unnamed" %>
+          
+        <% } %>
+        <div class="notfirst_rank_details_sub">
+          <div class="notfirst_rank_subordinate">
+            <div class="norfirst_rank_img">
+              <img class="total_crown_img" id="second_crown_img" border="0" src="<%= crownImg %>" alt="crownFirst" />
+              <p class="<%= crownImgTag %>"><%= totalNum %>位</p>
+            </div>
+            <div class="<%= pointTag %> test_center_flex <%= pointClass %>">
+              <p><%= total[i].global_point %>pt</p>
+            </div>
+            <div class="<%= crownCategoryClass %> test_center_flex work_info_font_color">
+              <p>カテゴリ:<%= total[i].genre_name %></p>
+            </div>
+          </div>
+          <div class="notfirst_rank_details_text test_center_flex">
+            <p><a href="./details/author/<%= total[i].auther_id %>"><%= total[i].title %></a></p>
+          </div>
+          <div class="notfirst_rank_details_name work_info_font_color">
+            <p>作者:<%= total[i].auther_name %></p>
+          </div>
+        </div>
+      <% } %>
+    </div>
+    <input type="button" id="total_rank_button" class="detailsButton" value="総合ランキングをもっと見る" onclick="postRankview(0)" />
+  </div>
+</section>
 <!-- 恋愛ランキング -->
 <section class="content_area category_rank">
   <h3 class="rank_ttl">恋愛ランキングベスト<span class="rank_number love_font">3</span></h3>

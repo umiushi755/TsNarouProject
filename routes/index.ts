@@ -22,7 +22,6 @@ container.register(SqlConst.DB_NAME, {
     useClass: AppDatabase
 })
 
-
 // // パラメータ無し
 // ranking.findTotalRankingTop()
 // // パラメータあり
@@ -60,19 +59,19 @@ router.get("/", (req, res, next) => {
 async function indexMain(res : any){
   const filePass = 'public/json/top.json';
   const resultJsonData = await getJsonVal.readJsonFile(filePass);
-  let viewData = void(0);
+  let viewData = {};
   if(resultJsonData != undefined){
     viewData = resultJsonData;
   }else{
     accesslog.error("jsonの取得に失敗しました。");
     accesslog.info("DBからパラメータ取得をします");
-    console.log("気にならんよ");
     const resultDbList = await getDbValueList();
-    // console.log(resultDbList);
-    // const resultList = editResults(resultDbList);
-    // viewData = resultList;
+    const resultList = editResults(resultDbList);
+    // console.log(resultList);
+
+    viewData = resultList;
   }
-  res.render('index');
+  res.render('index',viewData);
   return ;
 };
 
@@ -95,11 +94,14 @@ async function getDbValueList(){
   return resultData;
 };
 let editResults = function(list : any) {
-  //console.log(list);
-  let edited = {};
-  for(let i=0;i<list.length;i++){
-    // edited[list[i].keyName] =list[i].data;
-    edited = {[list[i].keyName]: list[i].data};
-  }
+  let edited = {
+    total:list[0],
+    love:list[1],
+    fantasy:list[2],
+    literary:list[3],
+    sf:list[4],
+    other:list[5],
+    nonGenre:list[6]
+  };
   return edited;
-}
+};
