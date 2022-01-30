@@ -72,7 +72,7 @@ export namespace SqlConst {
 
     /** ncodeをもとにデータを取得 */
     export const FIND_RANKING_TOP_BY_NCODE = mysql.format(
-        `${FIND_RANKING} WHERE a.ncode in (?)`
+        `${FIND_RANKING} WHERE a.ncode in (?) ORDER BY c.global_point DESC`
     )
 
     /** 作者一覧画面 */
