@@ -66,6 +66,6 @@ interface DbConfig {
 const dbConfig: DbConfig = {
     host: 'localhost',
     user: 'root',
-    password: 'ther7midor',
+    password: 'siina1987',
     database: 'new_naroken'
 }
