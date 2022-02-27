@@ -50,6 +50,14 @@ export default class Ranking {
         return await db.select(SqlConst.FIND_GENRE_RANKING, [genreId])
     }
 
+    /**
+     * ランキング画面 キーワードランキングのデータを取得します。
+     */
+    async findKeywordRanking() {
+        const db = this.getDatabase()
+        return await db.select(SqlConst.FIND_KEYWORD_RANKING)
+    }
+
     private getDatabase(): AppDatabase {
         return container.resolve(SqlConst.DB_NAME)
     }

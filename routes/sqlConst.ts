@@ -84,6 +84,13 @@ export namespace SqlConst {
         FROM
             trn_novel_author_base`
 
+    /** 作者一覧画面 ページネーション件数 */
+    export const FIND_AUTHOR_PAGENATION_COUNT =
+    `SELECT
+        COUNT(*)
+    FROM
+        trn_novel_author_base`
+
     /** 作者一覧画面 キーワード(param)を置換して使用すること */
     export const SQL_WHERE_AUTHOR_FROM_FREE_WORD =
         ` WHERE
@@ -134,5 +141,154 @@ export namespace SqlConst {
     export const SQL_WHERE_NOVEL_FROM_REINCARNATION = ` a.reincarnation_flg = '1'`
     /** 作品一覧画面 追加条件 異世界転移フラグ */
     export const SQL_WHERE_NOVEL_FROM_METASTASIS = ` a.metastasis_flg = '1'`
+
+    export const FIND_KEYWORD_RANKING =
+    `SELECT
+        keyword
+        , COUNT(keyword) AS cnt 
+    FROM
+        ( 
+            ( 
+                SELECT
+                    keyword_1 AS keyword 
+                FROM
+                    trn_novel_keyword 
+                WHERE
+                    keyword_1 IS NOT NULL 
+                    OR keyword_1 != ''
+            ) 
+            UNION ALL ( 
+                SELECT
+                    keyword_2 AS keyword 
+                FROM
+                    trn_novel_keyword 
+                WHERE
+                    keyword_2 IS NOT NULL 
+                    OR keyword_2 != ''
+            ) 
+            UNION ALL ( 
+                SELECT
+                    keyword_3 AS keyword 
+                FROM
+                    trn_novel_keyword 
+                WHERE
+                    keyword_3 IS NOT NULL 
+                    OR keyword_3 != ''
+            ) 
+            UNION ALL ( 
+                SELECT
+                    keyword_4 AS keyword 
+                FROM
+                    trn_novel_keyword 
+                WHERE
+                    keyword_4 IS NOT NULL 
+                    OR keyword_4 != ''
+            ) 
+            UNION ALL ( 
+                SELECT
+                    keyword_5 AS keyword 
+                FROM
+                    trn_novel_keyword 
+                WHERE
+                    keyword_5 IS NOT NULL 
+                    OR keyword_5 != ''
+            ) 
+            UNION ALL ( 
+                SELECT
+                    keyword_6 AS keyword 
+                FROM
+                    trn_novel_keyword 
+                WHERE
+                    keyword_6 IS NOT NULL 
+                    OR keyword_6 != ''
+            ) 
+            UNION ALL ( 
+                SELECT
+                    keyword_7 AS keyword 
+                FROM
+                    trn_novel_keyword 
+                WHERE
+                    keyword_7 IS NOT NULL 
+                    OR keyword_7 != ''
+            ) 
+            UNION ALL ( 
+                SELECT
+                    keyword_8 AS keyword 
+                FROM
+                    trn_novel_keyword 
+                WHERE
+                    keyword_8 IS NOT NULL 
+                    OR keyword_8 != ''
+            ) 
+            UNION ALL ( 
+                SELECT
+                    keyword_9 AS keyword 
+                FROM
+                    trn_novel_keyword 
+                WHERE
+                    keyword_9 IS NOT NULL 
+                    OR keyword_9 != ''
+            ) 
+            UNION ALL ( 
+                SELECT
+                    keyword_10 AS keyword 
+                FROM
+                    trn_novel_keyword 
+                WHERE
+                    keyword_10 IS NOT NULL 
+                    OR keyword_10 != ''
+            ) 
+            UNION ALL ( 
+                SELECT
+                    keyword_11 AS keyword 
+                FROM
+                    trn_novel_keyword 
+                WHERE
+                    keyword_11 IS NOT NULL 
+                    OR keyword_11 != ''
+            ) 
+            UNION ALL ( 
+                SELECT
+                    keyword_12 AS keyword 
+                FROM
+                    trn_novel_keyword 
+                WHERE
+                    keyword_12 IS NOT NULL 
+                    OR keyword_12 != ''
+            ) 
+            UNION ALL ( 
+                SELECT
+                    keyword_13 AS keyword 
+                FROM
+                    trn_novel_keyword 
+                WHERE
+                    keyword_13 IS NOT NULL 
+                    OR keyword_13 != ''
+            ) 
+            UNION ALL ( 
+                SELECT
+                    keyword_14 AS keyword 
+                FROM
+                    trn_novel_keyword 
+                WHERE
+                    keyword_14 IS NOT NULL 
+                    OR keyword_14 != ''
+            ) 
+            UNION ALL ( 
+                SELECT
+                    keyword_15 AS keyword 
+                FROM
+                    trn_novel_keyword 
+                WHERE
+                    keyword_15 IS NOT NULL 
+                    OR keyword_15 != ''
+            )
+        ) AS tmp_table_1 
+    GROUP BY
+        keyword 
+    ORDER BY
+        cnt DESC 
+    LIMIT
+        100`
 }
 
