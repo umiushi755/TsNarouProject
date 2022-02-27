@@ -15,10 +15,20 @@ export default class Author {
      */
     async findAuthorFromFreeWord(freeWords: string[] = [], offset: number = 0, limit: number = 40) {
         const db = this.getDatabase()
-        return await db.select(this.makeSqlFindAuthorFromFreeWord(freeWords, offset, limit))
+        return await db.select(this.makeSqlFindAuthorFromFreeWord(SqlConst.FIND_AUTHOR, freeWords, offset, limit))
     }
 
-    private makeSqlFindAuthorFromFreeWord(freeWords: string[], offset: number, limit: number): string {
+    /**
+     * 作者一覧画面 作者のデータ件数を取得します。
+     *
+     * @param freeWords 検索用フリーワード
+     */
+    async findAuthorPagenationCount(freeWords: string[] = []) {
+        const db = this.getDatabase()
+        return await db.select(this.makeSqlFindAuthorFromFreeWord(SqlConst.FIND_AUTHOR_PAGENATION_COUNT, freeWords, 0, 0))
+    }
+
+    private makeSqlFindAuthorFromFreeWord(selectClause: string, freeWords: string[], offset: number, limit: number): string {
         const setParam = new Set(freeWords)
         let paramReplaced = ""
         let count = 0
@@ -33,9 +43,12 @@ export default class Author {
         
         const sqlOrderAsc = SqlConst.SQL_ORDER_ASC.replace("?", "author_id")
         const sqlOffset = SqlConst.SQL_OFFSET.replace("?", `${offset}`)
-        const sqlLimit = SqlConst.SQL_LIMIT.replace("?", `${limit}`)
-        console.log(mysql.format(`${SqlConst.FIND_AUTHOR}${paramReplaced}${sqlOrderAsc}${sqlLimit}${sqlOffset}`))
-        return mysql.format(`${SqlConst.FIND_AUTHOR}${paramReplaced}${sqlOrderAsc}${sqlLimit}${sqlOffset}`)
+        let sqlLimit = ""
+        if (limit > 0) {
+            sqlLimit = SqlConst.SQL_LIMIT.replace("?", `${limit}`)
+        }
+        console.log(mysql.format(`${selectClause}${paramReplaced}${sqlOrderAsc}${sqlLimit}${sqlOffset}`))
+        return mysql.format(`${selectClause}${paramReplaced}${sqlOrderAsc}${sqlLimit}${sqlOffset}`)
     }
 
     private getDatabase(): AppDatabase {
