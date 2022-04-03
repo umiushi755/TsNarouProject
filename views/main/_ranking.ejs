@@ -1,0 +1,711 @@
+<% var categorySet = function(categoryNum){
+  let color ="";
+  let crownImg ="";
+  let img = "";
+  if(categoryNum==0){
+    color ="total_font";
+    crownImg ="/img/crown/first.png"
+    img = "/img/square/total_square.png"
+  }else if(categoryNum==1 || categoryNum==101 ||  categoryNum==102 ){
+    color ="love_font";
+    crownImg ="/img/crown/love.png";
+    img = "/img/square/love_square.png"
+  }else if(categoryNum==2 || categoryNum==201 ||  categoryNum==202 ){
+    color ="fantasy_font";
+    crownImg ="/img/crown/fantasy.png";
+    img = "/img/square/fantasy_square.png"
+  }else if(categoryNum==3 || categoryNum==301 ||  categoryNum==302 || categoryNum==303 
+      ||  categoryNum==304 || categoryNum==305 ||  categoryNum==306 || categoryNum==307){
+    color ="literary_font";
+    crownImg ="/img/crown/literary.png";
+    img = "/img/square/literary_square.png"
+  }else if(categoryNum==4 || categoryNum==401 ||  categoryNum==402 || categoryNum==403 ||  categoryNum==404){
+    color ="sf_font";
+    crownImg ="/img/crown/sf.png";
+    img = "/img/square/sf_square.png"
+  }else if(categoryNum==98 || categoryNum==9801){
+    color ="nonGenre_font";
+    crownImg ="/img/crown/non-genre.png";
+    img = "/img/square/non-genre_square.png"
+  }else if(categoryNum==99 || categoryNum==9901 || categoryNum==9902 || categoryNum==9903 || categoryNum==9904){
+    color ="other_font";
+    crownImg ="/img/crown/other.png";
+    img = "/img/square/other_square.png"
+  }
+  let cotegoryElem = {
+    color:color,
+    crownImg:crownImg,
+    img:img
+  };
+  return cotegoryElem;
+} %>
+<section class="content_area">
+  <div class="content_block select_wrap">
+    <%- include('./parts/_categorySelecter.ejs') %>
+  </div>
+  <div class="content_block category_rank">
+    <div class="rank_content" id="rank_content">
+      <% let categoryElem = categorySet(category) %>
+      <h3 class = "rank_ttl"><span class ="<%= categoryElem.color %>"><%= title %></span>ランキングベスト<span class ="<%= categoryElem.color %>">30</span></h3>
+      <div class="category_rank_card_field <%= categoryElem.color %>">
+        <% let numString = 0; %>
+        <% for (var i in content) { %> 
+          <% var obj = content[i]; %>
+          <div class="category_rank_card">
+            <div class="category_rank_meta">
+              <div class="category_rank_subordinate">
+                <div class="category_rank_img">
+                <% numString ++; %>
+                <% if(i >=0 && i <=2 ){ %>
+                  <img class="category_crown_img" border="0" src="<%= categoryElem.crownImg %>" alt="crown_img" />
+                  <p class="crown_ranks_mark"><%= numString %>位</p>
+                <% }else{ %>
+                  <img class="category_crown_img" border="0" src="<%= categoryElem.img %>" alt="square_img" />
+                  <p class="category_ranks_mark"><%= numString %>位</p>
+                <% } %>
+              </div>
+              <% if(i >=0 && i <=2 ){ %>
+                <div class="crown_rank_point">
+                  <p class="crown_total_point"><%= obj.global_point %>pt</p>
+              <% }else{ %>
+                <div class="category_rank_point">
+                  <p class="notfirst_total_point"><%= obj.global_point %>pt</p>
+              <% } %>
+              </div>
+              </div>
+            </div>
+            <div class="category_rank_category work_info_font_color">
+              <p><%= obj.genre_name %></p>
+              <p>ID:<%= obj.ncode %></p>
+            </div>
+            <div class="category_rank_details_text">
+              <p><a href="/details/author/<%= obj.auther_id %>"><%= obj.title %></a></p>
+            </div>
+            <div class="category_rank_author work_info_font_color">
+              <div class="category_rank_author_name">
+                <p>作者:</p>
+              </div>
+              <div class="category_rank_author_detail">
+                <p><%= obj.author_name %></p>
+              </div>
+            </div>
+          </div>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="content_area">
+  <section class="content_block tag_rank">
+    <div class="tag_content" id="tag_content">
+      <h3 class="rank_ttl rank_ttl_long"><span>登録が多いタグランキング</span><span>ベスト<span
+            class="fantasy_font rank_number">100</span></span></h3>
+
+      <div class="tag_rank_list">
+
+        <div>
+          <span class="tags tag_order">01位</span>
+          <!-- 
+          --><span class="tags tag_name">R15</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">02位</span>
+          <!-- 
+          --><span class="tags tag_name">残酷な描写あり</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">03位</span>
+          <!-- 
+          --><span class="tags tag_name">日常</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">04位</span>
+          <!-- 
+          --><span class="tags tag_name">青春</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">05位</span>
+          <!-- 
+          --><span class="tags tag_name">男主人公</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">06位</span>
+          <!-- 
+          --><span class="tags tag_name">冒険</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">07位</span>
+          <!-- 
+          --><span class="tags tag_name">魔法</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">08位</span>
+          <!-- 
+          --><span class="tags tag_name">恋愛</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">09位</span>
+          <!-- 
+          --><span class="tags tag_name">現代</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">10位</span>
+          <!-- 
+          --><span class="tags tag_name">ほのぼの</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">11位</span>
+          <!-- 
+          --><span class="tags tag_name">シリアス</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">12位</span>
+          <!-- 
+          --><span class="tags tag_name">ファンタジー</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">13位</span>
+          <!-- 
+          --><span class="tags tag_name">異世界転移</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">14位</span>
+          <!-- 
+          --><span class="tags tag_name">女主人公</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">15位</span>
+          <!-- 
+          --><span class="tags tag_name">ラブコメ</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">16位</span>
+          <!-- 
+          --><span class="tags tag_name">異世界転生</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">17位</span>
+          <!-- 
+          --><span class="tags tag_name">オリジナル戦記</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">18位</span>
+          <!-- 
+          --><span class="tags tag_name"></span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">19位</span>
+          <!-- 
+          --><span class="tags tag_name">異世界</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">20位</span>
+          <!-- 
+          --><span class="tags tag_name">異能力バトル</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">21位</span>
+          <!-- 
+          --><span class="tags tag_name">学園</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">22位</span>
+          <!-- 
+          --><span class="tags tag_name">ハッピーエンド</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">23位</span>
+          <!-- 
+          --><span class="tags tag_name">ギャグ</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">24位</span>
+          <!-- 
+          --><span class="tags tag_name">チート</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">25位</span>
+          <!-- 
+          --><span class="tags tag_name">高校生</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">26位</span>
+          <!-- 
+          --><span class="tags tag_name">スクールラブ</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">27位</span>
+          <!-- 
+          --><span class="tags tag_name">ダーク</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">28位</span>
+          <!-- 
+          --><span class="tags tag_name">西洋</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">29位</span>
+          <!-- 
+          --><span class="tags tag_name">悲恋</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">30位</span>
+          <!-- 
+          --><span class="tags tag_name">現代(モダン)</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">31位</span>
+          <!-- 
+          --><span class="tags tag_name">私小説</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">32位</span>
+          <!-- 
+          --><span class="tags tag_name">近未来</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">33位</span>
+          <!-- 
+          --><span class="tags tag_name">魔王</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">34位</span>
+          <!-- 
+          --><span class="tags tag_name">勇者</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">35位</span>
+          <!-- 
+          --><span class="tags tag_name">年の差</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">36位</span>
+          <!-- 
+          --><span class="tags tag_name">人外</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">37位</span>
+          <!-- 
+          --><span class="tags tag_name">ハーレム</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">38位</span>
+          <!-- 
+          --><span class="tags tag_name">ガールズラブ</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">39位</span>
+          <!-- 
+          --><span class="tags tag_name">ミステリー</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">40位</span>
+          <!-- 
+          --><span class="tags tag_name">超能力</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">41位</span>
+          <!-- 
+          --><span class="tags tag_name">身分差</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">42位</span>
+          <!-- 
+          --><span class="tags tag_name">伝奇</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">43位</span>
+          <!-- 
+          --><span class="tags tag_name">ヒーロー</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">44位</span>
+          <!-- 
+          --><span class="tags tag_name">中世</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">45位</span>
+          <!-- 
+          --><span class="tags tag_name">コメディ</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">46位</span>
+          <!-- 
+          --><span class="tags tag_name">少女</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">47位</span>
+          <!-- 
+          --><span class="tags tag_name">ボーイズラブ</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">48位</span>
+          <!-- 
+          --><span class="tags tag_name">怪談</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">49位</span>
+          <!-- 
+          --><span class="tags tag_name">ホームドラマ</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">50位</span>
+          <!-- 
+          --><span class="tags tag_name">未来</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">51位</span>
+          <!-- 
+          --><span class="tags tag_name">主人公最強</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">52位</span>
+          <!-- 
+          --><span class="tags tag_name">転生</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">53位</span>
+          <!-- 
+          --><span class="tags tag_name">友情</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">54位</span>
+          <!-- 
+          --><span class="tags tag_name">詩</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">55位</span>
+          <!-- 
+          --><span class="tags tag_name">ダンジョン</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">56位</span>
+          <!-- 
+          --><span class="tags tag_name">コメディー</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">57位</span>
+          <!-- 
+          --><span class="tags tag_name">SF</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">58位</span>
+          <!-- 
+          --><span class="tags tag_name">和風</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">59位</span>
+          <!-- 
+          --><span class="tags tag_name">バトル</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">60位</span>
+          <!-- 
+          --><span class="tags tag_name">二次創作</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">61位</span>
+          <!-- 
+          --><span class="tags tag_name">短編</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">62位</span>
+          <!-- 
+          --><span class="tags tag_name">サスペンス</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">63位</span>
+          <!-- 
+          --><span class="tags tag_name">ホラー</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">64位</span>
+          <!-- 
+          --><span class="tags tag_name">サイコホラー</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">65位</span>
+          <!-- 
+          --><span class="tags tag_name">少年</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">66位</span>
+          <!-- 
+          --><span class="tags tag_name">悪役令嬢</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">67位</span>
+          <!-- 
+          --><span class="tags tag_name">学校/学園</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">68位</span>
+          <!-- 
+          --><span class="tags tag_name">幼馴染</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">69位</span>
+          <!-- 
+          --><span class="tags tag_name">乙女ゲーム</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">70位</span>
+          <!-- 
+          --><span class="tags tag_name">ショートショート</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">71位</span>
+          <!-- 
+          --><span class="tags tag_name">職業もの</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">72位</span>
+          <!-- 
+          --><span class="tags tag_name">文学</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">73位</span>
+          <!-- 
+          --><span class="tags tag_name">ヒストリカル</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">74位</span>
+          <!-- 
+          --><span class="tags tag_name">戦争</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">75位</span>
+          <!-- 
+          --><span class="tags tag_name">バッドエンド</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">76位</span>
+          <!-- 
+          --><span class="tags tag_name">ゲーム</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">77位</span>
+          <!-- 
+          --><span class="tags tag_name">VRMMO</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">78位</span>
+          <!-- 
+          --><span class="tags tag_name">異類婚姻譚</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">79位</span>
+          <!-- 
+          --><span class="tags tag_name">人工知能</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">80位</span>
+          <!-- 
+          --><span class="tags tag_name">ハードボイルド</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">81位</span>
+          <!-- 
+          --><span class="tags tag_name">天災</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">82位</span>
+          <!-- 
+          --><span class="tags tag_name">大学生</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">83位</span>
+          <!-- 
+          --><span class="tags tag_name">中学生</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">84位</span>
+          <!-- 
+          --><span class="tags tag_name">ロボット</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">85位</span>
+          <!-- 
+          --><span class="tags tag_name">時代小説</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">86位</span>
+          <!-- 
+          --><span class="tags tag_name">群像劇</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">87位</span>
+          <!-- 
+          --><span class="tags tag_name">美少女</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">88位</span>
+          <!-- 
+          --><span class="tags tag_name">剣と魔法</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">89位</span>
+          <!-- 
+          --><span class="tags tag_name">夢</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">90位</span>
+          <!-- 
+          --><span class="tags tag_name">パラレルワールド</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">91位</span>
+          <!-- 
+          --><span class="tags tag_name">スプラッタ</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">92位</span>
+          <!-- 
+          --><span class="tags tag_name">百合</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">93位</span>
+          <!-- 
+          --><span class="tags tag_name">ディストピア</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">94位</span>
+          <!-- 
+          --><span class="tags tag_name">復讐</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">95位</span>
+          <!-- 
+          --><span class="tags tag_name">妖怪</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">96位</span>
+          <!-- 
+          --><span class="tags tag_name">恋</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">97位</span>
+          <!-- 
+          --><span class="tags tag_name">涙</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">98位</span>
+          <!-- 
+          --><span class="tags tag_name">猫</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">99位</span>
+          <!-- 
+          --><span class="tags tag_name">古典恋愛</span>
+        </div>
+
+        <div>
+          <span class="tags tag_order">100位</span>
+          <!-- 
+          --><span class="tags tag_name">童話</span>
+        </div>
+
+      </div>
+
+
+    </div>
+  </section>
+</section>
