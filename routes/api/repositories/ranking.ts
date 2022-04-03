@@ -19,7 +19,6 @@ export default class Ranking {
         const rowData = await db.selectAllForSqls(sqls) as RowDataPacket[][]
         var findSqls: string[] = []
         for (const rowIndex in rowData) {
-            rowData[rowIndex]
             var ncode = ""
             for (const dataIndex in rowData[rowIndex]) {
                 ncode += "\"" + rowData[rowIndex][dataIndex].ncode + "\","
@@ -32,12 +31,24 @@ export default class Ranking {
 
     /**
      * ランキング画面 各大ジャンルランキングのデータを取得します。
+     * 引数なしだと、総合ランキングを取得します。
      *
      * @param bigGenreId 大ジャンルID
      */
-    async findBigGenreRanking(bigGenreId: string) {
+    async findBigGenreRanking(bigGenreId: string = "") {
         const db = this.getDatabase()
-        return await db.select(SqlConst.FIND_BIG_GENRE_RANKING, [bigGenreId])
+        if (bigGenreId === "") {
+            const rowData = await db.select(SqlConst.FIND_TOTAL_RANKING_NCODE, [bigGenreId]) as RowDataPacket[]
+            var ncode = ""
+            for (const index in rowData) {
+                ncode += "\"" + rowData[index].ncode + "\","
+            }
+            ncode = ncode.slice(0, -1)
+            console.log(SqlConst.FIND_BIG_GENRE_TOTAL_RANKING_BY_NCODE.replace("?", ncode))
+            return await db.select(SqlConst.FIND_BIG_GENRE_TOTAL_RANKING_BY_NCODE.replace("?", ncode))
+        } else {
+            return await db.select(SqlConst.FIND_BIG_GENRE_RANKING, [bigGenreId])
+        }
     }
 
     /**

@@ -56,6 +56,24 @@ export namespace SqlConst {
         LIMIT 3`
     )
 
+    /** ランキング画面 総合ランキング */
+    export const FIND_TOTAL_RANKING_NCODE = mysql.format(
+        `SELECT
+            ncode
+        FROM
+            trn_novel_evanluation
+        ORDER BY
+            global_point DESC
+        LIMIT 30`
+    )
+
+    /** ランキング画面 大ジャンルランキング 大ジャンルIDを付与して使用する */
+    export const FIND_BIG_GENRE_TOTAL_RANKING_BY_NCODE = mysql.format(
+        `${FIND_RANKING} WHERE a.ncode in (?)
+        ORDER BY c.global_point DESC
+        LIMIT 30`
+    )
+
     /** ランキング画面 大ジャンルランキング 大ジャンルIDを付与して使用する */
     export const FIND_BIG_GENRE_RANKING = mysql.format(
         `${FIND_RANKING} WHERE a.big_genre_id = ?
