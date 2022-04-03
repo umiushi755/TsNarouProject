@@ -44,7 +44,6 @@ export default class Ranking {
                 ncode += "\"" + rowData[index].ncode + "\","
             }
             ncode = ncode.slice(0, -1)
-            console.log(SqlConst.FIND_BIG_GENRE_TOTAL_RANKING_BY_NCODE.replace("?", ncode))
             return await db.select(SqlConst.FIND_BIG_GENRE_TOTAL_RANKING_BY_NCODE.replace("?", ncode))
         } else {
             return await db.select(SqlConst.FIND_BIG_GENRE_RANKING, [bigGenreId])

@@ -77,20 +77,13 @@ async function indexMain(res : any){
 
 async function getDbValueList(){
   const ranking = new Ranking();
-  const resultData = await Promise.all([
-    ranking.findTotalRankingTop(),//total
-    ranking.findGenreRankingTop("1"),//love
-    ranking.findGenreRankingTop("2"),//Fantasy
-    ranking.findGenreRankingTop("3"),//文芸
-    ranking.findGenreRankingTop("4"),//SF
-    ranking.findGenreRankingTop("99"),//その他
-    ranking.findGenreRankingTop("98")//ノンジャンル
-  ]).then(function(value){
+  const resultData = await ranking.findRankingTopAll().then(function(value){
     return value;
   }).catch(function(error){
+    console.log(error);
     return undefined;
   });
-
+  // console.log(resultData);
   return resultData;
 };
 let editResults = function(list : any) {
@@ -103,5 +96,6 @@ let editResults = function(list : any) {
     other:list[5],
     nonGenre:list[6]
   };
+  console.log(edited);
   return edited;
 };

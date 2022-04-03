@@ -6,7 +6,6 @@
 <section class="content_area">
   <h3 class="rank_ttl">総合ランキングベスト<span class="rank_number total_font">5</span></h3>
   <div class="content_block" id="toprank_description">
-
     <div class="first_rank_view">
       <div class="first_rank_points">
         <div class="first_rank_img">
@@ -14,156 +13,21 @@
           <p class="first_total_rank">1位</p>
         </div>
         <div class="first_total_point">
-          <p>635306pt</p>
+          <p><%= total[0].global_point %>pt</p>
         </div>
       </div>
       <div class="first_rank_details">
         <div class="first_rank_details_text">
-          <p><a href="./details/author/679640">とんでもスキルで異世界放浪メシ</a></p>
-        </div>
-        <div class="first_rank_details_data_block">
-          <div class="first_rank_details_data_left_right work_info_font_color">
-            <p>作者:江口　連</p>
-          </div>
-          <div class="first_rank_details_data_center work_info_font_color">
-            <p>ハイファンタジー〔ファンタジー〕</p>
-          </div>
-          <div class="first_rank_details_data_left_right work_info_font_color">
-            <p>Nコード:N2710DB</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="notfirst_rank_details">
-      <div class="notfirst_rank_details_sub">
-        <div class="notfirst_rank_subordinate">
-          <div class="category_rank_subordinate">
-            <div class="norfirst_rank_img">
-              <img class="total_crown_img" id="second_crown_img" border="0" src="img/crown/second.png"
-                alt="crownFirst" />
-              <p class="total_ranks_mark">2位</p>
-            </div>
-            <div class="norfirst_rank_point second_place">
-              <p>603088pt</p>
-            </div>
-          </div>
-          <div class="norfirst_rank_category work_info_font_color">
-            <p>ハイファンタジー〔ファンタジー〕</p>
-            <p>Nコード:N8611BV</p>
-          </div>
-        </div>
-        <div class="notfirst_rank_details_text">
-          <p><a href="./details/author/311735">転生したらスライムだった件</a></p>
-        </div>
-        <div class="notfirst_rank_details_name work_info_font_color">
-          <p>作者:伏瀬</p>
-        </div>
-      </div>
-
-      <div class="notfirst_rank_details_sub">
-        <div class="notfirst_rank_subordinate">
-          <div class="category_rank_subordinate">
-            <div class="norfirst_rank_img">
-              <img class="total_crown_img" id="second_crown_img" border="0" src="img/crown/third.png"
-                alt="crownFirst" />
-              <p class="total_ranks_mark">3位</p>
-            </div>
-            <div class="norfirst_rank_point third_place">
-              <p>598955pt</p>
-            </div>
-          </div>
-          <div class="norfirst_rank_category work_info_font_color">
-            <p>ハイファンタジー〔ファンタジー〕</p>
-            <p>Nコード:N8611BV</p>
-          </div>
-        </div>
-        <div class="notfirst_rank_details_text">
-          <p><a href="./details/author/386841">ありふれた職業で世界最強</a></p>
-        </div>
-        <div class="notfirst_rank_details_name work_info_font_color">
-          <p>作者:厨二好き/白米良</p>
-        </div>
-      </div>
-
-      <div class="notfirst_rank_details_sub">
-        <div class="notfirst_rank_subordinate">
-          <div class="category_rank_subordinate">
-            <div class="norfirst_rank_img">
-              <img class="total_crown_img" id="second_crown_img" border="0" src="img/square/total_square.png"
-                alt="crownFirst" />
-              <p class="total_ranks_mark_unnamed">4位</p>
-            </div>
-            <div class="norfirst_rank_point_unnamed four_five_place">
-              <p>554495pt</p>
-            </div>
-          </div>
-          <div class="norfirst_rank_category_unnamed work_info_font_color">
-            <p>ハイファンタジー〔ファンタジー〕</p>
-            <p>Nコード:N8611BV</p>
-          </div>
-        </div>
-        <div class="notfirst_rank_details_text">
-          <p><a href="./details/author/288399">無職転生　- 異世界行ったら本気だす -</a></p>
-        </div>
-        <div class="notfirst_rank_details_name work_info_font_color">
-          <p>作者:理不尽な孫の手</p>
-        </div>
-      </div>
-
-      <div class="notfirst_rank_details_sub">
-        <div class="notfirst_rank_subordinate">
-          <div class="category_rank_subordinate">
-            <div class="norfirst_rank_img">
-              <img class="total_crown_img" id="second_crown_img" border="0" src="img/square/total_square.png"
-                alt="crownFirst" />
-              <p class="total_ranks_mark_unnamed">5位</p>
-            </div>
-            <div class="norfirst_rank_point_unnamed four_five_place">
-              <p>541408pt</p>
-            </div>
-          </div>
-          <div class="norfirst_rank_category_unnamed work_info_font_color">
-            <p>ハイファンタジー〔ファンタジー〕</p>
-            <p>Nコード:N8611BV</p>
-          </div>
-        </div>
-        <div class="notfirst_rank_details_text">
-          <p><a href="./details/author/235132">Ｒｅ：ゼロから始める異世界生活</a></p>
-        </div>
-        <div class="notfirst_rank_details_name work_info_font_color">
-          <p>作者:鼠色猫/長月達平</p>
-        </div>
-      </div>
-
-    </div>
-    <div class="link link_total">
-      <input type="button" id="total_rank_button" class="link_button" value="総合ランキングをもっと見る"
-        onclick="postRankview(0)" />
-    </div>
-  </div>
-</section>
-<section class="content_area white_color">
-  <h3>総合ランキングベスト5</h3>
-  <div class="content_block" id="toprank_description">
-    <div class="first_rank_view">
-      <div class="first_rank_img">
-        <img class="first_crown_backimg" src="/public/images/crown/crown_first-background.jpg" alt="crownBack" />
-        <img class="first_crown_img" src="/public/images/crown/crown_first.png" alt="crownFirst" />
-        <p class="first_total_rank">1位</p>
-        <p class="first_total_point"><%= total[0].global_point %>pt</p>
-      </div>
-      <div class="first_rank_details">
-        <div class="first_rank_details_text test_center_flex">
           <p><a href="./details/author/<%= total[0].auther_id %>"><%= total[0].title %></a></p>
         </div>
         <div class="first_rank_details_data_block">
-          <div class="first_rank_details_data_left_right test_center_flex work_info_font_color">
+          <div class="first_rank_details_data_left_right work_info_font_color">
             <p>作者:<%= total[0].auther_name %></p>
           </div>
-          <div class="first_rank_details_data_center test_center_flex work_info_font_color">
+          <div class="first_rank_details_data_center work_info_font_color">
             <p>カテゴリ:<%= total[0].genre_name %></p>
           </div>
-          <div class="first_rank_details_data_left_right test_center_flex work_info_font_color">
+          <div class="first_rank_details_data_left_right work_info_font_color">
             <p>ncode:<%= total[0].ncode %></p>
           </div>
         </div>
@@ -179,27 +43,28 @@
         <% let pointTag="norfirst_rank_point" %>
         <% let crownCategoryClass="norfirst_rank_category" %>
         <% if(totalNum==2){ %>
-          <% crownImg = "/public/images/crown/second.jpg" %>
+          <% crownImg = "img/crown/second.png" %>
           <% pointClass = "second_place" %>
         <% }else if(totalNum==3){ %>
-          <% crownImg = "/public/images/crown/third.jpg" %>
+          <% crownImg = "img/crown/third.png" %>
           <% pointClass = "third_place" %>
         <% }else{ %>
-          <% crownImg = "/public/images/unnamed.png" %>
+          <% crownImg = "img/square/total_square.png" %>
           <% pointClass = "four_five_place" %>
           <% crownImgTag="total_ranks_mark_unnamed" %>
           <% pointTag="norfirst_rank_point_unnamed" %>
           <% crownCategoryClass="norfirst_rank_category_unnamed" %>
-          
         <% } %>
         <div class="notfirst_rank_details_sub">
           <div class="notfirst_rank_subordinate">
-            <div class="norfirst_rank_img">
-              <img class="total_crown_img" id="second_crown_img" border="0" src="<%= crownImg %>" alt="crownFirst" />
-              <p class="<%= crownImgTag %>"><%= totalNum %>位</p>
-            </div>
-            <div class="<%= pointTag %> test_center_flex <%= pointClass %>">
-              <p><%= total[i].global_point %>pt</p>
+            <div class="category_rank_subordinate">
+              <div class="norfirst_rank_img">
+                <img class="total_crown_img" id="second_crown_img" border="0" src="<%= crownImg %>" alt="crownFirst" />
+                <p class="<%= crownImgTag %>"><%= totalNum %>位</p>
+              </div>
+              <div class="<%= pointTag %> test_center_flex <%= pointClass %>">
+                <p><%= total[i].global_point %>pt</p>
+              </div>
             </div>
             <div class="<%= crownCategoryClass %> test_center_flex work_info_font_color">
               <p>カテゴリ:<%= total[i].genre_name %></p>
@@ -209,106 +74,54 @@
             <p><a href="./details/author/<%= total[i].auther_id %>"><%= total[i].title %></a></p>
           </div>
           <div class="notfirst_rank_details_name work_info_font_color">
-            <p>作者:<%= total[i].auther_name %></p>
+            <p>作者:<%= total[i].author_name %></p>
           </div>
         </div>
       <% } %>
     </div>
-    <input type="button" id="total_rank_button" class="detailsButton" value="総合ランキングをもっと見る" onclick="postRankview(0)" />
+    <div class="link link_total">
+      <input type="button" id="total_rank_button" class="link_button" value="総合ランキングをもっと見る"
+        onclick="postRankview(0)" />
+    </div>
   </div>
 </section>
+
 <!-- 恋愛ランキング -->
 <section class="content_area category_rank">
   <h3 class="rank_ttl">恋愛ランキングベスト<span class="rank_number love_font">3</span></h3>
   <div class="content_block rank_card love_font">
-
+    <% let loveNum=0 %>
+    <% for(i=0; i<love.length; i++){ %>
+      <% let loveNum=i+1 %>
     <div class="category_rank_card">
       <div class="category_rank_meta">
         <div class="category_rank_subordinate">
           <div class="category_rank_img">
             <img class="category_crown_img" border="0" src="img/crown/love.png" alt="crown_love" />
-            <p class="category_ranks_mark">1位</p>
+            <p class="category_ranks_mark"><%= loveNum %>位</p>
           </div>
           <div class="category_rank_point">
-            <p class="notfirst_total_point ">378281pt</p>
+            <p class="notfirst_total_point "><%= love[i].global_point %>pt</p>
           </div>
         </div>
         <div class=" category_rank_category work_info_font_color">
-          <p>異世界〔恋愛〕</p>
-          <p>Nコード:N7787EQ</p>
+          <p><%= love[i].genre_name %></p>
+          <p>Nコード:<%= love[i].ncode %></p>
         </div>
       </div>
       <div class="category_rank_details_text">
-        <p><a href="./details/author/1300935">魔導具師ダリヤはうつむかない</a></p>
+        <p><a href="./details/author/<%= love[i].auther_id %>"><%= love[i].title %></a></p>
       </div>
       <div class="category_rank_author work_info_font_color">
         <div class="category_rank_author_name">
           <p>作者:</p>
         </div>
         <div class="category_rank_author_detail">
-          <p>甘岸久弥</p>
+          <p><%= love[i].author_name %></p>
         </div>
       </div>
     </div>
-
-    <div class="category_rank_card">
-      <div class="category_rank_meta">
-        <div class="category_rank_subordinate">
-          <div class="category_rank_img">
-            <img class="category_crown_img" border="0" src="img/crown/love.png" alt="crown_love" />
-            <p class="category_ranks_mark">2位</p>
-          </div>
-          <div class="category_rank_point">
-            <p class="notfirst_total_point ">375516pt</p>
-          </div>
-        </div>
-        <div class=" category_rank_category work_info_font_color">
-          <p>現実世界〔恋愛〕</p>
-          <p>Nコード:N4029BS</p>
-        </div>
-      </div>
-      <div class="category_rank_details_text">
-        <p><a href="./details/author/345745">謙虚、堅実をモットーに生きております！</a></p>
-      </div>
-      <div class="category_rank_author work_info_font_color">
-        <div class="category_rank_author_name">
-          <p>作者:</p>
-        </div>
-        <div class="category_rank_author_detail">
-          <p>ひよこのケーキ</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="category_rank_card">
-      <div class="category_rank_meta">
-        <div class="category_rank_subordinate">
-          <div class="category_rank_img">
-            <img class="category_crown_img" border="0" src="img/crown/love.png" alt="crown_love" />
-            <p class="category_ranks_mark">3位</p>
-          </div>
-          <div class="category_rank_point">
-            <p class="notfirst_total_point ">393961pt</p>
-          </div>
-        </div>
-        <div class=" category_rank_category work_info_font_color">
-          <p>異世界〔恋愛〕</p>
-          <p>Nコード:N8139DG</p>
-        </div>
-      </div>
-      <div class="category_rank_details_text">
-        <p><a href="./details/author/608811">聖女の魔力は万能です</a></p>
-      </div>
-      <div class="category_rank_author work_info_font_color">
-        <div class="category_rank_author_name">
-          <p>作者:</p>
-        </div>
-        <div class="category_rank_author_detail">
-          <p>橘由華</p>
-        </div>
-      </div>
-    </div>
-
+    <% } %>
   </div>
   <div class="link link_love">
     <input type="button" id="total_rank_button" class="link_button" value="恋愛ランキングをもっと見る"
@@ -321,93 +134,38 @@
         class="rank_number fantasy_font">3</span></span>
   </h3>
   <div class="content_block rank_card  fantasy_font">
-
+    <% let fantasyNum=0 %>
+    <% for(i=0; i<fantasy.length; i++){ %>
+      <% let fantasyNum=i+1 %>
     <div class="category_rank_card">
       <div class="category_rank_meta">
         <div class="category_rank_subordinate">
           <div class="category_rank_img">
             <img class="category_crown_img" border="0" src="img/crown/fantasy.png" alt="crown_love" />
-            <p class="category_ranks_mark">1位</p>
+            <p class="category_ranks_mark"><%= fantasyNum %>位</p>
           </div>
           <div class="category_rank_point">
-            <p class="notfirst_total_point">598955pt</p>
+            <p class="notfirst_total_point"><%= fantasy[i].global_point %>pt</p>
           </div>
         </div>
         <div class="category_rank_category work_info_font_color">
-          <p>ハイファンタジー〔ファンタジー〕</p>
-          <p>Nコード:N8611BV</p>
+          <p><%= fantasy[i].genre_name %></p>
+          <p>Nコード:<%= fantasy[i].ncode %></p>
         </div>
       </div>
       <div class="category_rank_details_text">
-        <p><a href="./details/author/386841">ありふれた職業で世界最強</a></p>
+        <p><a href="./details/author/386841"><%= fantasy[i].title %></a></p>
       </div>
       <div class="category_rank_author work_info_font_color">
         <div class="category_rank_author_name">
           <p>作者:</p>
         </div>
         <div class="category_rank_author_detail">
-          <p>厨二好き/白米良</p>
+          <p><%= fantasy[i].author_name %></p>
         </div>
       </div>
     </div>
-
-    <div class="category_rank_card">
-      <div class="category_rank_meta">
-        <div class="category_rank_subordinate">
-          <div class="category_rank_img">
-            <img class="category_crown_img" border="0" src="img/crown/fantasy.png" alt="crown_love" />
-            <p class="category_ranks_mark">2位</p>
-          </div>
-          <div class="category_rank_point">
-            <p class="notfirst_total_point">635306pt</p>
-          </div>
-        </div>
-        <div class="category_rank_category work_info_font_color">
-          <p>ハイファンタジー〔ファンタジー〕</p>
-          <p>Nコード:N2710DB</p>
-        </div>
-      </div>
-      <div class="category_rank_details_text">
-        <p><a href="./details/author/679640">とんでもスキルで異世界放浪メシ</a></p>
-      </div>
-      <div class="category_rank_author work_info_font_color">
-        <div class="category_rank_author_name">
-          <p>作者:</p>
-        </div>
-        <div class="category_rank_author_detail">
-          <p>江口　連</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="category_rank_card">
-      <div class="category_rank_meta">
-        <div class="category_rank_subordinate">
-          <div class="category_rank_img">
-            <img class="category_crown_img" border="0" src="img/crown/fantasy.png" alt="crown_love" />
-            <p class="category_ranks_mark">3位</p>
-          </div>
-          <div class="category_rank_point">
-            <p class="notfirst_total_point">603088pt</p>
-          </div>
-        </div>
-        <div class="category_rank_category work_info_font_color">
-          <p>ハイファンタジー〔ファンタジー〕</p>
-          <p>Nコード:N6316BN</p>
-        </div>
-      </div>
-      <div class="category_rank_details_text">
-        <p><a href="./details/author/311735">転生したらスライムだった件</a></p>
-      </div>
-      <div class="category_rank_author work_info_font_color">
-        <div class="category_rank_author_name">
-          <p>作者:</p>
-        </div>
-        <div class="category_rank_author_detail">
-          <p>伏瀬</p>
-        </div>
-      </div>
-    </div>
+    <% } %>
 
   </div>
   <div class="link link_fantasy">
@@ -415,99 +173,42 @@
       onclick="postRankview(2)" />
   </div>
 </section>
-
 <!-- 文芸ランキング -->
 <section class="content_area category_rank">
   <h3 class="rank_ttl">文芸ランキングベスト<span class="rank_number literary_font">3</span></h3>
   <div class="content_block rank_card literary_font">
-
+    <% let literaryNum=0 %>
+    <% for(i=0; i<literary.length; i++){ %>
+      <% let literaryNum=i+1 %>
     <div class="category_rank_card">
       <div class="category_rank_meta">
         <div class="category_rank_subordinate">
           <div class="category_rank_img">
             <img class="category_crown_img" border="0" src="img/crown/literary.png" alt="crown_love" />
-            <p class="category_ranks_mark">1位</p>
+            <p class="category_ranks_mark"><%= literaryNum %>位</p>
           </div>
           <div class="category_rank_point">
-            <p class="notfirst_total_point">277041pt</p>
+            <p class="notfirst_total_point"><%= literary[i].global_point %>pt</p>
           </div>
         </div>
         <div class="category_rank_category work_info_font_color">
-          <p>コメディー〔文芸〕</p>
-          <p>Nコード:N5691DD</p>
+          <p><%= literary[i].genre_name %></p>
+          <p>Nコード:<%= literary[i].ncode %></p>
         </div>
       </div>
       <div class="category_rank_details_text">
-        <p><a href="./details/author/160125">即死チートが最強すぎて、異世界のやつらがまるで相手にならないんですが。</a></p>
+        <p><a href="./details/author/<%= literary[i].auther_id %>"><%= literary[i].title %></a></p>
       </div>
       <div class="category_rank_author work_info_font_color">
         <div class="category_rank_author_name">
           <p>作者:</p>
         </div>
         <div class="category_rank_author_detail">
-          <p>藤孝剛志</p>
+          <p><%= literary[i].author_name %></p>
         </div>
       </div>
     </div>
-
-    <div class="category_rank_card">
-      <div class="category_rank_meta">
-        <div class="category_rank_subordinate">
-          <div class="category_rank_img">
-            <img class="category_crown_img" border="0" src="img/crown/literary.png" alt="crown_love" />
-            <p class="category_ranks_mark">2位</p>
-          </div>
-          <div class="category_rank_point">
-            <p class="notfirst_total_point">195477pt</p>
-          </div>
-        </div>
-        <div class="category_rank_category work_info_font_color">
-          <p>アクション〔文芸〕</p>
-          <p>Nコード:N3830DD</p>
-        </div>
-      </div>
-      <div class="category_rank_details_text">
-        <p><a href="./details/author/726225">村人ですが何か？（ウェブ版）</a></p>
-      </div>
-      <div class="category_rank_author work_info_font_color">
-        <div class="category_rank_author_name">
-          <p>作者:</p>
-        </div>
-        <div class="category_rank_author_detail">
-          <p>白石新</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="category_rank_card">
-      <div class="category_rank_meta">
-        <div class="category_rank_subordinate">
-          <div class="category_rank_img">
-            <img class="category_crown_img" border="0" src="img/crown/literary.png" alt="crown_love" />
-            <p class="category_ranks_mark">3位</p>
-          </div>
-          <div class="category_rank_point">
-            <p class="notfirst_total_point">353208pt</p>
-          </div>
-        </div>
-        <div class="category_rank_category work_info_font_color">
-          <p>推理〔文芸〕</p>
-          <p>Nコード:N9636X</p>
-        </div>
-      </div>
-      <div class="category_rank_details_text">
-        <p><a href="./details/author/183213">薬屋のひとりごと</a></p>
-      </div>
-      <div class="category_rank_author work_info_font_color">
-        <div class="category_rank_author_name">
-          <p>作者:</p>
-        </div>
-        <div class="category_rank_author_detail">
-          <p>日向夏</p>
-        </div>
-      </div>
-    </div>
-
+    <% } %>
   </div>
   <div class="link link_literary">
     <input type="button" id="literary_rank_button" class="link_button" value="文芸ランキングをもっと見る"
@@ -518,94 +219,38 @@
 <section class="content_area category_rank">
   <h3 class="rank_ttl">SFランキングベスト<span class="rank_number sf_font">3</span></h3>
   <div class="content_block rank_card sf_font">
-
+    <% let sfNum=0 %>
+    <% for(i=0; i<sf.length; i++){ %>
+      <% let sfNum=i+1 %>
     <div class="category_rank_card">
       <div class="category_rank_meta">
         <div class="category_rank_subordinate">
           <div class="category_rank_img">
             <img class="category_crown_img" border="0" src="img/crown/sf.png" alt="crown_love" />
-            <p class="category_ranks_mark">1位</p>
+            <p class="category_ranks_mark"><%= sfNum %>位</p>
           </div>
           <div class="category_rank_point">
-            <p class="notfirst_total_point">276918pt</p>
+            <p class="notfirst_total_point"><%= sf[i].global_point %>pt</p>
           </div>
         </div>
         <div class="category_rank_category work_info_font_color">
-          <p>VRゲーム〔SF〕</p>
-          <p>Nコード:N0358DH</p>
+          <p><%= sf[i].genre_name %></p>
+          <p>Nコード:<%= sf[i].ncode %></p>
         </div>
       </div>
       <div class="category_rank_details_text">
-        <p><a href="./details/author/590376">痛いのは嫌なので防御力に極振りしたいと思います。</a></p>
+        <p><a href="./details/author/<%= sf[i].auther_id %>"><%= sf[i].title %></a></p>
       </div>
       <div class="category_rank_author work_info_font_color">
         <div class="category_rank_author_name">
           <p>作者:</p>
         </div>
         <div class="category_rank_author_detail">
-          <p>夕蜜柑</p>
+          <p><%= sf[i].author_name %></p>
         </div>
       </div>
     </div>
-
-    <div class="category_rank_card">
-      <div class="category_rank_meta">
-        <div class="category_rank_subordinate">
-          <div class="category_rank_img">
-            <img class="category_crown_img" border="0" src="img/crown/sf.png" alt="crown_love" />
-            <p class="category_ranks_mark">2位</p>
-          </div>
-          <div class="category_rank_point">
-            <p class="notfirst_total_point">350315pt</p>
-          </div>
-        </div>
-        <div class="category_rank_category work_info_font_color">
-          <p>VRゲーム〔SF〕</p>
-          <p>Nコード:N6169DZ</p>
-        </div>
-      </div>
-      <div class="category_rank_details_text">
-        <p><a href="./details/author/474038">シャングリラ・フロンティア〜クソゲーハンター、神ゲーに挑まんとす〜</a></p>
-      </div>
-      <div class="category_rank_author work_info_font_color">
-        <div class="category_rank_author_name">
-          <p>作者:</p>
-        </div>
-        <div class="category_rank_author_detail">
-          <p>硬梨菜</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="category_rank_card">
-      <div class="category_rank_meta">
-        <div class="category_rank_subordinate">
-          <div class="category_rank_img">
-            <img class="category_crown_img" border="0" src="img/crown/sf.png" alt="crown_love" />
-            <p class="category_ranks_mark">3位</p>
-          </div>
-          <div class="category_rank_point">
-            <p class="notfirst_total_point">295377pt</p>
-          </div>
-        </div>
-        <div class="category_rank_category work_info_font_color">
-          <p>宇宙〔SF〕</p>
-          <p>Nコード:N1976EY</p>
-        </div>
-      </div>
-      <div class="category_rank_details_text">
-        <p><a href="./details/author/218376">俺は星間国家の悪徳領主！</a></p>
-      </div>
-      <div class="category_rank_author work_info_font_color">
-        <div class="category_rank_author_name">
-          <p>作者:</p>
-        </div>
-        <div class="category_rank_author_detail">
-          <p>三嶋　与夢</p>
-        </div>
-      </div>
-    </div>
-
+    <% } %>
   </div>
   <div class="link link_sf">
     <input type="button" id="sf_rank_button" class="link_button" value="SFランキングをもっと見る"
@@ -616,94 +261,38 @@
 <section class="content_area category_rank">
   <h3 class="rank_ttl">その他ランキングベスト<span class="rank_number other_font">3</span></h3>
   <div class="content_block rank_card other_font">
-
+    <% let otherNum=0 %>
+    <% for(i=0; i<other.length; i++){ %>
+      <% let otherNum=i+1 %>
     <div class="category_rank_card">
       <div class="category_rank_meta">
         <div class="category_rank_subordinate">
           <div class="category_rank_img">
             <img class="category_crown_img" border="0" src="img/crown/other.png" alt="crown_love" />
-            <p class="category_ranks_mark">1位</p>
+            <p class="category_ranks_mark"><%= otherNum %>位</p>
           </div>
           <div class="category_rank_point">
-            <p class="notfirst_total_point">57745pt</p>
+            <p class="notfirst_total_point"><%= other[i].global_point %>pt</p>
           </div>
         </div>
         <div class="category_rank_category work_info_font_color">
-          <p>その他〔その他〕</p>
-          <p>Nコード:N9924BW</p>
+          <p><%= other[i].genre_name %></p>
+          <p>Nコード:<%= other[i].ncode %></p>
         </div>
       </div>
       <div class="category_rank_details_text">
-        <p><a href="./details/author/396651">悪の組織の求人広告</a></p>
+        <p><a href="./details/author/<%= other[i].auther_id %>"><%= other[i].title %></a></p>
       </div>
       <div class="category_rank_author work_info_font_color">
         <div class="category_rank_author_name">
           <p>作者:</p>
         </div>
         <div class="category_rank_author_detail">
-          <p>Q7／喜友名トト</p>
+          <p><%= other[i].author_name %></p>
         </div>
       </div>
     </div>
-
-    <div class="category_rank_card">
-      <div class="category_rank_meta">
-        <div class="category_rank_subordinate">
-          <div class="category_rank_img">
-            <img class="category_crown_img" border="0" src="img/crown/other.png" alt="crown_love" />
-            <p class="category_ranks_mark">2位</p>
-          </div>
-          <div class="category_rank_point">
-            <p class="notfirst_total_point">109104pt</p>
-          </div>
-        </div>
-        <div class="category_rank_category work_info_font_color">
-          <p>その他〔その他〕</p>
-          <p>Nコード:N0579DC</p>
-        </div>
-      </div>
-      <div class="category_rank_details_text">
-        <p><a href="./details/author/164671">異世界コンサル株式会社（旧題：冒険者パーティーの経営を支援します！！）</a></p>
-      </div>
-      <div class="category_rank_author work_info_font_color">
-        <div class="category_rank_author_name">
-          <p>作者:</p>
-        </div>
-        <div class="category_rank_author_detail">
-          <p>ダイスケ</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="category_rank_card">
-      <div class="category_rank_meta">
-        <div class="category_rank_subordinate">
-          <div class="category_rank_img">
-            <img class="category_crown_img" border="0" src="img/crown/other.png" alt="crown_love" />
-            <p class="category_ranks_mark">3位</p>
-          </div>
-          <div class="category_rank_point">
-            <p class="notfirst_total_point">108528pt</p>
-          </div>
-        </div>
-        <div class="category_rank_category work_info_font_color">
-          <p>その他〔その他〕</p>
-          <p>Nコード:N6247DD</p>
-        </div>
-      </div>
-      <div class="category_rank_details_text">
-        <p><a href="./details/author/602510">魔王軍最強の魔術師は人間だった</a></p>
-      </div>
-      <div class="category_rank_author work_info_font_color">
-        <div class="category_rank_author_name">
-          <p>作者:</p>
-        </div>
-        <div class="category_rank_author_detail">
-          <p>羽田遼亮</p>
-        </div>
-      </div>
-    </div>
-
+    <% } %>
   </div>
   <div class="link link_other">
     <input type="button" id="other_rank_button" class="link_button" value="その他ランキングをもっと見る"
@@ -715,94 +304,38 @@
   <h3 class="rank_ttl rank_ttl_long"><span>ノンジャンルランキング</span><span>ベスト<span
         class="rank_number nonGenre_font">3</span></span></h3>
   <div class="content_block rank_card nonGenre_font">
-
+    <% let nonGenreNum=0 %>
+    <% for(i=0; i<nonGenre.length; i++){ %>
+    <% let nonGenreNum=i+1 %>
     <div class="category_rank_card">
       <div class="category_rank_meta">
         <div class="category_rank_subordinate">
           <div class="category_rank_img">
             <img class="category_crown_img" border="0" src="img/crown/non-genre.png" alt="crown_love" />
-            <p class="category_ranks_mark">1位</p>
+            <p class="category_ranks_mark"><%= nonGenreNum %>位</p>
           </div>
           <div class="category_rank_point">
-            <p class="notfirst_total_point">105030pt</p>
+            <p class="notfirst_total_point"><%= nonGenre[i].global_point %>pt</p>
           </div>
         </div>
         <div class="category_rank_category work_info_font_color">
-          <p>ノンジャンル〔ノンジャンル〕</p>
-          <p>Nコード:105030</p>
+          <p><%= nonGenre[i].genre_name %></p>
+          <p>Nコード:<%= nonGenre[i].ncode %></p>
         </div>
       </div>
       <div class="category_rank_details_text">
-        <p><a href="./details/author/75416">先代勇者は隠居したい(仮題)</a></p>
+        <p><a href="./details/author/<%= other[i].auther_id %>"><%= other[i].title %></a></p>
       </div>
       <div class="category_rank_author work_info_font_color">
         <div class="category_rank_author_name">
           <p>作者:</p>
         </div>
         <div class="category_rank_author_detail">
-          <p>タピオカ</p>
+          <p><%= other[i].auther_name %></p>
         </div>
       </div>
     </div>
-
-    <div class="category_rank_card">
-      <div class="category_rank_meta">
-        <div class="category_rank_subordinate">
-          <div class="category_rank_img">
-            <img class="category_crown_img" border="0" src="img/crown/non-genre.png" alt="crown_love" />
-            <p class="category_ranks_mark">2位</p>
-          </div>
-          <div class="category_rank_point">
-            <p class="notfirst_total_point">90619pt</p>
-          </div>
-        </div>
-        <div class="category_rank_category work_info_font_color">
-          <p>ノンジャンル〔ノンジャンル〕</p>
-          <p>Nコード:90619</p>
-        </div>
-      </div>
-      <div class="category_rank_details_text">
-        <p><a href="./details/author/324781">多神の加護</a></p>
-      </div>
-      <div class="category_rank_author work_info_font_color">
-        <div class="category_rank_author_name">
-          <p>作者:</p>
-        </div>
-        <div class="category_rank_author_detail">
-          <p>masanimasa</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="category_rank_card">
-      <div class="category_rank_meta">
-        <div class="category_rank_subordinate">
-          <div class="category_rank_img">
-            <img class="category_crown_img" border="0" src="img/crown/non-genre.png" alt="crown_love" />
-            <p class="category_ranks_mark">3位</p>
-          </div>
-          <div class="category_rank_point">
-            <p class="notfirst_total_point">203448pt</p>
-          </div>
-        </div>
-        <div class="category_rank_category work_info_font_color">
-          <p>ノンジャンル〔ノンジャンル〕</p>
-          <p>Nコード:203448</p>
-        </div>
-      </div>
-      <div class="category_rank_details_text">
-        <p><a href="./details/author/76491">ログ・ホライズン</a></p>
-      </div>
-      <div class="category_rank_author work_info_font_color">
-        <div class="category_rank_author_name">
-          <p>作者:</p>
-        </div>
-        <div class="category_rank_author_detail">
-          <p>橙乃ままれ</p>
-        </div>
-      </div>
-    </div>
-
+    <% } %>
   </div>
   <div class="link link_non-genre">
     <input type="button" id="non-genre_rank_button" class="link_button link_long-text" value="ノンジャンルランキングをもっと見る"
